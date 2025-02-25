@@ -9,6 +9,10 @@ const StyledGlobal = createGlobalStyle`
     *, ::after, ::before {
         box-sizing: inherit;
     }
+
+    body {
+        background: ${({ theme }) => theme.colors.bgLightGrey};
+    }
 `;
 
 export default StyledGlobal;
