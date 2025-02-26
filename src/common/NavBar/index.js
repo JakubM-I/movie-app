@@ -1,9 +1,13 @@
-import { StyledMenu, StyledMenuItem, StyledNavBar, StyledSearch } from "./styled";
-import logo from "../assets/logo.png"
+import { StyledLogoIcon, StyledLogoName, StyledLogoWrapper, StyledMenu, StyledMenuItem, StyledNavBar, StyledSearch } from "./styled";
+import logo from "../assets/video-logo.png"
 
 const NavBar = () => (
     <StyledNavBar>
-        <img src={logo} alt="logo" />
+        <StyledLogoWrapper >
+            <StyledLogoIcon src={logo} alt="logo" />
+            <StyledLogoName>Movies&nbsp;Browser</StyledLogoName>
+        </StyledLogoWrapper>
+
         <StyledMenu>
             <StyledMenuItem>Movies</StyledMenuItem>
             <StyledMenuItem>People</StyledMenuItem>
