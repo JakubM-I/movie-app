@@ -1,4 +1,4 @@
-import { StyledLogoIcon, StyledLogoName, StyledLogoWrapper, StyledMenu, StyledMenuItem, StyledNavBar, StyledSearch, StyledSearchInput } from "./styled";
+import { StyledLogoIcon, StyledLogoName, StyledLogoWrapper, StyledMenu, StyledMenuItem, StyledNavBar, StyledSearch, StyledSearchIcon, StyledSearchInput } from "./styled";
 import logo from "../assets/video-logo.png";
 import searchIcon from "../assets/search-icon.png";
 
@@ -14,7 +14,7 @@ const NavBar = () => (
             <StyledMenuItem>People</StyledMenuItem>
         </StyledMenu>
         <StyledSearch >
-            <img src={searchIcon} alt="search" />
+            <StyledSearchIcon src={searchIcon} alt="search" />
             <StyledSearchInput type="text" placeholder="Search for movies..." />
         </StyledSearch>
     </StyledNavBar>

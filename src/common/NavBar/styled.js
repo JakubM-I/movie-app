@@ -111,6 +111,14 @@ export const StyledSearch = styled.div`
     }
 `
 
+export const StyledSearchIcon = styled.img`
+    width: min(100%, 24px);
+
+    @media (width <= 768px) {
+        width: clamp(1rem, 0.6429rem + 1.7857vw, 1.5rem);
+    }
+`
+
 export const StyledSearchInput = styled.input`
     border: none;
     color: ${({ theme }) => theme.colors.darkerGrey};
