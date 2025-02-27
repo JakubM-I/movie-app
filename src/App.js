@@ -1,10 +1,12 @@
-import logo from './logo.svg';
-import { MovieList } from './Movie list';
-import './App.css';
+import Header from "./common/Header";
+
 
 function App() {
   return (
-    <MovieList />
+    <>
+      <Header />
+
+    </>
   );
 }
 
