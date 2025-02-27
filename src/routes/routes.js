@@ -1,4 +1,6 @@
 import App from "../App";
+import ActorsListApp from "../features/actorsList/ActorsListApp";
+import MovieListApp from "../features/movieList/MovieListApp";
 
 export const routes = [
     {
@@ -7,6 +9,7 @@ export const routes = [
         children: [
             {
                 path: "/",
+                index: true,
                 element: <MovieListApp />,
             },
             {

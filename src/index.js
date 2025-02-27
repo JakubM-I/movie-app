@@ -8,7 +8,7 @@ import { theme } from './common/utils/theme';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { routes } from './routes/routes';
 
-const router = createHashRouter(routes, { basename: "/react-movie-app" })
+const router = createHashRouter(routes)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
