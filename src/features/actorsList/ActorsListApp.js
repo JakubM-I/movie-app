@@ -1,7 +1,7 @@
 const ActorsListApp = () => {
     return (
         <>
-            <p>Tu bedzie lista aktorow</p>
+            <p style={{ textAlign: "center" }}>Tu bedzie lista aktorow</p>
         </>
     );
 };

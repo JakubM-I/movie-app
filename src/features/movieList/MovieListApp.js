@@ -1,7 +1,7 @@
 const MovieListApp = () => {
     return (
         <>
-            <p>Tu bedzie lista filmow</p>
+            <p style={{ textAlign: "center" }}>Tu bedzie lista filmow</p>
         </>
     );
 };
