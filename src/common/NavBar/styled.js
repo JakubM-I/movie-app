@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledNavBar = styled.div`
@@ -33,6 +34,19 @@ export const StyledLogoWrapper = styled.div`
     }
 `
 
+export const StyledLogoNavLink = styled(NavLink)`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    cursor: pointer;
+
+    @media (width <= 1024px) {
+        gap: clamp(0.5rem, 0.2159rem + 1.4205vw, 1.125rem);
+    }
+`
+
 export const StyledLogoIcon = styled.img`
     width: min(100%, 40px);
     height: auto;
@@ -47,6 +61,7 @@ export const StyledLogoName = styled.span`
     font-size: 24px;
     line-height: 1;
     font-weight: 500;
+    text-decoration: none;
     color: ${({ theme }) => theme.colors.white};
 
     @media (width <= 1024px) {
@@ -67,7 +82,12 @@ export const StyledMenu = styled.ul`
 `
 
 export const StyledMenuItem = styled.li`
+
+`
+
+export const StyledNavLink = styled(NavLink)`
     color: ${({ theme }) => theme.colors.white};
+    text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
@@ -77,6 +97,10 @@ export const StyledMenuItem = styled.li`
     border-radius: 24px;
     cursor: pointer;
     transition: all 0.35s ease;
+
+    &.active {
+        border: 1px solid ${({ theme }) => theme.colors.white};
+    }
 
     @media (width <= 1024px) {
         font-size: clamp(0.75rem, 0.6932rem + 0.2841vw, 0.875rem);
