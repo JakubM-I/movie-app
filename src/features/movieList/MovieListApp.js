@@ -1,7 +1,8 @@
+import { MovieList } from "./Movie list";
 const MovieListApp = () => {
     return (
         <>
-            <p style={{ textAlign: "center" }}>Tu bedzie lista filmow</p>
+            <p style={{ textAlign: "center" }}><MovieList /></p>
         </>
     );
 };
