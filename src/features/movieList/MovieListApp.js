@@ -2,7 +2,7 @@ import { MovieList } from "./Movie list";
 const MovieListApp = () => {
     return (
         <>
-            <p style={{ textAlign: "center" }}><MovieList /></p>
+            <p><MovieList /></p>
         </>
     );
 };

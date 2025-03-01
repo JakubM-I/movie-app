@@ -8,10 +8,10 @@ export const StyledButton = styled.button`
   cursor: pointer;
 
   ${({ reverse }) => reverse && css`
-    background: #E4E6F0;
+    background: ${({ theme }) => theme.colors.grey};
   `}
   ${({ next }) => next && css`
-    background: #E4E6F0;
+    background: ${({ theme }) => theme.colors.lightBlue};
   `}
 `;
 
