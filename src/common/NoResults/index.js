@@ -1,5 +1,5 @@
 import { PageTitle } from "../PageHeader"
-import { PageContainer } from "../styled/page-ontainer";
+import { PageContainer } from "../styled/page-container";
 
 const NoResults = () => {
     return (
