@@ -53,8 +53,8 @@ export const MovieImage = styled.img`
 
 export const MovieTitle = styled.h2`
   margin: 16px 0;
-  font-size: 500;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 500;
 `;
 
 export const MovieYear = styled.div`
@@ -73,10 +73,10 @@ export const MovieGenreContainer = styled.div`
 export const MovieGenre = styled.div`
   display: inline-block;
   background-color: ${({ theme }) => theme.colors.grey};
-  font-size: 400;
+  font-size: 14px;
+  font-weight: 400;
   border-radius: 8px;
-  padding: 8px 16px;
-  
+  padding: 8px 16px; 
 `;
 
 export const MovieRatingContainer = styled.div`
@@ -84,14 +84,15 @@ export const MovieRatingContainer = styled.div`
   grid-template-columns: 72px 1fr;
   margin: 16px 0;
   padding: 0 16px; 
-  font-size: 400; 
+  font-size: 16px; 
   align-self: flex-end;
 `;
 
 export const MovieRating = styled.div``;
 
 export const Votes = styled.div`
-  font-size: 400;
+  font-size: 16px;
+  font-weight: 400;
   margin-top: 32px;
   color: ${({ theme }) => theme.colors.darkerGrey};
 `;
