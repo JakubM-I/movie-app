@@ -49,10 +49,16 @@ export const StyledButton = styled.button`
     border: 1px solid ${({ theme }) => theme.colors.blue};
     border-radius: 5px;
     padding: 16px 24px;
-    background-color: ${({ theme }) => theme.colors.blue};
+    background: ${({ theme }) => theme.colors.blue};
     color: ${({ theme }) => theme.colors.white};
     font-size: 14px;
     font-weight: 700;
     line-height: 1;
     cursor: pointer;
+    transition: background 0.55s ease-in-out, color 0.55s ease-in-out;
+
+    &:hover {
+        background: ${({ theme }) => theme.colors.white};
+        color: ${({ theme }) => theme.colors.blue};
+    }
 `;
