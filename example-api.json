@@ -1,0 +1,38 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "id": 12345,
+      "title": "Example Movie",
+      "overview": "This is a sample movie description.",
+      "release_date": "2024-05-10",
+      "poster_path": "/path_to_poster.jpg",
+      "backdrop_path": "/path_to_backdrop.jpg",
+      "vote_average": 8.5,
+      "vote_count": 1200,
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ]
+    },
+    {
+      "id": 67890,
+      "title": "Another Example Movie",
+      "overview": "This is another sample movie description.",
+      "release_date": "2023-11-22",
+      "poster_path": "/another_poster.jpg",
+      "backdrop_path": "/another_backdrop.jpg",
+      "vote_average": 7.8,
+      "vote_count": 980,
+      "original_language": "fr",
+      "genre_ids": [
+        35,
+        18
+      ]
+    }
+  ],
+  "total_pages": 10,
+  "total_results": 200
+}
