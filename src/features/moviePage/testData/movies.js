@@ -12,7 +12,7 @@ export const movies = {
       Poster: posterSmall,
       MovieData: {
         Title: "Mulan",
-        2020: "2020",
+        Year: "2020",
         ProductioRelase: "",
         tags: "",
         Rating: "",

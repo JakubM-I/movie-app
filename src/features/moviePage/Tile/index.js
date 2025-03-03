@@ -1,8 +1,18 @@
-import { MovieTile, ImgSmall, Description } from "./styled";
+import {
+  MovieTile,
+  ImgSmall,
+  MovieData,
+  MovieTitle,
+  MovieDescription,
+} from "./styled";
 
-export const Tile = ({ posterSmall, description }) => (
+export const Tile = ({ posterSmall, description, title, year }) => (
   <MovieTile>
     <ImgSmall src={posterSmall} alt="" />
-    <Description> {description} </Description>
+    <MovieData>
+      <MovieTitle> {title} </MovieTitle>
+      <MovieDescription> {year} </MovieDescription>
+      <MovieDescription> {description} </MovieDescription>
+    </MovieData>
   </MovieTile>
 );

@@ -6,6 +6,6 @@ export const Top = styled.div`
 
 export const ImgBig = styled.img`
   width: 90vw;
-  margin: 0 auto;
-  max-width: 1364px;  
+  margin: 10px 0;
+  max-width: 1920px;  
 `;
