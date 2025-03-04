@@ -16,7 +16,7 @@ export const movies = {
       MovieData: {
         Title: "Mulan",
         Year: "2020",
-        Productio: "China, USA",
+        Production: "China, USA",
         Date: "24.10.2020",
         tags: {
           action: "Action",
@@ -34,12 +34,12 @@ export const movies = {
     },
     Cast: {
       Cast: "Cast",
-      PersonTiles: {
+      PersonTiles0: {
         poster: poster,
         name: "Liu Yifei",
         character: "Mulon",
       },
-      PersonTiles: {
+      PersonTiles1: {
         poster: picture,
         name: "Doonie Yen",
         character: "Komandor Tung",
@@ -47,12 +47,12 @@ export const movies = {
     },
     Crew: {
       Crew: "Crew",
-      PersonTiles: {
+      PersonTiles0: {
         poster: poster,
         name: "Liu Yifei",
         character: "Director",
       },
-      PersonTiles: {
+      PersonTiles1: {
         poster: picture,
         name: "Janson Scot",
         character: "Music",

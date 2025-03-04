@@ -12,7 +12,6 @@ const StyledGlobal = createGlobalStyle`
 
     body {
         background: ${({ theme }) => theme.colors.lightGrey};
-        border-style: dotted;
     }
 `;
 

@@ -25,8 +25,10 @@ export const ImgSmall = styled.img`
 export const MovieTitle = styled.p`
   font-weight: bold;
   font-size: 40px;
+  margin: 5px 0 20px 0;
 `;
 
 export const MovieDescription = styled.p`
   font-size: small;
+  margin: 20px 0 0 0;
 `;
