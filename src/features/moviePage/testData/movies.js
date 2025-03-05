@@ -33,31 +33,94 @@ export const movies = {
       }
     },
     Cast: {
-      Cast: "Cast",
-      PersonTiles0: {
-        poster: poster,
-        name: "Liu Yifei",
-        character: "Mulon",
-      },
-      PersonTiles1: {
-        poster: picture,
-        name: "Doonie Yen",
-        character: "Komandor Tung",
-      },
+      Title: "Cast",
+      People: [
+        {
+          poster: poster,
+          name: "Liu Yifei",
+          character: "Mulon",
+        },
+        {
+          poster: picture,
+          name: "Doonie Yen",
+          character: "Komandor Tung",
+        },
+        {
+          poster: poster,
+          name: "Liu Yifei",
+          character: "Mulon",
+        },
+        {
+          poster: picture,
+          name: "Doonie Yen",
+          character: "Komandor Tung",
+        },
+        {
+          poster: poster,
+          name: "Liu Yifei",
+          character: "Mulon",
+        },
+        {
+          poster: picture,
+          name: "Doonie Yen",
+          character: "Komandor Tung",
+        },
+        {
+          poster: poster,
+          name: "Liu Yifei",
+          character: "Mulon",
+        },
+        {
+          poster: picture,
+          name: "Doonie Yen",
+          character: "Komandor Tung",
+        },
+      ],
     },
     Crew: {
-      Crew: "Crew",
-      PersonTiles0: {
-        poster: poster,
-        name: "Liu Yifei",
-        character: "Director",
-      },
-      PersonTiles1: {
-        poster: picture,
-        name: "Janson Scot",
-        character: "Music",
-
-      },
+      Title: "Crew",
+      People: [
+        {
+          poster: poster,
+          name: "Liu Yifei",
+          character: "Director",
+        },
+        {
+          poster: picture,
+          name: "Janson Scot",
+          character: "Music",
+        },
+        {
+          poster: poster,
+          name: "Liu Yifei",
+          character: "Director",
+        },
+        {
+          poster: picture,
+          name: "Janson Scot",
+          character: "Music",
+        },
+        {
+          poster: poster,
+          name: "Liu Yifei",
+          character: "Director",
+        },
+        {
+          poster: picture,
+          name: "Janson Scot",
+          character: "Music",
+        },
+        {
+          poster: poster,
+          name: "Liu Yifei",
+          character: "Director",
+        },
+        {
+          poster: picture,
+          name: "Janson Scot",
+          character: "Music",
+        },
+      ],
     },
   },
 };

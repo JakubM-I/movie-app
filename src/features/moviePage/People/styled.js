@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const PeopleWrapper = styled.div`
   margin: 0 50px 50px 50px;
   width: 100%;
   max-width: 1000px;

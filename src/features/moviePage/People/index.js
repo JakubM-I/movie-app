@@ -1,8 +1,8 @@
-import { Wrapper, SubHeader } from "./styled";
+import { PeopleWrapper, SubHeader } from "./styled";
 
 export const People = ({ title }) => (
 
-  <Wrapper>
+  <PeopleWrapper>
     <SubHeader>{title}</SubHeader>
-  </Wrapper>
+  </PeopleWrapper>
 );

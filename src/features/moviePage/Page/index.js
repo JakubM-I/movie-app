@@ -1,12 +1,12 @@
-import { Wrapper } from "./styled";
+import { PageWrapper } from "./styled";
 import { Poster } from "../Poster";
 import { Tile } from "../Tile";
 import { People } from "../People";
 
-export const MoviePage = ({
+export const Page = ({
   posterBig, posterSmall, description, title,
   year, produktion, date }) => (
-  <Wrapper>
+  <PageWrapper>
     <Poster posterBig={posterBig} />
     <Tile
       posterSmall={posterSmall}
@@ -17,5 +17,5 @@ export const MoviePage = ({
       date={date} />
     <People title="Coast" />
     <People title="Crew" />
-  </Wrapper>
+  </PageWrapper>
 );

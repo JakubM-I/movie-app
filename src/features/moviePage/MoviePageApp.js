@@ -1,4 +1,4 @@
-import { MoviePage } from "./MoviePage";
+import { Page } from "./Page";
 import { movies } from "./testData/movies";
 
 function MoviePageApp() {
@@ -12,7 +12,7 @@ function MoviePageApp() {
   const date = movies.Content.MovieTile.MovieData.Date;
 
   return (
-    <MoviePage posterBig={posterBig} posterSmall={posterSmall}
+    <Page posterBig={posterBig} posterSmall={posterSmall}
       description={description} title={title} year={year}
       produktion={produktion} date={date}
     />
