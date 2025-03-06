@@ -23,7 +23,7 @@ export const ImgPerson = styled.img`
   width: 100vw;
   max-width: 176px;
   max-height: 231px;
-  border-radius: 10px;
+  border-radius: 15px;
 `;
 
 export const Description = styled.p`

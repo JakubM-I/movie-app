@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PeopleWrapper = styled.div`
   margin: 0 50px 50px 50px;
   width: 100vw;
-  max-width: 1000px;
+  max-width: 1368px;
 `;
 
 export const SubHeader = styled.h2`
