@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Top = styled.div`
-  background: ${({ theme }) => theme.colorsMoviePage.black};
+  width: 100vw;
+  max-width:100%;
 `;
 
 export const ImgBig = styled.img`

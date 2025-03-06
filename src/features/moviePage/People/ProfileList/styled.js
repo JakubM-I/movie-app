@@ -19,11 +19,11 @@ export const PersonTile = styled.div`
 `;
 
 export const ImgPerson = styled.img`
-  padding: 10px 0px;
+  margin-bottom: 15px;
   width: 100vw;
   max-width: 176px;
   max-height: 231px;
-  border-radius: 10px;
+  border-radius: 5px;
 `;
 
 export const Description = styled.p`
