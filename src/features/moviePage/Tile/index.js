@@ -7,7 +7,7 @@ import {
 } from "./styled";
 
 export const Tile = ({ posterSmall,
-  description, title, year, produktion,
+  description, title, year, production,
   date }) => (
 
   <MovieTile>
@@ -15,7 +15,7 @@ export const Tile = ({ posterSmall,
     <MovieData>
       <MovieTitle>{title}</MovieTitle>
       <MovieDescription>{year}</MovieDescription>
-      <MovieDescription>Production: {produktion}<br />Release date: {date}</MovieDescription>
+      <MovieDescription>Production: {production}<br />Release date: {date}</MovieDescription>
       <MovieDescription>{description}</MovieDescription>
     </MovieData>
   </MovieTile>

@@ -6,5 +6,5 @@ export const Top = styled.div`
 
 export const ImgBig = styled.img`
   width: 100vw;
-  max-width: 1920px;  
+  max-width: 100%;  
 `;

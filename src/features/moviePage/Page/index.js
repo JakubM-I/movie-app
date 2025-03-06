@@ -5,7 +5,7 @@ import { People } from "../People";
 
 export const Page = ({
   posterBig, posterSmall, description, title,
-  year, produktion, date }) => (
+  year, production, date, typeCast, peopleCast, typeCrew, peopleCrew }) => (
   <PageWrapper>
     <Poster posterBig={posterBig} />
     <Tile
@@ -13,9 +13,9 @@ export const Page = ({
       title={title}
       year={year}
       description={description}
-      produktion={produktion}
+      production={production}
       date={date} />
-    <People title="Coast" />
-    <People title="Crew" />
+    <People type={typeCast} people={peopleCast} />
+    <People type={typeCrew} people={peopleCrew} />
   </PageWrapper>
 );

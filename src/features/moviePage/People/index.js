@@ -1,8 +1,9 @@
 import { PeopleWrapper, SubHeader } from "./styled";
+import { ProfileList } from "./ProfileList";
 
-export const People = ({ title }) => (
-
+export const People = ({ type, people }) => (
   <PeopleWrapper>
-    <SubHeader>{title}</SubHeader>
+    <SubHeader>{type}</SubHeader>
+    <ProfileList people={people} />
   </PeopleWrapper>
 );

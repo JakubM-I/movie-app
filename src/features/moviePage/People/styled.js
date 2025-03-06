@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PeopleWrapper = styled.div`
   margin: 0 50px 50px 50px;
-  width: 100%;
+  width: 100vw;
   max-width: 1000px;
 `;
 

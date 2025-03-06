@@ -8,13 +8,19 @@ function MoviePageApp() {
   const description = movies.Content.MovieTile.MovieData.description;
   const title = movies.Content.MovieTile.MovieData.Title;
   const year = movies.Content.MovieTile.MovieData.Year;
-  const produktion = movies.Content.MovieTile.MovieData.Production;
+  const production = movies.Content.MovieTile.MovieData.Production;
   const date = movies.Content.MovieTile.MovieData.Date;
+  const typeCast = movies.Content.Cast.Title;
+  const peopleCast = movies.Content.Cast.People;
+  const typeCrew = movies.Content.Crew.Title;
+  const peopleCrew = movies.Content.Crew.People;
 
   return (
     <Page posterBig={posterBig} posterSmall={posterSmall}
       description={description} title={title} year={year}
-      produktion={produktion} date={date}
+      production={production} date={date}
+      typeCast={typeCast} peopleCast={peopleCast}
+      typeCrew={typeCrew} peopleCrew={peopleCrew}
     />
   );
 };

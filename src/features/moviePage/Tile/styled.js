@@ -17,7 +17,7 @@ export const MovieData = styled.div`
 `;
 
 export const ImgSmall = styled.img`
-  width: 90vw;
+  width: 100vw;
   max-width: 312px;
   max-height: 464px; 
 `;
