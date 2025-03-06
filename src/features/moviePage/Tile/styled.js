@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MovieTile = styled.div`
   margin: 50px;
-  max-width: 1000px;
+  max-width: 1368px;
   display: flex;
   flex-flow: row;
   align-items: start;
