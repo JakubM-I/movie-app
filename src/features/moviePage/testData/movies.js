@@ -1,8 +1,11 @@
 import posterBig from "./posterBig.png";
 import posterSmall from "./posterSmall.png";
 import star from "./shape-star.svg";
-import poster from "./person.png";
-import picture from "./picture.png";
+import person from "./person.png";
+import personA from "./personA.png";
+import personB from "./personB.png";
+import personC from "./personC.png";
+import personD from "./personD.png";
 
 export const movies = {
   Header: "",
@@ -36,42 +39,51 @@ export const movies = {
       Title: "Cast",
       People: [
         {
-          poster: poster,
+          id: 0,
+          poster: personA,
           name: "Liu Yifei",
           character: "Mulon",
         },
         {
-          poster: picture,
+          id: 1,
+          poster: personB,
           name: "Doonie Yen",
           character: "Komandor Tung",
         },
         {
-          poster: poster,
+          id: 2,
+          poster: person,
           name: "Liu Yifei",
           character: "Mulon",
         },
         {
-          poster: picture,
+
+          id: 3,
+          poster: person,
           name: "Doonie Yen",
           character: "Komandor Tung",
         },
         {
-          poster: poster,
+          id: 4,
+          poster: personC,
           name: "Liu Yifei",
           character: "Mulon",
         },
         {
-          poster: picture,
+          id: 5,
+          poster: person,
           name: "Doonie Yen",
           character: "Komandor Tung",
         },
         {
-          poster: poster,
+          id: 6,
+          poster: personD,
           name: "Liu Yifei",
           character: "Mulon",
         },
         {
-          poster: picture,
+          id: 7,
+          poster: person,
           name: "Doonie Yen",
           character: "Komandor Tung",
         },
@@ -81,44 +93,39 @@ export const movies = {
       Title: "Crew",
       People: [
         {
-          poster: poster,
+          poster: personC,
           name: "Liu Yifei",
           character: "Director",
         },
         {
-          poster: picture,
+          poster: personD,
           name: "Janson Scot",
           character: "Music",
         },
         {
-          poster: poster,
+          poster: personA,
           name: "Liu Yifei",
           character: "Director",
         },
         {
-          poster: picture,
+          poster: person,
           name: "Janson Scot",
           character: "Music",
         },
         {
-          poster: poster,
+          poster: person,
           name: "Liu Yifei",
           character: "Director",
         },
         {
-          poster: picture,
+          poster: personB,
           name: "Janson Scot",
           character: "Music",
         },
         {
-          poster: poster,
+          poster: personB,
           name: "Liu Yifei",
           character: "Director",
-        },
-        {
-          poster: picture,
-          name: "Janson Scot",
-          character: "Music",
         },
       ],
     },
