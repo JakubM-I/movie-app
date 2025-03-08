@@ -8,7 +8,7 @@ import { MovieCard, } from "../MovieCard";
 export const MovieList = () => {
 
   return (
-    <div>
+    <>
       <PageContainer>
         <PageTitle title="Popular movies" />
 
@@ -25,6 +25,6 @@ export const MovieList = () => {
 
       </PageContainer>
       <Buttons />
-    </div>
+    </>
   );
 }

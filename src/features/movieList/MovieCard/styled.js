@@ -59,8 +59,8 @@ export const MovieImage = styled.img`
 
 export const MovieTitle = styled.h2`
   margin: 16px 0;
-  font-size: 500;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 500;
   text-align: left;
   @media (max-width: 450px) {
     font-size: 16px;
