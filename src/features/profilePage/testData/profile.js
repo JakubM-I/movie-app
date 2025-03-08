@@ -1,127 +1,180 @@
 import image from "./image.png";
+import poster1 from "./poster1.png";
+import poster2 from "./poster2.png";
+import poster3 from "./poster3.png";
+import poster4 from "./poster4.png";
+import star from "./star.png";
 
 export const profile = {
   About: {
-    PersonalInfo: {},
+    PersonalInfo: {
+      BirthDate: "25.08.1987",
+      BirthPlace: "Wuhan, Hubei, China",
+      Info: "Liu Yifei was born in Wuhan, Hubei, Province of China on August 25th, 1987. She began modeling at the age of 8 and was trained in singing, dancing and the piano. Moving to the United States at 10 with her mother, Liu lived there for four years."
+    },
     Image: image,
   },
-  Content: {
-    MovieTile: {
-      Poster: posterSmall,
-      MovieData: {
-        Title: "Mulan",
-        Year: "2020",
-        Production: "China, USA",
-        Date: "24.10.2020",
+  MoviesCast: {
+    Title: "Movies - cast (4)",
+    Movies: [
+      {
+        Poster: poster1,
+        Description: {
+          Name: "Mulan",
+          Year: "Mulan (2020)",
+        },
         tags: {
-          action: "Action",
-          adventure: "Adventure",
-          drama: "Drama",
+          tag1: "Action",
+          tqg2: "Adventure",
+          tag3: "Drama",
         },
         Rating: {
-          Max: " /10",
-          Votes: "335 votes",
           Star: star,
-          Notes: " 7,8",
+          Notes: "7,8",
+          Votes: "35 votes",
         },
-        description: "A young Chinese maiden disguises herself as a male warrior in order to save her father. Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father.",
+      },
+      {
+        Poster: poster2,
+        Description: {
+          Name: "Mulan",
+          Year: "Diao Chan (2021)",
+        },
+        tags: {
+          tag1: "",
+          tqg2: "",
+          tag3: "",
+        },
+        Rating: {
+          Star: star,
+          Notes: "7,9",
+          Votes: "25 votes",
+        },
+      },
+      {
+        Poster: poster3,
+        Description: {
+          Name: "Mulan",
+          Year: "Zou Yu (2020)",
+        },
+        tags: {
+          tag1: "Action",
+          tqg2: "",
+          tag3: "",
+        },
+        Rating: {
+          Star: star,
+          Notes: "8,0",
+          Votes: "45 votes",
+        },
+      },
+      {
+        Poster: poster4,
+        Description: {
+          Name: "Mulan long title long title Mulan long title long",
+          Year: "Zou Yu (2020)",
+        },
+        tags: {
+          tag1: "",
+          tqg2: "",
+          tag3: "Drama",
+        },
+        Rating: {
+          Star: star,
+          Notes: "8,1",
+          Votes: "135 votes",
+        },
       }
-    },
-    Cast: {
-      Title: "Cast",
-      People: [
-        {
-          id: 0,
-          poster: personA,
-          name: "Liu Yifei",
-          character: "Mulon",
+    ],
+  },
+  MoviesCrew: {
+    Title: "Movies - crew (5)",
+    Movies: [
+      {
+        Poster: poster2,
+        Description: {
+          Name: "Mulan",
+          Year: "Diao Chan (2021)",
         },
-        {
-          id: 1,
-          poster: personB,
-          name: "Doonie Yen",
-          character: "Komandor Tung",
+        tags: {
+          tag1: "",
+          tqg2: "",
+          tag3: "",
         },
-        {
-          id: 2,
-          poster: person,
-          name: "Liu Yifei",
-          character: "Mulon",
+        Rating: {
+          Star: star,
+          Notes: "7,9",
+          Votes: "25 votes",
         },
-        {
-
-          id: 3,
-          poster: person,
-          name: "Doonie Yen",
-          character: "Komandor Tung",
+      },
+      {
+        Poster: poster1,
+        Description: {
+          Name: "Mulan",
+          Year: "Mulan (2020)",
         },
-        {
-          id: 4,
-          poster: personC,
-          name: "Liu Yifei",
-          character: "Mulon",
+        tags: {
+          tag1: "Action",
+          tqg2: "Adventure",
+          tag3: "Drama",
         },
-        {
-          id: 5,
-          poster: person,
-          name: "Doonie Yen",
-          character: "Komandor Tung",
+        Rating: {
+          Star: star,
+          Notes: "7,8",
+          Votes: "35 votes",
         },
-        {
-          id: 6,
-          poster: personD,
-          name: "Liu Yifei",
-          character: "Mulon",
+      },
+      {
+        Poster: poster3,
+        Description: {
+          Name: "Mulan",
+          Year: "Zou Yu (2020)",
         },
-        {
-          id: 7,
-          poster: person,
-          name: "Doonie Yen",
-          character: "Komandor Tung",
+        tags: {
+          tag1: "Action",
+          tqg2: "",
+          tag3: "",
         },
-      ],
-    },
-    Crew: {
-      Title: "Crew",
-      People: [
-        {
-          poster: personC,
-          name: "Liu Yifei",
-          character: "Director",
+        Rating: {
+          Star: star,
+          Notes: "8,0",
+          Votes: "45 votes",
         },
-        {
-          poster: personD,
-          name: "Janson Scot",
-          character: "Music",
+      },
+      {
+        Poster: poster1,
+        Description: {
+          Name: "Mulan",
+          Year: "Mulan (2020)",
         },
-        {
-          poster: personA,
-          name: "Liu Yifei",
-          character: "Director",
+        tags: {
+          tag1: "Action",
+          tqg2: "Adventure",
+          tag3: "Drama",
         },
-        {
-          poster: person,
-          name: "Janson Scot",
-          character: "Music",
+        Rating: {
+          Star: star,
+          Notes: "7,8",
+          Votes: "35 votes",
         },
-        {
-          poster: person,
-          name: "Liu Yifei",
-          character: "Director",
+      },
+      {
+        Poster: poster4,
+        Description: {
+          Name: "Mulan long title long title Mulan long title long",
+          Year: "Zou Yu (2020)",
         },
-        {
-          poster: personB,
-          name: "Janson Scot",
-          character: "Music",
+        tags: {
+          tag1: "",
+          tqg2: "",
+          tag3: "Drama",
         },
-        {
-          poster: personB,
-          name: "Liu Yifei",
-          character: "Director",
+        Rating: {
+          Star: star,
+          Notes: "8,1",
+          Votes: "135 votes",
         },
-      ],
-    },
+      }
+    ],
   },
 };
-
-/* export const descryption = "A young Chinese maiden disguises herself as a male warrior in order to save her father. Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father."; */
