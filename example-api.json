@@ -107,6 +107,24 @@
   "genres": ["Action", "Sci-Fi", "Thriller"],
   "rating": 8.8,
   "votes": 92
+  },
+  {
+  "id": 13,
+  "title": "The Dark Knight",
+  "graphic": "dark_knight.jpg",
+  "year": 2008,
+  "genres": ["Action", "Crime", "Drama"],
+  "rating": 9.0,
+  "votes": 89
+  },
+  {
+  "id": 14,
+  "title": "The Lord of the Rings: The Return of the King",
+  "graphic": "lotr.jpg",
+  "year": 2003,
+  "genres": ["Action", "Adventure", "Drama"],
+  "rating": 8.9,
+  "votes": 90
   }
   ]
   }
