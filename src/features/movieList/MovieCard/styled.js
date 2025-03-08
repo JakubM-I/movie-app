@@ -1,15 +1,12 @@
 import styled from "styled-components";
 
-
 export const MovieListContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, auto);
   gap: 10px;
   margin-top: 20px;
   max-width: 1368px;
   max-height: 1391px;
-
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 324px), 1fr));
@@ -22,15 +19,25 @@ export const MovieCardContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  
 
-  @media (max-width: 350px) {
-    max-width: 268px;
+  @media (max-width: 450px) {
+    max-width: 288px;
     max-height: 201px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-right: none;
+    
   }
 `;
 
 export const MovieDetailsCointainer = styled.div`
   padding: 0 16px;
+  @media (max-width: 450px) {     
+   
+  }
 `;
 
 export const MovieImage = styled.img`
@@ -41,58 +48,83 @@ export const MovieImage = styled.img`
   margin-top: 10px;
   border-radius: 10px;
 
-  @media (max-width: 350px) {
-    display: block;
-    margin-left: 0;
+  @media (max-width: 450px) {
+    margin: 16px 16px 0px 16px;
     max-width: 114px;
-    max-height: 169px;
+    height: auto;
+    padding: 0 0;
+    margin-right: 0;
   }
 `;
-
-
 
 export const MovieTitle = styled.h2`
   margin: 16px 0;
   font-size: 500;
   font-weight: bold;
+  text-align: left;
+  @media (max-width: 450px) {
+    font-size: 16px;
+  }
 `;
 
 export const MovieYear = styled.div`
-  margin: 16px 0;
   font-size: 400;
   color: ${({ theme }) => theme.colors.darkerGrey};
+  padding-bottom: 8px;
+  @media (max-width: 450px) {
+    font-size: 13px;
+  }
 `;
 
 export const MovieGenreContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  font-size: 16px; 
+  font-size: 16px;    
+
+  @media (max-width: 450px) {
+   max-width: 107px;
+   max-height: 46px;
+   display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: flex-start;
+  }
 `;
 
 export const MovieGenre = styled.div`
-  display: inline-block;
+  display: block;
   background-color: ${({ theme }) => theme.colors.grey};
-  font-size: 400;
+  font-size: 14px;
   border-radius: 8px;
   padding: 8px 16px;
-  
+  @media (max-width: 450px) {
+   max-width: 107px;
+   max-height: 46px;
+   padding: 4px 8px;
+    font-size: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
 `;
 
 export const MovieRatingContainer = styled.div`
-  display: grid;
-  grid-template-columns: 72px 1fr;
+  display: flex;
   margin: 16px 0;
-  padding: 0 16px; 
-  font-size: 400; 
-  align-self: flex-end;
+  padding: 0 16px; ;
+  margin-top: auto;
+  @media (max-width: 450px) {
+    
+  }
+  
 `;
 
-export const MovieRating = styled.div``;
+export const MovieRating = styled.div`
+padding-right: 8px;`;
 
 export const Votes = styled.div`
   font-size: 400;
-  margin-top: 32px;
+  
   color: ${({ theme }) => theme.colors.darkerGrey};
 `;
 

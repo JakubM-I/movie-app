@@ -26,7 +26,5 @@ export const MovieList = () => {
       </PageContainer>
       <Buttons />
     </div>
-
-
   );
 }

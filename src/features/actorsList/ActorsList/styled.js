@@ -7,7 +7,7 @@ export const PageContainer = styled.div`
     max-width: 288px;  }
 `;
 
-export const MovieListContainer = styled.div`
+export const ActorsListContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, auto);
