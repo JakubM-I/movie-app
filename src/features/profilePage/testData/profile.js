@@ -1,4 +1,4 @@
-import image from "./image.png";
+import imagePerson from "./image.png";
 import poster1 from "./poster1.png";
 import poster2 from "./poster2.png";
 import poster3 from "./poster3.png";
@@ -8,11 +8,12 @@ import star from "./star.png";
 export const profile = {
   About: {
     PersonalInfo: {
+      Name: "Liu Yifei",
       BirthDate: "25.08.1987",
       BirthPlace: "Wuhan, Hubei, China",
       Info: "Liu Yifei was born in Wuhan, Hubei, Province of China on August 25th, 1987. She began modeling at the age of 8 and was trained in singing, dancing and the piano. Moving to the United States at 10 with her mother, Liu lived there for four years."
     },
-    Image: image,
+    ImagePerson: imagePerson,
   },
   MoviesCast: {
     Title: "Movies - cast (4)",

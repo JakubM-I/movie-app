@@ -1,34 +1,48 @@
 import styled from "styled-components";
 
-export const MovieTile = styled.div`
-  margin: 50px;
-  max-width: 1000px;
+export const AboutWrapper = styled.div`
+  margin: 0px;
+  padding: 20px;
+  width: vw;
+  width: 100%;
   display: flex;
   flex-flow: row;
   align-items: start;
 `;
 
-export const MovieData = styled.div`
-  max-height: 412px;
+export const PersonalInfo = styled.div`
+  max-height: 260px;
   display: flex;
   flex-flow: column;
   align-items: left;
-  margin: 0 10px;
+  margin: 0px 40px;
 `;
 
-export const ImgSmall = styled.img`
+export const Img = styled.img`
   width: 100vw;
-  max-width: 312px;
-  max-height: 464px; 
+  max-width: 399px;
+  max-height: 564px;
+  border-radius: 5px;
 `;
 
-export const MovieTitle = styled.p`
+export const Name = styled.p`
   font-weight: bold;
-  font-size: 40px;
-  margin: 5px 0 20px 0;
+  font-size: 35px;
+  margin: 0px 0px 20px 0px;
 `;
 
-export const MovieDescription = styled.p`
+export const TextInfo = styled.span`
+  margin: 0px;
+  color: #000;
+  font-weight: normal;
+`;
+
+export const HeaderInfo = styled.p`
+  margin: 5px 0px;
   font-size: small;
+  color: #555;
+`;
+
+export const InfoWrapper = styled.p`
   margin: 20px 0 0 0;
 `;
