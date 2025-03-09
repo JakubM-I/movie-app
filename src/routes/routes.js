@@ -5,7 +5,6 @@ import ActorsListApp from "../features/actorsList/ActorsListApp";
 import MoviePageApp from "../features/moviePage/MoviePageApp";
 import MovieListApp from "../features/movieList/MovieListApp";
 
-
 export const routes = [
     {
         path: "/",
