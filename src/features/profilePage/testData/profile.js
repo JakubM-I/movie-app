@@ -23,11 +23,11 @@ export const profile = {
           Name: "Mulan",
           Year: "Mulan (2020)",
         },
-        tags: {
-          tag1: "Action",
-          tqg2: "Adventure",
-          tag3: "Drama",
-        },
+        tags: [
+          "Action",
+          "Adventure",
+          "Drama"
+        ],
         Rating: {
           Star: star,
           Notes: "7,8",
@@ -40,11 +40,7 @@ export const profile = {
           Name: "Mulan",
           Year: "Diao Chan (2021)",
         },
-        tags: {
-          tag1: "",
-          tqg2: "",
-          tag3: "",
-        },
+        tags: [],
         Rating: {
           Star: star,
           Notes: "7,9",
@@ -57,11 +53,7 @@ export const profile = {
           Name: "Mulan",
           Year: "Zou Yu (2020)",
         },
-        tags: {
-          tag1: "Action",
-          tqg2: "",
-          tag3: "",
-        },
+        tags: ["Action"],
         Rating: {
           Star: star,
           Notes: "8,0",
@@ -74,11 +66,7 @@ export const profile = {
           Name: "Mulan long title long title Mulan long title long",
           Year: "Zou Yu (2020)",
         },
-        tags: {
-          tag1: "",
-          tqg2: "",
-          tag3: "Drama",
-        },
+        tags: ["Drama"],
         Rating: {
           Star: star,
           Notes: "8,1",
@@ -96,11 +84,7 @@ export const profile = {
           Name: "Mulan",
           Year: "Diao Chan (2021)",
         },
-        tags: {
-          tag1: "",
-          tqg2: "",
-          tag3: "",
-        },
+        tags: [],
         Rating: {
           Star: star,
           Notes: "7,9",
@@ -113,11 +97,7 @@ export const profile = {
           Name: "Mulan",
           Year: "Mulan (2020)",
         },
-        tags: {
-          tag1: "Action",
-          tqg2: "Adventure",
-          tag3: "Drama",
-        },
+        tags: ["Action"],
         Rating: {
           Star: star,
           Notes: "7,8",
@@ -130,11 +110,7 @@ export const profile = {
           Name: "Mulan",
           Year: "Zou Yu (2020)",
         },
-        tags: {
-          tag1: "Action",
-          tqg2: "",
-          tag3: "",
-        },
+        tags: ["Adventure"],
         Rating: {
           Star: star,
           Notes: "8,0",
@@ -147,11 +123,11 @@ export const profile = {
           Name: "Mulan",
           Year: "Mulan (2020)",
         },
-        tags: {
-          tag1: "Action",
-          tqg2: "Adventure",
-          tag3: "Drama",
-        },
+        tags: [
+          "Action",
+          "Adventure",
+          "Drama"
+        ],
         Rating: {
           Star: star,
           Notes: "7,8",
@@ -164,11 +140,7 @@ export const profile = {
           Name: "Mulan long title long title Mulan long title long",
           Year: "Zou Yu (2020)",
         },
-        tags: {
-          tag1: "",
-          tqg2: "",
-          tag3: "Drama",
-        },
+        tags: ["Drama"],
         Rating: {
           Star: star,
           Notes: "8,1",
