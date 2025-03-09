@@ -1,7 +1,5 @@
 import { Outlet } from "react-router-dom";
 import Header from "./common/Header";
-import MovieListApp from "./features/moviesList/MovieListApp";
-import ActorsList from "./features/actorsList/ActorsListApp";
 import { useDispatch } from "react-redux";
 import { use, useEffect } from "react";
 import { fetchMovies } from "./features/moviesList/moviesSlice";
