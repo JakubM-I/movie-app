@@ -21,11 +21,11 @@ export const movies = {
         Year: "2020",
         Production: "China, USA",
         Date: "24.10.2020",
-        tags: {
-          action: "Action",
-          adventure: "Adventure",
-          drama: "Drama",
-        },
+        tags: [
+          "Action",
+          "Adventure",
+          "Drama",
+        ],
         Rating: {
           Max: " /10",
           Votes: "335 votes",
@@ -131,5 +131,3 @@ export const movies = {
     },
   },
 };
-
-/* export const descryption = "A young Chinese maiden disguises herself as a male warrior in order to save her father. Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father."; */
