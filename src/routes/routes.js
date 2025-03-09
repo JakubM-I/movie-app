@@ -3,7 +3,7 @@ import ErrorPage from "../common/ErrorPage";
 import NoResults from "../common/NoResults";
 import ActorsListApp from "../features/actorsList/ActorsListApp";
 import MoviePageApp from "../features/moviePage/MoviePageApp";
-import MovieListApp from "../features/movieList/MovieListApp";
+import MovieListApp from "../features/moviesList/MovieListApp";
 
 export const routes = [
     {
