@@ -26,12 +26,14 @@ export const MovieCard = () => {
           <MovieGenre>Adventure</MovieGenre>
           <MovieGenre>Drama</MovieGenre>
         </MovieGenreContainer>
+
+        <MovieRatingContainer>
+          <MovieRating>⭐️ 7.4</MovieRating>
+          <Votes>35 votes</Votes>
+        </MovieRatingContainer>
       </MovieDetailsCointainer>
 
-      <MovieRatingContainer>
-        <MovieRating>⭐️ 7.4</MovieRating>
-        <Votes>35 votes</Votes>
-      </MovieRatingContainer>
+
 
     </MovieCardContainer>
   );

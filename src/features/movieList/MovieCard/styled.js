@@ -29,14 +29,12 @@ export const MovieCardContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding-right: none;
-    
   }
 `;
 
 export const MovieDetailsCointainer = styled.div`
   padding: 0 16px;
   @media (max-width: 450px) {     
-   
   }
 `;
 
@@ -113,19 +111,31 @@ export const MovieRatingContainer = styled.div`
   margin: 16px 0;
   padding: 0 16px; ;
   margin-top: auto;
+  font-size: 16px;
+  justify-content: flex-start;
   @media (max-width: 450px) {
-    
+    font-size: 13px;
+    padding: 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
   
 `;
 
 export const MovieRating = styled.div`
-padding-right: 8px;`;
+  padding-right: 8px;
+  margin-top: 52px;
+ 
+`;
 
 export const Votes = styled.div`
-  font-size: 400;
-  
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 52px;
   color: ${({ theme }) => theme.colors.darkerGrey};
+  @media (max-width: 450px) {
+    font-size: 13px;
+  }
 `;
 
 
