@@ -6,7 +6,7 @@ import { MovieCard, } from "../MovieCard";
 
 
 export const MovieList = () => {
-
+  const isMobile = console.log(window.innerWidth);
   return (
     <>
       <PageContainer>
@@ -21,8 +21,8 @@ export const MovieList = () => {
           <MovieCard />
           <MovieCard />
         </MovieListContainer>
+        <Buttons />
       </PageContainer>
-      <Buttons />
     </>
   );
 }

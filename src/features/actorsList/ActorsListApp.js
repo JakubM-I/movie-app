@@ -1,7 +1,9 @@
+import { ActorsList } from './ActorsList';
+
 const ActorsListApp = () => {
     return (
         <>
-            <p style={{ textAlign: "center" }}>Tu bedzie lista aktorow</p>
+            <p> <ActorsList /></p>
         </>
     );
 };
