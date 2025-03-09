@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
 export const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 1368px;
   margin: 0 auto;
+  @media (max-width: 450px) {
+    max-width: 288px;  }
 `;
 
 export const MovieListContainer = styled.div`
@@ -12,7 +17,7 @@ export const MovieListContainer = styled.div`
   gap: 10px;
   margin-top: 20px;
   max-width: 1368px;
-  max-height: 1391px;
+ 
 
   justify-content: center;
   align-items: center;
