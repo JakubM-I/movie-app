@@ -19,19 +19,19 @@ export const PersonTile = styled.div`
 `;
 
 export const ImgPerson = styled.img`
-  padding: 10px 0px;
+  margin-bottom: 15px;
   width: 100vw;
   max-width: 176px;
   max-height: 231px;
-  border-radius: 15px;
+  border-radius: 5px;
 `;
 
-export const Description = styled.p`
-  margin-top: 24px;
-  line-height: 1.4;
+export const Name = styled.p`
+  margin: 0px;
+`;
 
-  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    margin-top: 16px;
-    font-size: 14px;
-  }  
+export const Character = styled.p`
+  margin: 5px 0px;
+  font-size: small;
+  color: #555;
 `;
