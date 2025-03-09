@@ -1,12 +1,12 @@
-import { PeopleList, PersonTile, ImgPerson } from "./styled"
+import { PeopleList, PersonTile, ImgPerson, Name, Character } from "./styled"
 
 export const ProfileList = ({ people }) => (
   <PeopleList>
     {people.map(({ poster, name, character }) => (
       <PersonTile>
         <ImgPerson src={poster} alt="" />
-        <dt>{name}</dt>
-        <dt>{character}</dt>
+        <Name>{name}</Name>
+        <Character>{character}</Character>
       </PersonTile>
     ))}
   </PeopleList>

@@ -26,12 +26,12 @@ export const ImgPerson = styled.img`
   border-radius: 5px;
 `;
 
-export const Description = styled.p`
-  margin-top: 24px;
-  line-height: 1.4;
+export const Name = styled.p`
+  margin: 0px;
+`;
 
-  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    margin-top: 16px;
-    font-size: 14px;
-  }  
+export const Character = styled.p`
+  margin: 5px 0px;
+  font-size: small;
+  color: #555;
 `;
