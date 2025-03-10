@@ -19,15 +19,16 @@ export const profile = {
     Title: "Movies - cast (4)",
     Movies: [
       {
+        id: 0,
         Poster: poster1,
         Description: {
           Name: "Mulan",
           Year: "Mulan (2020)",
         },
         tags: [
-          "Action",
-          "Adventure",
-          "Drama"
+          { id: 0, tag: "Action", },
+          { id: 1, tag: "Adventure", },
+          { id: 2, tag: "Drama" }
         ],
         Rating: {
           Star: star,
@@ -36,6 +37,7 @@ export const profile = {
         },
       },
       {
+        id: 1,
         Poster: poster2,
         Description: {
           Name: "Mulan",
@@ -49,12 +51,13 @@ export const profile = {
         },
       },
       {
+        id: 2,
         Poster: poster3,
         Description: {
           Name: "Mulan",
           Year: "Zou Yu (2020)",
         },
-        tags: ["Action"],
+        tags: [{ id: 0, tag: "Action", }],
         Rating: {
           Star: star,
           Notes: "8,0",
@@ -62,12 +65,13 @@ export const profile = {
         },
       },
       {
+        id: 3,
         Poster: poster4,
         Description: {
           Name: "Mulan long title long title Mulan long title long",
           Year: "Zou Yu (2020)",
         },
-        tags: ["Drama"],
+        tags: [{ id: 0, tag: "Drama" }],
         Rating: {
           Star: star,
           Notes: "8,1",
@@ -80,6 +84,7 @@ export const profile = {
     Title: "Movies - crew (5)",
     Movies: [
       {
+        id: 0,
         Poster: poster2,
         Description: {
           Name: "Mulan",
@@ -93,12 +98,13 @@ export const profile = {
         },
       },
       {
+        id: 1,
         Poster: poster1,
         Description: {
           Name: "Mulan",
           Year: "Mulan (2020)",
         },
-        tags: ["Action"],
+        tags: [{ id: 0, tag: "Action" }],
         Rating: {
           Star: star,
           Notes: "7,8",
@@ -106,12 +112,13 @@ export const profile = {
         },
       },
       {
+        id: 2,
         Poster: poster3,
         Description: {
           Name: "Mulan",
           Year: "Zou Yu (2020)",
         },
-        tags: ["Adventure"],
+        tags: [{ id: 0, tag: "Adventure" }],
         Rating: {
           Star: star,
           Notes: "8,0",
@@ -119,15 +126,16 @@ export const profile = {
         },
       },
       {
+        id: 3,
         Poster: poster1,
         Description: {
           Name: "Mulan",
           Year: "Mulan (2020)",
         },
         tags: [
-          "Action",
-          "Adventure",
-          "Drama"
+          { id: 0, tag: "Action", },
+          { id: 1, tag: "Adventure", },
+          { id: 2, tag: "Drama" }
         ],
         Rating: {
           Star: star,
@@ -136,12 +144,13 @@ export const profile = {
         },
       },
       {
+        id: 4,
         Poster: poster4,
         Description: {
           Name: "Mulan long title long title Mulan long title long",
           Year: "Zou Yu (2020)",
         },
-        tags: ["Drama"],
+        tags: [{ id: 0, tag: "Drama" }],
         Rating: {
           Star: star,
           Notes: "8,1",

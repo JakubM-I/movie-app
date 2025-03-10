@@ -8,6 +8,10 @@ function ProfilePageApp() {
   const birthDate = profile.About.PersonalInfo.BirthDate;
   const birthPlace = profile.About.PersonalInfo.BirthPlace;
   const info = profile.About.PersonalInfo.Info;
+  const titleCast = profile.MoviesCast.Title;
+  const moviesCast = profile.MoviesCast.Movies;
+  const titleCrew = profile.MoviesCrew.Title;
+  const moviesCrew = profile.MoviesCrew.Movies;
 
   return (
     <Profile
@@ -15,7 +19,12 @@ function ProfilePageApp() {
       name={name}
       birthDate={birthDate}
       birthPlace={birthPlace}
-      info={info} />
+      info={info}
+      titleCast={titleCast}
+      moviesCast={moviesCast}
+      titleCrew={titleCrew}
+      moviesCrew={moviesCrew}
+    />
   );
 };
 
