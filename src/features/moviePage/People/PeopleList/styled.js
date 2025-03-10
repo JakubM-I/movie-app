@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PeopleList = styled.div`
+export const PersonTileList = styled.div`
   margin: 20px 0 0 0;
   width: 100%;
   display: grid;

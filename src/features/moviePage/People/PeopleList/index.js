@@ -1,7 +1,7 @@
-import { PeopleList, PersonTile, ImgPerson, Name, Character } from "./styled"
+import { PersonTileList, PersonTile, ImgPerson, Name, Character } from "./styled"
 
-export const ProfileList = ({ people }) => (
-  <PeopleList>
+export const PeopleList = ({ people }) => (
+  <PersonTileList>
     {people.map(({ poster, name, character }) => (
       <PersonTile>
         <ImgPerson src={poster} alt="" />
@@ -9,5 +9,5 @@ export const ProfileList = ({ people }) => (
         <Character>{character}</Character>
       </PersonTile>
     ))}
-  </PeopleList>
+  </PersonTileList>
 );
