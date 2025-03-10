@@ -93,36 +93,43 @@ export const movies = {
       Title: "Crew",
       People: [
         {
+          id: 0,
           poster: personC,
           name: "Liu Yifei",
           character: "Director",
         },
         {
+          id: 1,
           poster: personD,
           name: "Janson Scot",
           character: "Music",
         },
         {
+          id: 2,
           poster: personA,
           name: "Liu Yifei",
           character: "Director",
         },
         {
+          id: 3,
           poster: person,
           name: "Janson Scot",
           character: "Music",
         },
         {
+          id: 4,
           poster: person,
           name: "Liu Yifei",
           character: "Director",
         },
         {
+          id: 5,
           poster: personB,
           name: "Janson Scot",
           character: "Music",
         },
         {
+          id: 6,
           poster: personB,
           name: "Liu Yifei",
           character: "Director",
@@ -131,5 +138,3 @@ export const movies = {
     },
   },
 };
-
-/* export const descryption = "A young Chinese maiden disguises herself as a male warrior in order to save her father. Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father."; */
