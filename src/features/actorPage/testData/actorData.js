@@ -5,7 +5,7 @@ import poster3 from "./poster3.png";
 import poster4 from "./poster4.png";
 import star from "./star.png";
 
-export const profile = {
+export const actor = {
   About: {
     PersonalInfo: {
       Name: "Liu Yifei",

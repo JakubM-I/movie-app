@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProfilePageWrapper = styled.div`
+export const ActorPageWrapper = styled.div`
   max-width: 1368px;
   margin: 50px auto;
   display: flex;
