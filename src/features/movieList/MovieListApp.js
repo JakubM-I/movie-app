@@ -2,7 +2,7 @@ import { MovieList } from "./Movie list";
 const MovieListApp = () => {
     return (
         <>
-            <MovieList />
+           <p> <MovieList /> </p>
         </>
     );
 };

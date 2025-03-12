@@ -33,8 +33,6 @@ export const MovieCard = () => {
         </MovieRatingContainer>
       </MovieDetailsCointainer>
 
-
-
     </MovieCardContainer>
   );
 };
