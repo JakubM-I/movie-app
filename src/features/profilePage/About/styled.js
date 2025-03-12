@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const AboutWrapper = styled.div`
   margin: 0px;
   padding: 20px;
-  width: vw;
-  width: 100%;
+  width: 100vw;
+  max-width: 100%;
   display: flex;
   flex-flow: row;
   align-items: start;

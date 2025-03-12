@@ -2,14 +2,16 @@ import styled from "styled-components";
 
 export const MoviesTileList = styled.div`
   margin: 20px 0 0 0;
-  width: 100%;
+  padding: 0;
+  max-width: 1368px;
+  width: 100vw;
   display: grid;
   grid-template-columns: repeat(4,1fr);
-  padding: 0;
   grid-gap: 30px;
 `;
 
 export const MovieTile = styled.div`
+  max-width: 100vw;
   padding: 0px;
   margin: 0;
   display: flex;
