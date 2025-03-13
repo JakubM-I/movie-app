@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const PersonTileList = styled.div`
   margin: 20px 0 0 0;
-  width: 100%;
+  max-width: 100%;
+  width: 100vw;
   display: grid;
   grid-template-columns: repeat(6,1fr);
   list-style: none;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MoviesTileList = styled.div`
   margin: 20px 0 0 0;
   padding: 0;
-  max-width: 1368px;
+  max-width: 100%;
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(4,1fr);
