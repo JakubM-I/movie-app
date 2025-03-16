@@ -1,19 +1,26 @@
 import { Page } from "./Page";
-import { movies } from "./testData/movies";
+import { movie } from "./movieAPI/dataAPI/movie";
+import { MovieAPI } from "./movieAPI";
 
 function MoviePageApp() {
 
-  const posterBig = movies.Top.PosterBig;
-  const posterSmall = movies.Content.MovieTile.Poster;
-  const description = movies.Content.MovieTile.MovieData.description;
-  const title = movies.Content.MovieTile.MovieData.Title;
-  const year = movies.Content.MovieTile.MovieData.Year;
-  const production = movies.Content.MovieTile.MovieData.Production;
-  const date = movies.Content.MovieTile.MovieData.Date;
-  const typeCast = movies.Content.Cast.Title;
-  const peopleCast = movies.Content.Cast.People;
-  const typeCrew = movies.Content.Crew.Title;
-  const peopleCrew = movies.Content.Crew.People;
+  MovieAPI();
+  const data = JSON.parse(localStorage.getItem("movie"));
+  // console.log(data.poster_path);
+
+  const posterBig = "https://image.tmdb.org/t/p/original" + data.poster_path;
+  // const posterBig = movie.Top.PosterBig;
+  const posterSmall = movie.Content.MovieTile.Poster;
+  const description = data.overview;
+  // const description = movie.Content.MovieTile.MovieData.description;
+  const title = movie.Content.MovieTile.MovieData.Title;
+  const year = movie.Content.MovieTile.MovieData.Year;
+  const production = movie.Content.MovieTile.MovieData.Production;
+  const date = movie.Content.MovieTile.MovieData.Date;
+  const typeCast = movie.Content.Cast.Title;
+  const peopleCast = movie.Content.Cast.People;
+  const typeCrew = movie.Content.Crew.Title;
+  const peopleCrew = movie.Content.Crew.People;
 
   return (
     <Page posterBig={posterBig} posterSmall={posterSmall}

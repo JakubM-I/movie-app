@@ -5,6 +5,6 @@ export const Top = styled.div`
 `;
 
 export const ImgBig = styled.img`
-  width: 100vw;
-  max-width: 100%;  
+  width: 70vw;
+  max-width: 1400px;  
 `;

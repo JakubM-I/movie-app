@@ -1,13 +1,13 @@
-import posterBig from "./posterBig.png";
-import posterSmall from "./posterSmall.png";
-import star from "./shape-star.svg";
-import person from "./person.png";
-import personA from "./personA.png";
-import personB from "./personB.png";
-import personC from "./personC.png";
-import personD from "./personD.png";
+import posterBig from "../images/posterBig.png";
+import posterSmall from "../images/posterSmall.png";
+import star from "../images/shape-star.svg";
+import person from "../images/person.png";
+import personA from "../images/personA.png";
+import personB from "../images/personB.png";
+import personC from "../images/personC.png";
+import personD from "../images/personD.png";
 
-export const movies = {
+export const movie = {
   Header: "",
   Top: {
     MainInfo: {},
