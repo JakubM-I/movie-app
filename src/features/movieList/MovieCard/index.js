@@ -1,4 +1,3 @@
-
 import {
   MovieCardContainer,
   MovieImage,
@@ -12,27 +11,34 @@ import {
   Votes,
 } from "./styled";
 
-export const MovieCard = () => {
+export const MovieCard = ({ movie, genres }) => {
+  if (!movie || !movie.poster_path) {
+    return null; 
+  }
+
   return (
     <MovieCardContainer>
-      <MovieImage src="https://image.tmdb.org/t/p/w500/aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg" />
+      <MovieImage src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
 
       <MovieDetailsCointainer>
-        <MovieTitle>Mulan</MovieTitle>
-        <MovieYear>2020</MovieYear>
+        <MovieTitle>{movie.title}</MovieTitle>
+        <MovieYear>{movie.release_date ? movie.release_date.split("-")[0] : "Brak daty"}</MovieYear>
 
         <MovieGenreContainer>
-          <MovieGenre>Action</MovieGenre>
-          <MovieGenre>Adventure</MovieGenre>
-          <MovieGenre>Drama</MovieGenre>
+          {movie.genre_ids.length > 0 ? (
+            movie.genre_ids.map((id) => (
+              <MovieGenre key={id}>{genres[id] || "Unknown"}</MovieGenre>
+            ))
+          ) : (
+            <MovieGenre>Brak gatunków</MovieGenre>
+          )}
         </MovieGenreContainer>
 
         <MovieRatingContainer>
-          <MovieRating>⭐️ 7.4</MovieRating>
-          <Votes>35 votes</Votes>
+          <MovieRating>⭐️ {movie.vote_average.toFixed(1)}</MovieRating>
+          <Votes>{movie.vote_count} votes</Votes>
         </MovieRatingContainer>
       </MovieDetailsCointainer>
-
     </MovieCardContainer>
   );
 };
