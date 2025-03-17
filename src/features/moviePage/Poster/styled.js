@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
 export const Top = styled.div`
-  background: ${({ theme }) => theme.colorsMoviePage.black};
+  width:100%;
+  height: 770px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.colors.black};
 `;
 
 export const ImgBig = styled.img`
-  width: 70vw;
-  max-width: 1400px;  
+  display: block;
+  width: 100vw;
+  max-width: 1350px;
+  max-height: 770px;
 `;

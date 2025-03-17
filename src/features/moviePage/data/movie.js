@@ -1,11 +1,11 @@
-import posterBig from "../images/posterBig.png";
-import posterSmall from "../images/posterSmall.png";
-import star from "../images/shape-star.svg";
-import person from "../images/person.png";
-import personA from "../images/personA.png";
-import personB from "../images/personB.png";
-import personC from "../images/personC.png";
-import personD from "../images/personD.png";
+import posterBig from "./images/posterBig.png";
+import posterSmall from "./images/posterSmall.png";
+import star from "./images/shape-star.svg";
+import person from "./images/person.png";
+import personA from "./images/personA.png";
+import personB from "./images/personB.png";
+import personC from "./images/personC.png";
+import personD from "./images/personD.png";
 
 export const movie = {
   Header: "",
