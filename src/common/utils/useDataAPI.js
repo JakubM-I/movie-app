@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useAPIData = () => {
+export const useDataAPI = () => {
 
   const [APIdata, setAPIData] = useState({
     state: "loading",
@@ -11,7 +11,7 @@ export const useAPIData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://api.themoviedb.org/3/movie/35?api_key=3fa6324a34b047ad2073727e56c79251");
+        const response = await fetch("https://api.themoviedb.org/3/movie/02?api_key=3fa6324a34b047ad2073727e56c79251");
 
         if (!response.ok) {
           throw new Error(response.statusText);
@@ -25,7 +25,7 @@ export const useAPIData = () => {
       } catch { setAPIData({ state: "error", }) }
     };
 
-    setTimeout(fetchData, 3000);
+    setTimeout(fetchData, 2000);
   }, []);
 
 
