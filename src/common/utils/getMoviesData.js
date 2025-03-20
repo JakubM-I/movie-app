@@ -1,5 +1,9 @@
-export const getMoviesData = async () => {
-    const response = await fetch("/movie-app/example-api.json");
+
+export const getMoviesData = async (page) => {
+    // const page = useSelector(currentPageSelector);
+    // console.log(`/movie-app/example-api.json?page=${page}`);
+
+    const response = await fetch(`/movie-app/example-api.json?page=${page}`);
 
     if (!response.ok) {
         throw new Error(response.statusText);
