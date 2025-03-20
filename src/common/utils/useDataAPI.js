@@ -2,25 +2,45 @@ import { useEffect, useState } from "react";
 
 export const useDataAPI = () => {
 
+  const movieBaseURL = "https://api.themoviedb.org/3/movie/12?api_key=3fa6324a34b047ad2073727e56c79251";
+  const movieImagesURL = "https://api.themoviedb.org/3/movie/12/images?api_key=3fa6324a34b047ad2073727e56c79251";
+  const movieCastURL = "https://api.themoviedb.org/3/movie/12/credits?api_key=3fa6324a34b047ad2073727e56c79251";
+
   const [APIdata, setAPIData] = useState({
     state: "loading",
   });
 
-  // Fetching Movie
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://api.themoviedb.org/3/movie/02?api_key=3fa6324a34b047ad2073727e56c79251");
+        let response = await fetch(movieBaseURL);   // movie base
+
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+        const movieBase = await response.json();
+
+        response = await fetch(movieImagesURL);     // movie images 
 
         if (!response.ok) {
           throw new Error(response.statusText);
         }
 
-        const movieData = await response.json();
+        const movieImages = await response.json();
+
+        response = await fetch(movieCastURL);     // movie people
+
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+
+        const moviePeople = await response.json();
+
         setAPIData({
           state: "success",
-          movieData,
+          movieBase,
+          movieImages,
+          moviePeople,
         });
       } catch { setAPIData({ state: "error", }) }
     };
@@ -28,36 +48,5 @@ export const useDataAPI = () => {
     setTimeout(fetchData, 2000);
   }, []);
 
-
-
-  /* const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZmE2MzI0YTM0YjA0N2FkMjA3MzcyN2U1NmM3OTI1MSIsIm5iZiI6MTc0MTk0MDQzNy42MSwic3ViIjoiNjdkM2U2ZDVkY2JhNzBhMjY5NjRlYWMxIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.brcg1d7jawabimDzPmFtmZoKykPndUNwNzFHAOJIX48'
-    }
-  };
-   */
-
-  /* fetch('https://api.themoviedb.org/3/configuration', options)
-    .then(res => res.json())
-    .then(res => console.log(res))
-    .catch(err => console.error(err)); */
-
-
-  // Images configuration
-  /* const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZmE2MzI0YTM0YjA0N2FkMjA3MzcyN2U1NmM3OTI1MSIsIm5iZiI6MTc0MTk0MDQzNy42MSwic3ViIjoiNjdkM2U2ZDVkY2JhNzBhMjY5NjRlYWMxIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.brcg1d7jawabimDzPmFtmZoKykPndUNwNzFHAOJIX48'
-    }
-  };
-  
-  fetch('https://api.themoviedb.org/3/configuration', options)
-    .then(res => res.json())
-    .then(res => localStorage.setItem("images", JSON.stringify(res)))
-    .catch(err => console.error(err)); */
-
   return APIdata;
-}
+};
