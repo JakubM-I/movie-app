@@ -2,6 +2,24 @@ export const key = "3fa6324a34b047ad2073727e56c79251";
 
 export const readKey = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZmE2MzI0YTM0YjA0N2FkMjA3MzcyN2U1NmM3OTI1MSIsIm5iZiI6MTc0MTk0MDQzNy42MSwic3ViIjoiNjdkM2U2ZDVkY2JhNzBhMjY5NjRlYWMxIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.brcg1d7jawabimDzPmFtmZoKykPndUNwNzFHAOJIX48";
 
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZmE2MzI0YTM0YjA0N2FkMjA3MzcyN2U1NmM3OTI1MSIsIm5iZiI6MTc0MTk0MDQzNy42MSwic3ViIjoiNjdkM2U2ZDVkY2JhNzBhMjY5NjRlYWMxIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.brcg1d7jawabimDzPmFtmZoKykPndUNwNzFHAOJIX48'
+  }
+};
+
+fetch('https://api.themoviedb.org/3/authentication/token/new', options)
+  .then(res => res.json())
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
+
+fetch('https://api.themoviedb.org/3/movie/movie_id/images', options)
+  .then(res => res.json())
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
+
 export const request = "https://api.themoviedb.org/3/movie/550?api_key=3fa6324a34b047ad2073727e56c79251";
 
 export const change_keys = ["adult", "air_date", "also_known_as", "alternative_titles", "biography", "birthday",

@@ -6,13 +6,18 @@ import { movie } from "../data/movie";
 
 export const MoviePage = () => {
 
-  const { state, movieData } = useDataAPI();
+  const { state, movieBase, movieImages, moviePeople } = useDataAPI();
 
   return (
     <>
       {state === "loading" ? (<Loading />)
         : state === "error" ? (<ErrorPage />)
-          : (<Page movie={movie} movieData={movieData} />)}
+          : (<Page
+            movie={movie}
+            movieBase={movieBase}
+            movieImages={movieImages}
+            moviePeople={moviePeople}
+          />)}
     </>
   );
 };

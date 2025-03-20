@@ -3,25 +3,19 @@ import { Poster } from "../Poster";
 import { Tile } from "../Tile";
 import { People } from "../People";
 
-export const Page = ({ movie, movieData }) => {
+export const Page = ({ movie, movieBase, movieImages, moviePeople }) => {
 
-  const posterBig = "https://image.tmdb.org/t/p/w342" + movieData.poster_path;
-  // const posterBig = movie.Top.PosterBig;
-  const posterSmall = "https://image.tmdb.org/t/p/original" + movieData.backdrop_path;
-  // const posterSmall = movie.Content.MovieTile.Poster;
-  const description = movieData.overview;
-  // const description = movie.Content.MovieTile.MovieData.description;
-  const title = movieData.title;
-  // const title = movie.Content.MovieTile.MovieData.Title;
+  const posterBig = "https://image.tmdb.org/t/p/original" + movieImages.backdrops[1].file_path;
+  const posterSmall = "https://image.tmdb.org/t/p/original" + movieImages.posters[16].file_path;
+  const description = movieBase.overview;
+  const title = movieBase.title;
   const year = movie.Content.MovieTile.MovieData.Year;
   const production = movie.Content.MovieTile.MovieData.Production;
-  const date = movieData.release_date;
-  // const date = movie.Content.MovieTile.MovieData.Date;
-  const typeCast = movie.Content.Cast.Title;
-  const peopleCast = movie.Content.Cast.People;
-  const typeCrew = movie.Content.Crew.Title;
-  const peopleCrew = movie.Content.Crew.People;
+  const date = movieBase.release_date;
+  const cast = moviePeople.cast.slice(0, 12);
+  const crew = moviePeople.crew.slice(0, 12);
 
+  console.log(crew)
 
   return (
     <PageWrapper>
@@ -33,8 +27,8 @@ export const Page = ({ movie, movieData }) => {
         description={description}
         production={production}
         date={date} />
-      <People type={typeCast} people={peopleCast} />
-      <People type={typeCrew} people={peopleCrew} />
+      <People type="Cast" people={cast} />
+      <People type="Crew" people={crew} />
     </PageWrapper>
   )
 };
