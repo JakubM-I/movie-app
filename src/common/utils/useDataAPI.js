@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 export const useDataAPI = () => {
 
-  const movieBaseURL = "https://api.themoviedb.org/3/movie/12?api_key=3fa6324a34b047ad2073727e56c79251";
-  const movieImagesURL = "https://api.themoviedb.org/3/movie/12/images?api_key=3fa6324a34b047ad2073727e56c79251";
-  const movieCastURL = "https://api.themoviedb.org/3/movie/12/credits?api_key=3fa6324a34b047ad2073727e56c79251";
+  const movieBaseURL = "https://api.themoviedb.org/3/movie/212?api_key=3fa6324a34b047ad2073727e56c79251";
+  const movieImagesURL = "https://api.themoviedb.org/3/movie/212/images?api_key=3fa6324a34b047ad2073727e56c79251";
+  const movieCastURL = "https://api.themoviedb.org/3/movie/212/credits?api_key=3fa6324a34b047ad2073727e56c79251";
 
   const [APIdata, setAPIData] = useState({
     state: "loading",
