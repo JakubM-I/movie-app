@@ -1,12 +1,14 @@
 import { PersonTileList, PersonTile, ImgPerson, Name, Character } from "./styled"
-import person from "../../data/images/person.png";
+import { imageURL } from "../../../../common/utils/imageURL";
+import emptyImage from "../../movieImages/emptyImage.png";
+
 
 export const PeopleList = ({ people }) => (
   <PersonTileList>
     {people.map(({ id, profile_path, name, character, job }) => {
 
-      if (profile_path === null) { profile_path = person; }
-      else { profile_path = "https://image.tmdb.org/t/p/original" + profile_path; }
+      if (profile_path === null) { profile_path = emptyImage; }
+      else { profile_path = `${imageURL}/${profile_path}` };
 
       if (character === undefined) character = job;
 
