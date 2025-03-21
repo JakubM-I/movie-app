@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { baseURL } from "../../common/utils/baseURL";
 import { keyAPI } from "../../common/utils/keyAPI";
 
-export const useMovieDataAPI = ({ id }) => {
+export const useActorDataAPI = ({ id }) => {
 
-  const [APIMovieData, setAPIMovieData] = useState({
+  const [APIdata, setAPIData] = useState({
     state: "loading",
   });
 
@@ -36,7 +36,7 @@ export const useMovieDataAPI = ({ id }) => {
         }
         const movieCredits = await response.json();
 
-        setAPIMovieData({
+        setAPIData({
           state: "success",
           movieBase,
           movieImages,
@@ -48,5 +48,5 @@ export const useMovieDataAPI = ({ id }) => {
     setTimeout(fetchData, 2000);
   }, []);
 
-  return APIMovieData;
+  return APIdata;
 };
