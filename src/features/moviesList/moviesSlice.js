@@ -56,5 +56,5 @@ export const moviesSelector = state => moviesStateSelector(state).movies;
 export const currentPageSelector = state => moviesStateSelector(state).currentPaege;
 export const totalPagesSelector = state => moviesStateSelector(state).totalPages;
 
-export const { fetchMovies, setMovies } = moviesSlice.actions;
+export const { fetchMovies, setMovies, setNewMoviesPage, setNextPage, setLastPage, setPreviousPage, setFirstPage } = moviesSlice.actions;
 export default moviesSlice.reducer;

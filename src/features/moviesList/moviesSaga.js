@@ -1,6 +1,15 @@
 import { call, delay, put, takeEvery, takeLatest } from "redux-saga/effects";
 import { getMoviesData } from "../../common/utils/getMoviesData";
-import { currentPageSelector, fetchMovies, setMovies } from "./moviesSlice";
+import {
+    currentPageSelector,
+    fetchMovies,
+    setFirstPage,
+    setLastPage,
+    setMovies,
+    setNewMoviesPage,
+    setNextPage,
+    setPreviousPage
+} from "./moviesSlice";
 
 function* fetchMoviesWorker() {
     const page = yield select(currentPageSelector);
