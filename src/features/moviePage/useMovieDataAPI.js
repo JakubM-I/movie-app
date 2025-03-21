@@ -8,37 +8,32 @@ export const useMovieDataAPI = ({ id }) => {
     state: "loading",
   });
 
-  const movieBaseURL = `${baseURL}/movie/${id}?${keyAPI}`;
-  // "https://api.themoviedb.org/3/movie/212?api_key=3fa6324a34b047ad2073727e56c79251";
-  const movieImagesURL = `${baseURL}/movie/${id}/images?${keyAPI}`;
-  // "https://api.themoviedb.org/3/movie/212/images?api_key=3fa6324a34b047ad2073727e56c79251";
-  const movieCreditsURL = `${baseURL}/movie/${id}/credits?${keyAPI}`;
-  // "https://api.themoviedb.org/3/movie/212/credits?api_key=3fa6324a34b047ad2073727e56c79251";
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await fetch(movieBaseURL);   // base
 
+        // Base movie data
+        // "https://api.themoviedb.org/3/movie/movie_id?api_key=3fa6324a34b047ad2073727e56c79251";
+        let response = await fetch(`${baseURL}/movie/${id}${keyAPI}`);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
         const movieBase = await response.json();
 
-        response = await fetch(movieImagesURL);     // images 
-
+        // Images movie data
+        // "https://api.themoviedb.org/3/movie/movie_id/images?api_key=3fa6324a34b047ad2073727e56c79251";
+        response = await fetch(`${baseURL}/movie/${id}/images${keyAPI}`);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
-
         const movieImages = await response.json();
 
-        response = await fetch(movieCreditsURL);     // credits
-
+        // Credits movie data
+        // "https://api.themoviedb.org/3/movie/movie_id/credits?api_key=3fa6324a34b047ad2073727e56c79251";
+        response = await fetch(`${baseURL}/movie/${id}/credits${keyAPI}`);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
-
         const movieCredits = await response.json();
 
         setAPIData({

@@ -1,6 +1,6 @@
 import { imageURL } from "../../common/utils/imageURL";
 
-export const useMovieData = ({ movieBase, movieImages, moviePeople }) => {
+export const useMovieData = ({ movieBase, movieImages, movieCredits }) => {
 
   const posterBig = `${imageURL}/${movieImages.backdrops[1].file_path}`;
   const posterSmall = `${imageURL}/${movieImages.posters[16].file_path}`;
@@ -9,8 +9,8 @@ export const useMovieData = ({ movieBase, movieImages, moviePeople }) => {
   const year = "2025";
   const production = "Poland, UK, France";
   const date = movieBase.release_date;
-  const cast = moviePeople.cast.slice(0, 12);
-  const crew = moviePeople.crew.slice(0, 12);
+  const cast = movieCredits.cast.slice(0, 12);
+  const crew = movieCredits.crew.slice(0, 12);
 
   return { posterBig, posterSmall, title, year, description, production, date, cast, crew };
 
