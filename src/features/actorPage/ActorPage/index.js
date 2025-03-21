@@ -2,7 +2,7 @@ import { ActorPageWrapper } from "./styled";
 import { About } from "../About";
 import { ActorMoviesList } from "../ActorMoviesList";
 
-export const Actor = ({
+export const ActorPage = ({
   image, name, info, birthDate, birthPlace,
   titleCast, moviesCast, titleCrew, moviesCrew
 }) => (

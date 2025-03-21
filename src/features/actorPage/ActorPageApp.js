@@ -1,7 +1,7 @@
-import { Actor } from "./Actor";
+import { ActorPage } from "./ActorPage";
 import { actor } from "./testData/actorData";
 
-function actorPageApp() {
+function ActorPageApp() {
 
   const image = actor.About.ImagePerson;
   const name = actor.About.PersonalInfo.Name;
@@ -14,7 +14,7 @@ function actorPageApp() {
   const moviesCrew = actor.MoviesCrew.Movies;
 
   return (
-    <Actor
+    <ActorPage
       image={image}
       name={name}
       birthDate={birthDate}
@@ -28,4 +28,4 @@ function actorPageApp() {
   );
 };
 
-export default actorPageApp;
+export default ActorPageApp;
