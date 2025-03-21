@@ -30,30 +30,38 @@ export const moviesSlice = createSlice({
         // },
 
         setNextPage: (state) => {
-            state.currentPage += 1;
-            state.loading = true;
+            if (state.currentPage < state.totalPages) {
+                state.currentPage += 1;
+                state.loading = true;
+            }
         },
 
         setLastPage: (state) => {
-            state.currentPage = state.totalPages;
-            state.loading = true;
+            if (state.currentPage !== state.totalPages) {
+                state.currentPage = state.totalPages;
+                state.loading = true;
+            }
         },
 
         setPreviousPage: (state) => {
-            state.currentPage -= 1;
-            state.loading = true;
+            if (state.currentPage > 1) {
+                state.currentPage -= 1;
+                state.loading = true;
+            }
         },
 
         setFirstPage: (state) => {
-            state.currentPage = 1;
-            state.loading = true;
+            if (state.currentPage !== 1) {
+                state.currentPage = 1;
+                state.loading = true;
+            }
         }
     }
 });
 
 export const moviesStateSelector = state => state.movies;
 export const moviesSelector = state => moviesStateSelector(state).movies;
-export const currentPageSelector = state => moviesStateSelector(state).currentPaege;
+export const currentPageSelector = state => moviesStateSelector(state).currentPage;
 export const totalPagesSelector = state => moviesStateSelector(state).totalPages;
 
 export const { fetchMovies, setMovies, setNewMoviesPage, setNextPage, setLastPage, setPreviousPage, setFirstPage } = moviesSlice.actions;
