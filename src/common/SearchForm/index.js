@@ -1,10 +1,11 @@
 import { useSearchParams } from "react-router-dom";
 import searchIcon from "../assets/search-icon.png";
 import { StyledSearch, StyledSearchIcon, StyledSearchInput } from "./styled"
+import { useSelector } from "react-redux";
+import { searchQuerySelector } from "../../features/moviesList/moviesSlice";
 
 const SearchForm = () => {
     const [searchParams, setSearchParams] = useSearchParams();
-    const query = searchParams.get("search") || "";
     const currrentUrl = window.location.href;
 
     const isActorsPage = currrentUrl.includes("actors");
@@ -21,7 +22,7 @@ const SearchForm = () => {
             <StyledSearchInput
                 type="text"
                 placeholder={`Search for ${isActorsPage ? "actors" : "movies"}...`}
-                value={query}
+                value={query ? query : ""}
                 onChange={onInputChange}
             />
         </StyledSearch>
