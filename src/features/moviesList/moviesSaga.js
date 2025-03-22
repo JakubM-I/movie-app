@@ -4,6 +4,7 @@ import { getSearchMovie } from "../../common/utils/getSearchMovie";
 import {
     currentPageSelector,
     fetchMovies,
+    isSearchingSelector,
     searchQuerySelector,
     setFirstPage,
     setLastPage,
@@ -39,9 +40,17 @@ function* fetchMoviesWorker() {
 function* newPageWorker() {
     yield delay(600);
     const page = yield select(currentPageSelector);
+    const isSearching = yield select(isSearchingSelector);
+
     try {
-        const movies = yield call(getMoviesData, page);
-        yield put(setNewMoviesPage(movies.movies));
+        if (isSearching) {
+            const query = yield select(searchQuerySelector);
+            const movies = yield call(getSearchMovie, query, page)
+            yield put(setNewMoviesPage(movies.results));
+        } else {
+            const movies = yield call(getMoviesData, page);
+            yield put(setNewMoviesPage(movies.movies));
+        }
     } catch (error) {
         console.error(error);
     }
