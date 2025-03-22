@@ -4,7 +4,7 @@ import { keyAPI } from "../../common/utils/keyAPI";
 
 export const useActorDataAPI = ({ id }) => {
 
-  const [APIdata, setAPIData] = useState({
+  const [APIActorData, setAPIActorData] = useState({
     state: "loading",
   });
 
@@ -12,41 +12,40 @@ export const useActorDataAPI = ({ id }) => {
     const fetchData = async () => {
       try {
 
-        // Base movie data
-        // "https://api.themoviedb.org/3/movie/movie_id?api_key=3fa6324a34b047ad2073727e56c79251";
-        let response = await fetch(`${baseURL}/movie/${id}${keyAPI}`);
+        // Base actor data
+        // "https://api.themoviedb.org/3/person/person_id?api_key=3fa6324a34b047ad2073727e56c79251";
+        let response = await fetch(`${baseURL}/person/${id}${keyAPI}`);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
-        const movieBase = await response.json();
+        const actorBase = await response.json();
 
-        // Images movie data
-        // "https://api.themoviedb.org/3/movie/movie_id/images?api_key=3fa6324a34b047ad2073727e56c79251";
-        response = await fetch(`${baseURL}/movie/${id}/images${keyAPI}`);
+        // Images actor data
+        // "https://api.themoviedb.org/3/person/person_id/images?api_key=3fa6324a34b047ad2073727e56c79251";
+        /* response = await fetch(`${baseURL}/person/${id}/images${keyAPI}`);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
-        const movieImages = await response.json();
+        const actorImages = await response.json(); */
 
-        // Credits movie data
-        // "https://api.themoviedb.org/3/movie/movie_id/credits?api_key=3fa6324a34b047ad2073727e56c79251";
-        response = await fetch(`${baseURL}/movie/${id}/credits${keyAPI}`);
+        // Movie credits actor data
+        // "https://api.themoviedb.org/3/movie/movie_id/movie_credits?api_key=3fa6324a34b047ad2073727e56c79251";
+        response = await fetch(`${baseURL}/person/${id}/movie_credits${keyAPI}`);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
-        const movieCredits = await response.json();
+        const actorCredits = await response.json();
 
-        setAPIData({
+        setAPIActorData({
           state: "success",
-          movieBase,
-          movieImages,
-          movieCredits,
+          actorBase,
+          actorCredits,
         });
-      } catch { setAPIData({ state: "error", }) }
+      } catch { setAPIActorData({ state: "error", }) }
     };
 
     setTimeout(fetchData, 2000);
   }, []);
 
-  return APIdata;
+  return APIActorData;
 };

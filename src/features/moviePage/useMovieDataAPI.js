@@ -42,7 +42,7 @@ export const useMovieDataAPI = ({ id }) => {
           movieImages,
           movieCredits,
         });
-      } catch { setAPIData({ state: "error", }) }
+      } catch { setAPIMovieData({ state: "error", }) }
     };
 
     setTimeout(fetchData, 2000);

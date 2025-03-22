@@ -8,20 +8,20 @@ import {
   TextInfo
 } from "./styled";
 
-export const About = ({ image, name, info, birthDate, birthPlace }) => (
+export const About = ({ image, name, birthday, place_of_birth, biography }) => (
   <AboutWrapper>
     <Img src={image} alt="" />
     <PersonalInfo>
       <Name>{name}</Name>
       <HeaderInfo>
         {"Date of birth: "}
-        <TextInfo>{birthDate}</TextInfo>
+        <TextInfo>{birthday}</TextInfo>
       </HeaderInfo>
       <HeaderInfo>
         {"Place of birth: "}
-        <TextInfo>{birthPlace}</TextInfo>
+        <TextInfo>{place_of_birth}</TextInfo>
       </HeaderInfo>
-      <InfoWrapper>{info}</InfoWrapper>
+      <InfoWrapper>{biography}</InfoWrapper>
     </PersonalInfo>
   </AboutWrapper>
 )

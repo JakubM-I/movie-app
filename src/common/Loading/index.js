@@ -4,7 +4,7 @@ import { StyledSpinner } from "./styled";
 const Loading = () => {
   return (
     <Wrapper>
-      Poczekaj na pobranie wybranego filmu...
+      Poczekaj chwilę na dane...
       <StyledSpinner />
     </Wrapper>
   )
