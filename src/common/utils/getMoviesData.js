@@ -1,5 +1,5 @@
 
-export const getMoviesData = async (page) => {
+export const getMoviesData = async (page = 1) => {
     // const page = useSelector(currentPageSelector);
     // console.log(`/movie-app/example-api.json?page=${page}`);
 
