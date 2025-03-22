@@ -1,11 +1,14 @@
 import { call, delay, put, takeEvery, takeLatest, select } from "redux-saga/effects";
 import { getMoviesData } from "../../common/utils/getMoviesData";
+import { getSearchMovie } from "../../common/utils/getSearchMovie";
 import {
     currentPageSelector,
     fetchMovies,
+    searchQuerySelector,
     setFirstPage,
     setLastPage,
     setMovies,
+    setMovieSearching,
     setNewMoviesPage,
     setNextPage,
     setPreviousPage
@@ -45,8 +48,21 @@ function* newPageWorker() {
 }
 
 
+function* searchMovieWorker({ payload }) {
+    // const query = yield select(searchQuerySelector);
+    try {
+        const page = yield select(currentPageSelector);
+        const query = payload;
+        const movies = yield call(getSearchMovie, query, page);
+        yield put(setMovies(movies));
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 export function* moviesSaga() {
     yield takeEvery(fetchMovies.type, fetchMoviesWorker);
+    yield takeEvery(setMovieSearching.type, searchMovieWorker)
     yield takeEvery(setNextPage.type, newPageWorker);
     yield takeEvery(setPreviousPage.type, newPageWorker);
     yield takeEvery(setLastPage.type, newPageWorker);
