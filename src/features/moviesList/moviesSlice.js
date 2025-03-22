@@ -7,14 +7,17 @@ export const moviesSlice = createSlice({
         loading: false,
         currentPage: 1,
         totalPages: undefined,
+        isSearching: false,
+        searchQuery: "",
     },
     reducers: {
         fetchMovies: state => {
             state.loading = true;
+            state.isSearching = false;
         },
 
         setMovies: (state, { payload: movies }) => {
-            state.movies = movies.movies;
+            state.movies = movies.movies || movies.results;
             state.totalPages = movies.total_pages;
             state.loading = false;
         },
@@ -22,6 +25,13 @@ export const moviesSlice = createSlice({
         setNewMoviesPage: (state, { payload: movies }) => {
             state.movies = movies;
             state.loading = false;
+        },
+
+        setMovieSearching: (state, { payload: query }) => {
+            state.loading = true;
+            state.isSearching = true;
+            state.searchQuery = query;
+            state.currentPage = 1;
         },
 
         // setPagination: (state, payload) => {
@@ -63,6 +73,8 @@ export const moviesStateSelector = state => state.movies;
 export const moviesSelector = state => moviesStateSelector(state).movies;
 export const currentPageSelector = state => moviesStateSelector(state).currentPage;
 export const totalPagesSelector = state => moviesStateSelector(state).totalPages;
+export const isSearchingSelector = state => moviesStateSelector(state).isSearching;
+export const searchQuerySelector = state => moviesStateSelector(state).searchQuery;
 
-export const { fetchMovies, setMovies, setNewMoviesPage, setNextPage, setLastPage, setPreviousPage, setFirstPage } = moviesSlice.actions;
+export const { fetchMovies, setMovies, setNewMoviesPage, setMovieSearching, setNextPage, setLastPage, setPreviousPage, setFirstPage } = moviesSlice.actions;
 export default moviesSlice.reducer;
