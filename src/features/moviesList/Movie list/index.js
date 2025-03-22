@@ -19,10 +19,10 @@ export const MovieList = () => {
   useEffect(() => {
     if (query && query.length > 0) {
       dispatch(setMovieSearching(query))
-    } else if (currentSearchQuery && query === "") {
+    } else {
       dispatch(fetchMovies())
     }
-  }, [query, currentSearchQuery, dispatch])
+  }, [query])
 
   return (
     <>
