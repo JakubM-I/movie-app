@@ -1,10 +1,10 @@
 import App from "../App";
 import ErrorPage from "../common/ErrorPage";
 import NoResults from "../common/NoResults";
+import ActorPageApp from "../features/actorPage/ActorPageApp";
 import ActorsListApp from "../features/actorsList/ActorsListApp";
-import MovieListApp from "../features/movieList/MovieListApp";
-
-
+import MoviePageApp from "../features/moviePage/MoviePageApp";
+import MovieListApp from "../features/moviesList/MovieListApp";
 
 export const routes = [
     {
@@ -18,8 +18,16 @@ export const routes = [
                 element: <MovieListApp />,
             },
             {
+                path: "movie/:id",
+                element: <MoviePageApp />,
+            },
+            {
                 path: "actors",
                 element: <ActorsListApp />,
+            },
+            {
+                path: "actor/:id",
+                element: <ActorPageApp />
             },
             {
                 path: "noresults",

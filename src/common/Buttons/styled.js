@@ -13,14 +13,28 @@ export const StyledButton = styled.button`
   ${({ next }) => next && css`
     background: ${({ theme }) => theme.colors.lightBlue};
   `}
+
+  @media (max-width: 450px) {
+    max-width: 38px;
+  }
 `;
 
-export const ButtonsContainer = styled.footer`
+export const ButtonsContainer = styled.div`
+  margin-top: auto;
   margin: 16px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 24px;
-
-  
+  @media (max-width: 450px) {
+   max-width: 232px;
+   font-size: 10px;
+   gap: 8px;
+   margin: auto;
+   margin-top: 24px;
+  }
 `;
+
+export const GraySpan = styled.span`
+  color: ${({ theme }) => theme.colors.darkerGrey};
+`; 

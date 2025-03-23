@@ -5,5 +5,4 @@ export const Poster = ({ posterBig }) => (
   <Top>
     <ImgBig src={posterBig} alt="" />
   </Top>
-
 );

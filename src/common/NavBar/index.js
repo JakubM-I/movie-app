@@ -2,8 +2,14 @@ import { StyledLogoIcon, StyledLogoName, StyledLogoNavLink,
     // StyledLogoWrapper,
      StyledMenu, StyledMenuItem, StyledNavBar, StyledNavLink, StyledSearch, StyledSearchIcon, StyledSearchInput } from "./styled";
 import logo from "../assets/video-logo.png";
+<<<<<<< HEAD
 import searchIcon from "../assets/search-icon.png";
 // import { NavLink } from "react-router-dom";
+=======
+
+import { NavLink } from "react-router-dom";
+import SearchForm from "../SearchForm";
+>>>>>>> main
 
 const NavBar = () => (
     <StyledNavBar>
@@ -24,10 +30,7 @@ const NavBar = () => (
                 </StyledNavLink>
             </StyledMenuItem>
         </StyledMenu>
-        <StyledSearch >
-            <StyledSearchIcon src={searchIcon} alt="search" />
-            <StyledSearchInput type="text" placeholder="Search for movies..." />
-        </StyledSearch>
+        <SearchForm />
     </StyledNavBar>
 );
 

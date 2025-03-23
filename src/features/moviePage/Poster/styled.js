@@ -1,12 +1,8 @@
 import styled from "styled-components";
 
 export const Top = styled.div`
-  width:100%;
-  height: 770px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  background-color: ${({ theme }) => theme.colors.black};
+  width: 100vw;
+  max-width:100%;
 `;
 
 export const ImgBig = styled.img`
