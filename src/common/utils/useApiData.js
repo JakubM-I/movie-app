@@ -1,50 +1,58 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { MovieCard } from "./MovieCard";
+import { useEffect, useState } from "react";
 
-const API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYjU0MjljZjA3OTdmMDdjY2U4YjM2NjhlODRmOTZjYyIsIm5iZiI6MTc0MTQ4MDE2Mi4wOSwic3ViIjoiNjdjY2UwZTJhNGRmOTdkYjk2NGY5NmQwIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.RzwXsschNMuLJA_LNlfOMHfzwvMJmGUYxdNXANhhTdY";
-const BASE_URL = "https://api.themoviedb.org/3";
+const useMovieDetails = () => {
 
-const Api = () => {
-  const [movies, setMovies] = useState([]);
-  const [genres, setGenres] = useState({});
+  const [movieData, setMovieData] = useState({
+    state: "loading",
+    title: null,
+    vote_average: null,
+    vote_count: null,
+    release_date: null,
+    poster_patach: null,
+  });
 
   useEffect(() => {
-    const fetchMovies = async () => {
+    const fetchMovieData = async () => {
+      const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYjU0MjljZjA3OTdmMDdjY2U4YjM2NjhlODRmOTZjYyIsIm5iZiI6MTc0MTQ4MDE2Mi4wOSwic3ViIjoiNjdjY2UwZTJhNGRmOTdkYjk2NGY5NmQwIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.RzwXsschNMuLJA_LNlfOMHfzwvMJmGUYxdNXANhhTdY'
+        }
+      };
+
       try {
-        const response = await axios.get(`${BASE_URL}/movie/popular`, {
-          params: { api_key: API_KEY, language: "pl-PL" },
+        const response = await fetch("https://api.themoviedb.org/3/search/movie?query=Jack+Reacher", options);
+
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+
+        const data = await response.json();
+        const firstMovie = data.results[0];
+
+        setMovieData({
+          state: "succes",
+          title: firstMovie ? firstMovie.title : "Brak wyników",
+          vote_average: data.results[0].vote_average,
+          vote_count: data.results[0].vote_count,
+          release_date: data.results[0].release_date,
+          poster_path: data.results[0].poster_path ? firstMovie.poster_path : "Brak wyników",
         });
-  
-        const genreResponse = await axios.get(`${BASE_URL}/genre/movie/list`, {
-          params: { api_key: API_KEY, language: "pl-PL" },
-        });
-  
-        const genreMap = genreResponse.data.genres.reduce((acc, genre) => {
-          acc[genre.id] = genre.name;
-          return acc;
-        }, {});
-  
-        console.log("Filmy z API:", response.data.results); 
-        console.log("Mapa gatunków:", genreMap); 
-  
-        setGenres(genreMap);
-        setMovies(response.data.results);
-      } catch (error) {
-        console.error("Błąd pobierania filmów:", error);
       }
-    };
-  
-    fetchMovies();
+
+      catch {
+        setMovieData({
+          state: "error",
+        });
+      }
+    }
+
+    fetchMovieData();
+
   }, []);
+  console.log(movieData);
+  return movieData;
+}
 
-  return (
-    <div>
-      {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} genres={genres} />
-      ))}
-    </div>
-  );
-};
-
-export default Api;
+export default useMovieDetails;

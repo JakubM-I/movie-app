@@ -7,38 +7,52 @@ import {
   MovieGenre,
   MovieRatingContainer,
   MovieRating,
-  MovieDetailsCointainer,
+  MovieDetailsContainer,
   Votes,
 } from "./styled";
 
-export const MovieCard = ({ movie, genres }) => {
+import useMovieDetails from "../../../common/utils/useApiData";
+
+export const MovieCard = ({ movie }) => {
+
+  const { title, vote_average, vote_count, release_date, poster_path } = useMovieDetails();
+
   if (!movie || !movie.poster_path) {
-    return null; 
+    return null;
   }
 
   return (
     <MovieCardContainer>
-      <MovieImage src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
 
-      <MovieDetailsCointainer>
-        <MovieTitle>{movie.title}</MovieTitle>
-        <MovieYear>{movie.release_date ? movie.release_date.split("-")[0] : "Brak daty"}</MovieYear>
+      <MovieImage
+        src={movie.poster_path}
+        alt={movie}
+      />
 
+      <MovieDetailsContainer>
+        <MovieTitle>{title}</MovieTitle>
+
+        <MovieYear>
+          {movie.release_date ? movie.release_date.split("-")[0] : "Brak daty"}
+        </MovieYear>
+
+        {/* Gatunki filmowe */}
         <MovieGenreContainer>
           {movie.genre_ids.length > 0 ? (
             movie.genre_ids.map((id) => (
-              <MovieGenre key={id}>{genres[id] || "Unknown"}</MovieGenre>
+              <MovieGenre ></MovieGenre>
             ))
           ) : (
             <MovieGenre>Brak gatunków</MovieGenre>
           )}
         </MovieGenreContainer>
 
+        {/* Ocena i liczba głosów */}
         <MovieRatingContainer>
-          <MovieRating>⭐️ {movie.vote_average.toFixed(1)}</MovieRating>
-          <Votes>{movie.vote_count} votes</Votes>
+          <MovieRating>⭐ {vote_average.toFixed(1)}</MovieRating>
+          <Votes>{vote_count} głosów</Votes>
         </MovieRatingContainer>
-      </MovieDetailsCointainer>
+      </MovieDetailsContainer>
     </MovieCardContainer>
   );
 };

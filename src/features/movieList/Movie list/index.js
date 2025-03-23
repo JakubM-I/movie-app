@@ -5,7 +5,9 @@ import { PageContainer, MovieListContainer } from "./styled";
 import { MovieCard, } from "../MovieCard";
 
 export const MovieList = () => {
+  
   const isMobile = console.log(window.innerWidth);
+
   return (
     <>
       <PageContainer>
