@@ -5,7 +5,7 @@ import { ActorMoviesList } from "../ActorMoviesList";
 
 export const Actor = ({ actorBase, actorCredits }) => {
 
-  const { image, name, birthday, place_of_birth, biography, moviesCast, moviesCrew
+  const { image, name, day_of_birth, day_of_death, place_of_birth, biography, moviesCast, moviesCrew
   } = useActorData({ actorBase, actorCredits });
 
   return (
@@ -14,7 +14,8 @@ export const Actor = ({ actorBase, actorCredits }) => {
         image={image}
         name={name}
         biography={biography}
-        birthday={birthday}
+        day_of_birth={day_of_birth}
+        day_of_death={day_of_death}
         place_of_birth={place_of_birth}
       />
       <ActorMoviesList title="Movies - cast(4)" movies={moviesCast} />

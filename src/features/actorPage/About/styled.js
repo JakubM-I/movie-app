@@ -11,7 +11,7 @@ export const AboutWrapper = styled.div`
 `;
 
 export const PersonalInfo = styled.div`
-  max-height: 260px;
+  max-width: 75%;
   display: flex;
   flex-flow: column;
   align-items: left;
@@ -29,6 +29,15 @@ export const Name = styled.p`
   font-weight: bold;
   font-size: 35px;
   margin: 0px 0px 20px 0px;
+`;
+
+export const BirthdayWrapper = styled.div`
+  margin: 0px;
+  width: 100vw;
+  max-width: 40%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
 `;
 
 export const TextInfo = styled.span`

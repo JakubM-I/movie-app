@@ -1,6 +1,6 @@
 import { ActorPage } from "./ActorPage";
 
-function ActorPageApp({ id = "1011" }) {
+function ActorPageApp({ id = "23" }) {
   return (<ActorPage id={id} />);
 };
 

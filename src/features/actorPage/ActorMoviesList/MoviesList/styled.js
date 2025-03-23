@@ -23,7 +23,7 @@ export const ImgMovie = styled.img`
   margin-bottom: 15px;
   width: 100vw;
   max-width: 292px;
-  max-height: 434px;
+  height: 434px;
   border-radius: 5px;
 `;
 
