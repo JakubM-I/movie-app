@@ -9,6 +9,8 @@ const useMovieDetails = () => {
     vote_count: null,
     release_date: null,
     poster_patach: null,
+    genre_ids: null,
+    genre_name: null,
   });
 
   useEffect(() => {
@@ -38,6 +40,8 @@ const useMovieDetails = () => {
           vote_count: data.results[0].vote_count,
           release_date: data.results[0].release_date,
           poster_path: data.results[0].poster_path ? firstMovie.poster_path : "Brak wyników",
+          genre_ids: data.results[0].genre_ids,
+          genre_name: data.results[0].genre_ids,
         });
       }
 

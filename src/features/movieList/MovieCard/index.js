@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   MovieCardContainer,
   MovieImage,
@@ -13,34 +14,34 @@ import {
 
 import useMovieDetails from "../../../common/utils/useApiData";
 
-export const MovieCard = ({ movie }) => {
+export const MovieCard = () => {
+  const [genres, setGenres] = useState([]);
+  const { title, vote_average, vote_count, release_date, poster_path, genre_ids } = useMovieDetails();
 
-  const { title, vote_average, vote_count, release_date, poster_path } = useMovieDetails();
-
-  if (!movie || !movie.poster_path) {
-    return null;
-  }
+  const imageUrl = poster_path
+    ? `https://image.tmdb.org/t/p/w500${poster_path}`
+    : "https://via.placeholder.com/300";
 
   return (
     <MovieCardContainer>
 
       <MovieImage
-        src={movie.poster_path}
-        alt={movie}
+        src={imageUrl}
+        alt={title}
       />
 
       <MovieDetailsContainer>
         <MovieTitle>{title}</MovieTitle>
 
         <MovieYear>
-          {movie.release_date ? movie.release_date.split("-")[0] : "Brak daty"}
+          {release_date ? release_date.split("-")[0] : "Brak daty"}
         </MovieYear>
 
-        {/* Gatunki filmowe */}
+
         <MovieGenreContainer>
-          {movie.genre_ids.length > 0 ? (
-            movie.genre_ids.map((id) => (
-              <MovieGenre ></MovieGenre>
+          {genre_ids?.length > 0 ? (
+            genre_ids?.map((name, index) => (
+              <MovieGenre key={index}>{name}</MovieGenre>
             ))
           ) : (
             <MovieGenre>Brak gatunków</MovieGenre>
@@ -49,7 +50,7 @@ export const MovieCard = ({ movie }) => {
 
         {/* Ocena i liczba głosów */}
         <MovieRatingContainer>
-          <MovieRating>⭐ {vote_average.toFixed(1)}</MovieRating>
+          <MovieRating>⭐ {vote_average?.toFixed(1)}</MovieRating>
           <Votes>{vote_count} głosów</Votes>
         </MovieRatingContainer>
       </MovieDetailsContainer>
