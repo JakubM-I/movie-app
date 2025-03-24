@@ -6,7 +6,7 @@ import {
 import logo from "../assets/video-logo.png";
 
 import { NavLink } from "react-router-dom";
-import SearchForm from "../SearchForm";s
+import SearchForm from "../SearchForm";
 
 const NavBar = () => (
     <StyledNavBar>
