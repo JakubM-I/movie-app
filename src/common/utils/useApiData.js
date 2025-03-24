@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 
 const useMovieDetails = () => {
 
+  const [genres, setGenres] = useState({
+    id: null,
+    name: null,
+  });
+
   const [movieData, setMovieData] = useState({
     state: "loading",
     title: null,
@@ -14,7 +19,9 @@ const useMovieDetails = () => {
   });
 
   useEffect(() => {
+
     const fetchMovieData = async () => {
+
       const options = {
         method: 'GET',
         headers: {
@@ -22,6 +29,7 @@ const useMovieDetails = () => {
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYjU0MjljZjA3OTdmMDdjY2U4YjM2NjhlODRmOTZjYyIsIm5iZiI6MTc0MTQ4MDE2Mi4wOSwic3ViIjoiNjdjY2UwZTJhNGRmOTdkYjk2NGY5NmQwIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.RzwXsschNMuLJA_LNlfOMHfzwvMJmGUYxdNXANhhTdY'
         }
       };
+
 
       try {
         const response = await fetch("https://api.themoviedb.org/3/search/movie?query=Jack+Reacher", options);
@@ -52,10 +60,43 @@ const useMovieDetails = () => {
       }
     }
 
+    const fetchGenres = async () => {
+      const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYjU0MjljZjA3OTdmMDdjY2U4YjM2NjhlODRmOTZjYyIsIm5iZiI6MTc0MTQ4MDE2Mi4wOSwic3ViIjoiNjdjY2UwZTJhNGRmOTdkYjk2NGY5NmQwIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.RzwXsschNMuLJA_LNlfOMHfzwvMJmGUYxdNXANhhTdY'
+        }
+      };
+      try {
+        const response = await fetch("https://api.themoviedb.org/3/genre/movie/list", options);
+
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+        const data = await response.json();
+        setGenres({
+          id: response.id,
+          name: response.name,
+        });
+      }
+
+      catch {
+        setGenres({
+          state: "error",
+        });
+      }
+    }
+
+
+
     fetchMovieData();
+    fetchGenres();
 
   }, []);
   console.log(movieData);
+  console.log(genres);
+
   return movieData;
 }
 

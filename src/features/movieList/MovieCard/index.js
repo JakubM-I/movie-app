@@ -15,8 +15,8 @@ import {
 import useMovieDetails from "../../../common/utils/useApiData";
 
 export const MovieCard = () => {
-  const [genres, setGenres] = useState([]);
-  const { title, vote_average, vote_count, release_date, poster_path, genre_ids } = useMovieDetails();
+
+  const { title, vote_average, vote_count, release_date, poster_path, genre_ids, id, name } = useMovieDetails();
 
   const imageUrl = poster_path
     ? `https://image.tmdb.org/t/p/w500${poster_path}`
