@@ -17,7 +17,7 @@ import {
 
 function* fetchMoviesWorker() {
     const page = yield select(currentPageSelector);
-    console.log("fetchMoviesWorker");
+    // console.log("fetchMoviesWorker");
     try {
         const movies = yield call(getMoviesData, page);
         yield put(setMovies(movies));
@@ -49,7 +49,7 @@ function* newPageWorker() {
             yield put(setNewMoviesPage(movies.results));
         } else {
             const movies = yield call(getMoviesData, page);
-            yield put(setNewMoviesPage(movies.movies));
+            yield put(setNewMoviesPage(movies.results));
         }
     } catch (error) {
         console.error(error);
