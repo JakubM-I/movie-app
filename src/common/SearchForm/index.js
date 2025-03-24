@@ -7,6 +7,7 @@ import { searchQuerySelector } from "../../features/moviesList/moviesSlice";
 const SearchForm = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const currrentUrl = window.location.href;
+    const query = searchParams.get("search");
 
     const isActorsPage = currrentUrl.includes("actors");
 
