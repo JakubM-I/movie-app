@@ -118,7 +118,6 @@ export const MovieRatingContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  
 `;
 
 export const MovieRating = styled.div`

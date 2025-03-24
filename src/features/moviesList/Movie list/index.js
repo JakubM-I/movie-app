@@ -12,7 +12,6 @@ export const MovieList = () => {
     <>
       <PageContainer>
         <PageTitle title="Popular movies" />
-
         <MovieListContainer>
           <MovieCard />
           <MovieCard />
@@ -24,9 +23,7 @@ export const MovieList = () => {
           <MovieCard />
         </MovieListContainer>
         <Buttons />
-       
       </PageContainer>
-
     </>
   );
 }
