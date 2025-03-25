@@ -4,12 +4,11 @@ import { PageTitle } from "../../../common/PageHeader";
 import { PageContainer, MovieListContainer } from "./styled";
 import { MovieCard, } from "../MovieCard";
 
-
 export const MovieList = () => {
-  const isMobile = console.log(window.innerWidth);
+
   return (
     <>
-      <PageContainer>
+      <PageContainer >
         <PageTitle title="Popular movies" />
         <MovieListContainer>
           <MovieCard />
