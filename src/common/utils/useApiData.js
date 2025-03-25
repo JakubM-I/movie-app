@@ -32,7 +32,7 @@ const useMovieDetails = () => {
 
 
       try {
-        const response = await fetch("https://api.themoviedb.org/3/search/movie?query=Jack+Reacher", options);
+        const response = await fetch("https://api.themoviedb.org/3/list/", options);
 
         if (!response.ok) {
           throw new Error(response.statusText);
