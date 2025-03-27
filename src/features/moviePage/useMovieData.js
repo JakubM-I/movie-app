@@ -9,8 +9,8 @@ export const useMovieData = ({ movieBase, movieImages, movieCredits }) => {
   const year = "2025";
   const production = "Poland, UK, France";
   const date = movieBase.release_date;
-  const cast = movieCredits.cast.slice(0, 12);
-  const crew = movieCredits.crew.slice(0, 12);
+  const cast = movieCredits.cast;
+  const crew = movieCredits.crew;
 
   return { posterBig, posterSmall, title, year, description, production, date, cast, crew };
 

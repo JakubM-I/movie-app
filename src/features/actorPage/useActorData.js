@@ -7,8 +7,8 @@ export const useActorData = ({ actorBase, actorCredits }) => {
 
   const image = (profile_path !== null) ? `${imageURL}/${profile_path}` : emptyImage;
 
-  const moviesCast = actorCredits.cast.slice(0, 4);
-  const moviesCrew = actorCredits.crew.slice(0, 4);
+  const moviesCast = actorCredits.cast;
+  const moviesCrew = actorCredits.crew;
 
   const day_of_birth = (birthday !== null) ? new Date(birthday).toLocaleDateString() : null;
   const day_of_death = (deathday !== null) ? new Date(deathday).toLocaleDateString() : null;
