@@ -1,6 +1,10 @@
 import { MoviePage } from "./MoviePage";
+import { useParams } from "react-router-dom";
 
-function MoviePageApp({ id = "212" }) {
+function MoviePageApp() {
+
+  const { id } = useParams();
+
   return (<MoviePage id={id} />);
 };
 

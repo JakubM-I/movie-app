@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { baseURL } from "../../common/utils/baseURL";
-import { keyAPI } from "../../common/utils/keyAPI";
+import { API_URL } from "../../common/detailsPages/detailsfetchFromAPI";
+import { API_key } from "../../common/detailsPages/detailsfetchFromAPI";
+import { timeDelay } from "../../common/detailsPages/timeDelay";
 
 export const useActorDataAPI = ({ id }) => {
 
@@ -14,7 +15,7 @@ export const useActorDataAPI = ({ id }) => {
 
         // Base actor data
         // "https://api.themoviedb.org/3/person/person_id?api_key=3fa6324a34b047ad2073727e56c79251";
-        let response = await fetch(`${baseURL}/person/${id}${keyAPI}`);
+        let response = await fetch(`${API_URL}/person/${id}${API_key}`);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
@@ -22,15 +23,15 @@ export const useActorDataAPI = ({ id }) => {
 
         // Images actor data
         // "https://api.themoviedb.org/3/person/person_id/images?api_key=3fa6324a34b047ad2073727e56c79251";
-        /* response = await fetch(`${baseURL}/person/${id}/images${keyAPI}`);
+        response = await fetch(`${API_URL}/person/${id}/images${API_key}`);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
-        const actorImages = await response.json(); */
+        const actorImages = await response.json();
 
         // Movie credits actor data
-        // "https://api.themoviedb.org/3/movie/movie_id/movie_credits?api_key=3fa6324a34b047ad2073727e56c79251";
-        response = await fetch(`${baseURL}/person/${id}/movie_credits${keyAPI}`);
+        // "https://api.themoviedb.org/3/person/person_id/movie_credits?api_key=3fa6324a34b047ad2073727e56c79251";
+        response = await fetch(`${API_URL}/person/${id}/movie_credits${API_key}`);
         if (!response.ok) {
           throw new Error(response.statusText);
         }
@@ -39,12 +40,13 @@ export const useActorDataAPI = ({ id }) => {
         setAPIActorData({
           state: "success",
           actorBase,
+          actorImages,
           actorCredits,
         });
       } catch { setAPIActorData({ state: "error", }) }
     };
 
-    setTimeout(fetchData, 2000);
+    setTimeout(fetchData, timeDelay);
   }, []);
 
   return APIActorData;

@@ -2,7 +2,7 @@ import {
   MoviesTileList, MovieTile, ImgMovie, MovieTitle, MovieYear
 } from "./styled";
 import emptyImage from "../../../moviePage/movieImages/emptyImage.png";
-import { imageURL } from "../../../../common/utils/imageURL";
+import { API_imageURL } from "../../../../common/detailsPages/detailsfetchFromAPI";
 
 export const MoviesList = ({ movies }) => (
   <MoviesTileList>
@@ -10,7 +10,7 @@ export const MoviesList = ({ movies }) => (
       character, job }) => {
 
       if (poster_path === null) { poster_path = emptyImage; }
-      else { poster_path = `${imageURL}/${poster_path}` };
+      else { poster_path = `${API_imageURL}/${poster_path}` };
 
       if (character === undefined) character = job;
 

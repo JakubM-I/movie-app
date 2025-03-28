@@ -1,11 +1,11 @@
-import { imageURL } from "../../common/utils/imageURL";
+import { API_imageURL } from "../../common/detailsPages/detailsfetchFromAPI";
 import emptyImage from "../actorPage/actorImages/emptyImage.png";
 
 export const useActorData = ({ actorBase, actorCredits }) => {
 
   const { biography, birthday, deathday, name, place_of_birth, profile_path } = actorBase;
 
-  const image = (profile_path !== null) ? `${imageURL}/${profile_path}` : emptyImage;
+  const image = (profile_path !== null) ? `${API_imageURL}/${profile_path}` : emptyImage;
 
   const moviesCast = actorCredits.cast;
   const moviesCrew = actorCredits.crew;
