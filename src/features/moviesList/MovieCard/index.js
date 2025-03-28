@@ -1,4 +1,5 @@
-
+import { moviesGenreSelector } from "../moviesSlice";
+import { useSelector } from "react-redux";
 import {
   MovieCardContainer,
   MovieImage,
@@ -12,29 +13,45 @@ import {
   Votes,
 } from "./styled";
 
-export const MovieCard = () => {
+export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movieVoteCount, moviePosterPath, movieGenreId }) => {
+  
+  const movieGenres = useSelector(moviesGenreSelector);
+  const getMovieGenres = (movieGenres, movieGenreId) => {
+
+    if (!Array.isArray(movieGenres.genres)) {
+      console.error('movieGenres is not an array:', movieGenres);
+      return [];
+    }
+
+    return movieGenreId?.map(id => {
+      const genre = movieGenres.genres.find((g) => g.id === id);
+      return genre ? genre.name : "Unknown";
+    });
+  };
+
+  const genreNames = getMovieGenres(movieGenres, movieGenreId);
+
   return (
     <MovieCardContainer>
       <MovieImage src="https://image.tmdb.org/t/p/w500/aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg" />
 
       <MovieDetailsCointainer>
-        <MovieTitle>Mulan</MovieTitle>
-        <MovieYear>2020</MovieYear>
+        <MovieTitle>{movieTitle}</MovieTitle>
+        <MovieYear>{movieReleaseDate}</MovieYear>
 
         <MovieGenreContainer>
-          <MovieGenre>Action</MovieGenre>
-          <MovieGenre>Adventure</MovieGenre>
-          <MovieGenre>Drama</MovieGenre>
+          <MovieGenre>
+            {genreNames.map((genre, index) => (
+              <MovieGenre key={index}>{genre}</MovieGenre>
+            ))}
+          </MovieGenre>
         </MovieGenreContainer>
 
         <MovieRatingContainer>
-          <MovieRating>⭐️ 7.4</MovieRating>
-          <Votes>35 votes</Votes>
+          <MovieRating>⭐️ {movieVoteAverage}</MovieRating>
+          <Votes>{movieVoteCount} votes</Votes>
         </MovieRatingContainer>
       </MovieDetailsCointainer>
-
-
-
     </MovieCardContainer>
   );
 };

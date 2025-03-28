@@ -16,24 +16,26 @@ export const MovieListContainer = styled.div`
 export const MovieCardContainer = styled.div`
   width: 324px;
   height: 650px;
-  background-color: ${({ theme }) => theme.colors.white};
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  justify-content: flex-start; /* Ustawia elementy w kolumnie, a ostatni (czerwony pas) idzie na dół */
+  position: relative;
   
-
   @media (max-width: 450px) {
     max-width: 288px;
     max-height: 201px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding-right: none;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 `;
 
 export const MovieDetailsCointainer = styled.div`
   padding: 0 16px;
+  //background-color: green;
   @media (max-width: 450px) {     
   }
 `;
@@ -76,9 +78,12 @@ export const MovieYear = styled.div`
 
 export const MovieGenreContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  flex-wrap: wrap;
   gap: 8px;
-  font-size: 16px;    
+  align-items: center;
+  font-size: 16px;   
+  background-color: red;
 
   @media (max-width: 450px) {
    max-width: 107px;
@@ -91,11 +96,12 @@ export const MovieGenreContainer = styled.div`
 `;
 
 export const MovieGenre = styled.div`
-  display: block;
   background-color: ${({ theme }) => theme.colors.grey};
   font-size: 14px;
-  border-radius: 8px;
-  padding: 8px 16px;
+  border-radius: 12px;
+  padding: 6px 14px;
+  white-space: nowrap;
+
   @media (max-width: 450px) {
    max-width: 107px;
    max-height: 46px;
@@ -108,32 +114,44 @@ export const MovieGenre = styled.div`
 
 export const MovieRatingContainer = styled.div`
   display: flex;
-  margin: 16px 0;
-  padding: 0 16px; ;
-  margin-top: auto;
-  font-size: 16px;
-  justify-content: flex-start;
+  position: absolute; /* Umieszcza na dole */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+ 
+  padding: 10px;
+  margin-top: auto; /* Wypycha ten element na sam dół */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
   @media (max-width: 450px) {
+    
     font-size: 13px;
-    padding: 0 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: red;
   }
 `;
 
 export const MovieRating = styled.div`
   padding-right: 8px;
-  margin-top: 52px;
- 
+  @media (max-width: 450px) {
+    
+  }
 `;
 
 export const Votes = styled.div`
   font-size: 16px;
   font-weight: 400;
-  margin-top: 52px;
   color: ${({ theme }) => theme.colors.darkerGrey};
   @media (max-width: 450px) {
     font-size: 13px;
+    
   }
 `;
 
