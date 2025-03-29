@@ -8,8 +8,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { currentPageSelector, fetchMovies, moviesSelector, moviesGenreSelector, searchQuerySelector, setMovieSearching, totalPagesSelector } from "../moviesSlice";
 
-
 export const MovieList = () => {
+
   const [searchParams] = useSearchParams();
   const query = searchParams.get("search");
   //console.log("MovieList", query);
@@ -27,11 +27,11 @@ export const MovieList = () => {
     }
   }, [query])
 
-
   return (
     <>
       <PageContainer>
         <PageTitle title={`${query ? `Result for: ${query}` : "Popular movies"}`} />
+
         <MovieListContainer>
 
           {movie.map(m => (

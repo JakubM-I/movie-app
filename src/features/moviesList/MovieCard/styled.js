@@ -10,7 +10,6 @@ export const MovieListContainer = styled.div`
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 324px), 1fr));
-
 `;
 
 export const MovieCardContainer = styled.div`
@@ -33,7 +32,7 @@ export const MovieCardContainer = styled.div`
   }
 `;
 
-export const MovieDetailsCointainer = styled.div`
+export const MovieDetailsContainer = styled.div`
   padding: 0 16px;
   //background-color: green;
   @media (max-width: 450px) {     

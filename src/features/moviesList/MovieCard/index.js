@@ -1,5 +1,6 @@
 import { moviesGenreSelector } from "../moviesSlice";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 import {
   MovieCardContainer,
   MovieImage,
@@ -9,9 +10,10 @@ import {
   MovieGenre,
   MovieRatingContainer,
   MovieRating,
-  MovieDetailsCointainer,
+  MovieDetailsContainer,
   Votes,
 } from "./styled";
+
 
 export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movieVoteCount, moviePosterPath, movieGenreId }) => {
   
@@ -33,7 +35,7 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
 
   return (
     <MovieCardContainer>
-      <MovieImage src="https://image.tmdb.org/t/p/w500/aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg" />
+
 
       <MovieDetailsCointainer>
         <MovieTitle>{movieTitle}</MovieTitle>
@@ -44,14 +46,16 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
             {genreNames.map((genre, index) => (
               <MovieGenre key={index}>{genre}</MovieGenre>
             ))}
-          </MovieGenre>
+
         </MovieGenreContainer>
 
         <MovieRatingContainer>
+
           <MovieRating>⭐️ {movieVoteAverage}</MovieRating>
           <Votes>{movieVoteCount} votes</Votes>
         </MovieRatingContainer>
       </MovieDetailsCointainer>
+
     </MovieCardContainer>
   );
 };
