@@ -1,17 +1,22 @@
+import { currentPageSelector, setFirstPage, setLastPage, setNextPage, setPreviousPage, totalPagesSelector } from "../../features/moviesList/moviesSlice";
 import { StyledButton, ButtonsContainer, GraySpan } from "./styled"
+import { useDispatch, useSelector } from "react-redux";
 
 export const Buttons = () => {
+  const page = useSelector(currentPageSelector);
+  const totalPages = useSelector(totalPagesSelector);
+  const dispatch = useDispatch();
 
   const isMobile = window.innerWidth <= 500;
 
   if (isMobile) {
     return (
       <ButtonsContainer>
-        <StyledButton reverse> {"<<"} </StyledButton>
-        <StyledButton reverse> {`<`} </StyledButton>
-        <GraySpan>Page</GraySpan> 1 <GraySpan>of</GraySpan> 500
-        <StyledButton next>  {`>`} </StyledButton>
-        <StyledButton next> {`>>`} </StyledButton>
+        <StyledButton reverse onClick={() => dispatch(setFirstPage())} disabled={page === 1}> {"<<"} </StyledButton>
+        <StyledButton reverse onClick={() => dispatch(setPreviousPage())} disabled={page === 1}> {`<`} </StyledButton>
+        <GraySpan>Page</GraySpan> {page} <GraySpan>of</GraySpan> {totalPages}
+        <StyledButton next onClick={() => dispatch(setNextPage())} disabled={page === totalPages}>  {`>`} </StyledButton>
+        <StyledButton next onClick={() => dispatch(setLastPage())} disabled={page === totalPages}> {`>>`} </StyledButton>
       </ButtonsContainer>
     );
   }
@@ -19,11 +24,11 @@ export const Buttons = () => {
   return (
 
     <ButtonsContainer>
-      <StyledButton reverse> First {`<`} </StyledButton>
-      <StyledButton reverse> Previous {`<`} </StyledButton>
-      <GraySpan>Page</GraySpan> 1 <GraySpan>of</GraySpan> 500
-      <StyledButton next> Next {`>`} </StyledButton>
-      <StyledButton next> Last {`>`} </StyledButton>
+      <StyledButton reverse onClick={() => dispatch(setFirstPage())} disabled={page === 1}> First {`<`} </StyledButton>
+      <StyledButton reverse onClick={() => dispatch(setPreviousPage())} disabled={page === 1}> Previous {`<`} </StyledButton>
+      <GraySpan>Page</GraySpan> {page} <GraySpan>of</GraySpan> {totalPages}
+      <StyledButton next onClick={() => dispatch(setNextPage())} disabled={page === totalPages}> Next {`>`} </StyledButton>
+      <StyledButton next onClick={() => dispatch(setLastPage())} disabled={page === totalPages}> Last {`>`} </StyledButton>
     </ButtonsContainer>
   )
 }
