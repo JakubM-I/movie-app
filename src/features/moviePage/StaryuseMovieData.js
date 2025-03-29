@@ -1,4 +1,4 @@
-import { API_imageURL } from "../../common/detailsPages/detailsfetchFromAPI";
+import { API_imageURL } from "../../common/detailsPages/detailsFetchFromAPI";
 
 export const useMovieData = ({ movieBase, movieImages, movieCredits }) => {
 

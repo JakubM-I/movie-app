@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { API_URL } from "../../common/detailsPages/detailsfetchFromAPI";
-import { API_key } from "../../common/detailsPages/detailsfetchFromAPI";
+import { API_URL } from "../../common/detailsPages/API_URL";
+import { API_key } from "../../common/detailsPages/API_key";
 import { timeDelay } from "../../common/detailsPages/timeDelay";
 
 export const useActorDataAPI = ({ id }) => {

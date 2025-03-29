@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { API_URL } from "../../common/detailsPages/detailsfetchFromAPI";
-import { API_key } from "../../common/detailsPages/detailsfetchFromAPI";
+import { API_URL } from "../../common/detailsPages/detailsFetchFromAPI";
+import { API_key } from "../../common/detailsPages/detailsFetchFromAPI";
 import { timeDelay } from "../../common/detailsPages/timeDelay";
 
 export const useMovieDataAPI = ({ id }) => {

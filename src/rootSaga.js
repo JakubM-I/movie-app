@@ -1,10 +1,12 @@
-import { all, put } from "redux-saga/effects";
+import { all, /* put */ } from "redux-saga/effects";
 import { moviesSaga } from "./features/moviesList/moviesSaga";
-import { fetchMovies } from "./features/moviesList/moviesSlice";
+import { watchFetchMovieDetails } from "./features/moviePage/moviePageSaga";
+// import { fetchMovies } from "./features/moviesList/moviesSlice";
 
 export default function* rootSaga() {
     // yield put(fetchMovies());
     yield all([
         moviesSaga(),
+        watchFetchMovieDetails(),
     ])
 }

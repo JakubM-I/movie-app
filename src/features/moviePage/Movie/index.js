@@ -1,17 +1,23 @@
-import { useMovieData } from "../useMovieData";
+import { useSelector } from "react-redux";
+import { selectors } from "../moviePageSlice";
+// import { useMovieData } from "../useMovieData";
 import { PageWrapper } from "./styled";
 import { Poster } from "../Poster";
 import { Tile } from "../Tile";
 import { People } from "../People";
 
-export const Movie = ({ movieBase, movieImages, movieCredits }) => {
+export const Movie = () => {
 
-  const { posterBig, posterSmall, title, year, description, production, date, cast, crew
-  } = useMovieData({ movieBase, movieImages, movieCredits });
+  // const movieData = useSelector(selectors.selectDetails);
+  // const { base, images, cast, crew } = movieData;
+
+  /* const { posterBig, posterSmall, title, year, description, production, date, cast, crew
+  } = useMovieData({ movieBase, movieImages, movieCredits }); */
 
   return (
     <PageWrapper>
-      <Poster posterBig={posterBig} />
+      JEST DOBRZE
+      {/* <Poster posterBig={posterBig} />
       <Tile
         posterSmall={posterSmall}
         title={title}
@@ -20,7 +26,7 @@ export const Movie = ({ movieBase, movieImages, movieCredits }) => {
         production={production}
         date={date} />
       <People type="Cast" people={cast} />
-      <People type="Crew" people={crew} />
+      <People type="Crew" people={crew} /> */}
     </PageWrapper>
   )
 };

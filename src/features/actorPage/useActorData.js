@@ -1,4 +1,4 @@
-import { API_imageURL } from "../../common/detailsPages/detailsfetchFromAPI";
+import { API_imageURL } from "../../common/detailsPages/API_imageURL";
 import emptyImage from "../actorPage/actorImages/emptyImage.png";
 
 export const useActorData = ({ actorBase, actorCredits }) => {

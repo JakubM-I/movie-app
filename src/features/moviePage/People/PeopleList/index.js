@@ -1,5 +1,5 @@
 import { PersonTileList, PersonTile, ImgPerson, Name, Character } from "./styled"
-import { API_imageURL } from "../../../../common/detailsPages/detailsfetchFromAPI";
+import { API_imageURL } from "../../../../common/detailsPages/API_imageURL";
 import emptyImage from "../../movieImages/emptyImage.png";
 
 
