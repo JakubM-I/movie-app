@@ -2,6 +2,7 @@ import { call, delay, put, takeEvery, takeLatest, select } from "redux-saga/effe
 import { getMoviesData } from "../../common/utils/getMoviesData";
 import { getSearchMovie } from "../../common/utils/getSearchMovie";
 import { getMovieGenre } from "../../common/utils/getMoviesGerne";
+import { getPerson } from "../../common/utils/getPerson";
 import {
     currentPageSelector,
     moviesGenreSelector,
@@ -15,7 +16,9 @@ import {
     setMovieSearching,
     setNewMoviesPage,
     setNextPage,
-    setPreviousPage
+    setPreviousPage,
+    moviesActorSelector,
+    setActor
 } from "./moviesSlice";
 
 function* fetchMoviesWorker() {
@@ -40,6 +43,18 @@ function* fetchGenresWorker() {
         console.error(error);
     }
 }
+////////////////////////////////////////////////////////////////////////////////
+function* fetchActorWorker() {
+    const person = yield select(moviesActorSelector);
+
+    try {
+        const person = yield call(getPerson);
+        yield put(setActor(person));
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 
 // function* paginationWorker() {
 //     try {
@@ -86,6 +101,7 @@ function* searchMovieWorker({ payload }) {
 export function* moviesSaga() {
     yield takeEvery(fetchMovies.type, fetchMoviesWorker);
     yield takeEvery(fetchMovies.type, fetchGenresWorker);
+    yield takeEvery(fetchMovies.type, fetchActorWorker);
     yield takeEvery(setMovieSearching.type, searchMovieWorker)
     yield takeEvery(setNextPage.type, newPageWorker);
     yield takeEvery(setPreviousPage.type, newPageWorker);

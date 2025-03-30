@@ -16,7 +16,7 @@ import {
 
 
 export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movieVoteCount, moviePosterPath, movieGenreId }) => {
-  
+  console.log(moviePosterPath);
   const movieGenres = useSelector(moviesGenreSelector);
   const getMovieGenres = (movieGenres, movieGenreId) => {
 
@@ -35,6 +35,7 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
 
   return (
     <MovieCardContainer>
+      <MovieImage src={`https://image.tmdb.org/t/p/w500${moviePosterPath}`} />
 
 
       <MovieDetailsCointainer>
@@ -42,16 +43,15 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
         <MovieYear>{movieReleaseDate}</MovieYear>
 
         <MovieGenreContainer>
-          <MovieGenre>
-            {genreNames.map((genre, index) => (
-              <MovieGenre key={index}>{genre}</MovieGenre>
-            ))}
 
+          {genreNames.slice(0, 4).map((genre, index) => (
+            <MovieGenre key={index}>{genre}</MovieGenre>
+          ))}
         </MovieGenreContainer>
 
         <MovieRatingContainer>
+          <MovieRating>⭐️ {movieVoteAverage.toFixed(1)}</MovieRating>
 
-          <MovieRating>⭐️ {movieVoteAverage}</MovieRating>
           <Votes>{movieVoteCount} votes</Votes>
         </MovieRatingContainer>
       </MovieDetailsCointainer>
