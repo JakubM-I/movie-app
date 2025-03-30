@@ -37,11 +37,3 @@ export const ActorImage = styled.img`
   border-radius: 10px;
 
 `;
-
-export const ActorName = styled.h2`
-  margin: 16px 0;
-  font-size: 16px;
-  font-weight: 500;
-  text-align: left;
- 
-`;
