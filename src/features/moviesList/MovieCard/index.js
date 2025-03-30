@@ -38,7 +38,7 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
       <MovieImage src={`https://image.tmdb.org/t/p/w500${moviePosterPath}`} />
 
 
-      <MovieDetailsCointainer>
+      <MovieDetailsContainer>
         <MovieTitle>{movieTitle}</MovieTitle>
         <MovieYear>{movieReleaseDate}</MovieYear>
 
@@ -54,7 +54,7 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
 
           <Votes>{movieVoteCount} votes</Votes>
         </MovieRatingContainer>
-      </MovieDetailsCointainer>
+      </MovieDetailsContainer>
 
     </MovieCardContainer>
   );
