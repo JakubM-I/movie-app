@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectors } from "../moviePageSlice";
-// import { useMovieData } from "../useMovieData";
+import { API_imageURL } from "../../../common/detailsPages/API_imageURL";
 import { PageWrapper } from "./styled";
 import { Poster } from "../Poster";
 import { Tile } from "../Tile";
@@ -8,17 +8,22 @@ import { People } from "../People";
 
 export const Movie = () => {
 
+  const { images, credits, ...base } = useSelector(selectors.selectDetails);
 
-  // const movieData = useSelector(selectors.selectDetails);
-  // const { base, images, cast, crew } = movieData;
+  const posterBig = `${API_imageURL}/${images.backdrops[1].file_path}`;
+  const posterSmall = `${API_imageURL}/${images.posters[16].file_path}`;
+  const description = base.overview;
+  const title = base.title;
+  const production = "Poland, UK, France";
+  const date = base.release_date;
+  const cast = credits.cast;
+  const crew = credits.crew;
+  const year = new Date(date).getFullYear();
 
-  /* const { posterBig, posterSmall, title, year, description, production, date, cast, crew
-  } = useMovieData({ movieBase, movieImages, movieCredits }); */
 
   return (
     <PageWrapper>
-      JEST DOBRZE
-      {/* <Poster posterBig={posterBig} />
+      <Poster posterBig={posterBig} />
       <Tile
         posterSmall={posterSmall}
         title={title}
@@ -27,7 +32,7 @@ export const Movie = () => {
         production={production}
         date={date} />
       <People type="Cast" people={cast} />
-      <People type="Crew" people={crew} /> */}
+      <People type="Crew" people={crew} />
     </PageWrapper>
   )
 };
