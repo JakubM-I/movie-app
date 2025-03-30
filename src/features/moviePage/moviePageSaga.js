@@ -4,7 +4,7 @@ import { getMovieDetails } from "./getMovieDetails";
 
 export function* watchFetchMovieDetails() {
   yield detailsSaga({
-    getDetails: getMovieDetails,
+    getDatag: getMovieDetails,
     actions,
   });
 };
