@@ -6,7 +6,6 @@ export const ActorName = styled.h2`
   font-weight: bold;
   text-align: center;
   font-size: 16px;
-
 `;
 
 export const ActorCardContainer = styled.div`

@@ -12,8 +12,7 @@ export const ActorCard = () => {
 
   const moviesActor = useSelector(moviesActorSelector);
   console.log(moviesActor);
-
-
+  // const getMovieGenres = (moviesActor, moviesActorId) => {
 
   return (
     <ActorCardContainer>
