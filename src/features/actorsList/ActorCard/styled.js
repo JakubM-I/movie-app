@@ -1,8 +1,20 @@
 import styled from "styled-components";
 
+
+export const ActorName = styled.h2`
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+`;
+
 export const ActorCardContainer = styled.div`
-  width: 208px;
-  height: 339px;
+  max-width: 208px;
+  max-height: 339px;
+  padding: 16px 16px;
+  display: flex;
+  flex-direction: column;
+
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -19,19 +31,8 @@ export const ActorDetailsCointainer = styled.div`
 `;
 
 export const ActorImage = styled.img`
-  max-width: 177px;
-  max-height: 264px;
-  display: block;
-  margin: 0 auto;
-  margin-top: 10px;
+  max-width: 173px;
+  max-height: 231px;
   border-radius: 10px;
 
-`;
-
-export const ActorName = styled.h2`
-  margin: 16px 0;
-  font-size: 16px;
-  font-weight: 500;
-  text-align: left;
- 
 `;

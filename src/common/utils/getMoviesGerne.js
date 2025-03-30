@@ -1,6 +1,5 @@
-export const getMoviesData = async (page = 1) => {
-    // const page = useSelector(currentPageSelector);
-    // console.log(`/movie-app/example-api.json?page=${page}`);
+export const getMovieGenre = async () => {
+
     const options = {
         method: 'GET',
         headers: {
@@ -9,7 +8,7 @@ export const getMoviesData = async (page = 1) => {
         }
     };
 
-    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`, options);
+    const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, options);
 
     if (!response.ok) {
         throw new Error(response.statusText);
