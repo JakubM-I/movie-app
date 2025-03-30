@@ -4,23 +4,82 @@ export const moviesSlice = createSlice({
     name: "movies",
     initialState: {
         movies: [],
+        genres: [],
         loading: false,
+        currentPage: 1,
+        totalPages: undefined,
+        isSearching: false,
+        searchQuery: "",
     },
     reducers: {
         fetchMovies: state => {
             state.loading = true;
+            state.isSearching = false;
         },
 
         setMovies: (state, { payload: movies }) => {
-            state.movies = movies.movies;
+            state.movies = movies.movies || movies.results;
+            state.totalPages = movies.total_pages;
             state.loading = false;
         },
+        setGenres: (state, { payload: genres }) => {
+            state.genres = genres;
+        },
+
+        setNewMoviesPage: (state, { payload: movies }) => {
+            state.movies = movies;
+            state.loading = false;
+        },
+
+        setMovieSearching: (state, { payload: query }) => {
+            state.loading = true;
+            state.isSearching = true;
+            state.searchQuery = query;
+            state.currentPage = 1;
+        },
+
+        // setPagination: (state, payload) => {
+        //     state.currentPage = payload.page;
+
+        // },
+
+        setNextPage: (state) => {
+            if (state.currentPage < state.totalPages) {
+                state.currentPage += 1;
+                state.loading = true;
+            }
+        },
+
+        setLastPage: (state) => {
+            if (state.currentPage !== state.totalPages) {
+                state.currentPage = state.totalPages;
+                state.loading = true;
+            }
+        },
+
+        setPreviousPage: (state) => {
+            if (state.currentPage > 1) {
+                state.currentPage -= 1;
+                state.loading = true;
+            }
+        },
+
+        setFirstPage: (state) => {
+            if (state.currentPage !== 1) {
+                state.currentPage = 1;
+                state.loading = true;
+            }
+        }
     }
 });
 
 export const moviesStateSelector = state => state.movies;
 export const moviesSelector = state => moviesStateSelector(state).movies;
+export const moviesGenreSelector = state => moviesStateSelector(state).genres;
+export const currentPageSelector = state => moviesStateSelector(state).currentPage;
+export const totalPagesSelector = state => moviesStateSelector(state).totalPages;
+export const isSearchingSelector = state => moviesStateSelector(state).isSearching;
+export const searchQuerySelector = state => moviesStateSelector(state).searchQuery;
 
-
-export const { fetchMovies, setMovies } = moviesSlice.actions;
+export const { fetchMovies, setMovies, setGenres, setNewMoviesPage, setMovieSearching, setNextPage, setLastPage, setPreviousPage, setFirstPage } = moviesSlice.actions;
 export default moviesSlice.reducer;

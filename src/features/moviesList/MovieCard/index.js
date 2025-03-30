@@ -1,3 +1,5 @@
+import { moviesGenreSelector } from "../moviesSlice";
+import { useSelector } from "react-redux";
 import { useState } from "react";
 import {
   MovieCardContainer,
@@ -12,48 +14,48 @@ import {
   Votes,
 } from "./styled";
 
-import useMovieDetails from "../../../common/utils/useApiData";
 
-export const MovieCard = () => {
+export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movieVoteCount, moviePosterPath, movieGenreId }) => {
+  
+  const movieGenres = useSelector(moviesGenreSelector);
+  const getMovieGenres = (movieGenres, movieGenreId) => {
 
-  const { title, vote_average, vote_count, release_date, poster_path, genre_ids, id, name } = useMovieDetails();
+    if (!Array.isArray(movieGenres.genres)) {
+      console.error('movieGenres is not an array:', movieGenres);
+      return [];
+    }
 
-  const imageUrl = poster_path
-    ? `https://image.tmdb.org/t/p/w500${poster_path}`
-    : "https://via.placeholder.com/300";
+    return movieGenreId?.map(id => {
+      const genre = movieGenres.genres.find((g) => g.id === id);
+      return genre ? genre.name : "Unknown";
+    });
+  };
+
+  const genreNames = getMovieGenres(movieGenres, movieGenreId);
 
   return (
     <MovieCardContainer>
 
-      <MovieImage
-        src={imageUrl}
-        alt={title}
-      />
 
-      <MovieDetailsContainer>
-        <MovieTitle>{title}</MovieTitle>
-
-        <MovieYear>
-          {release_date ? release_date.split("-")[0] : "Brak daty"}
-        </MovieYear>
-
+      <MovieDetailsCointainer>
+        <MovieTitle>{movieTitle}</MovieTitle>
+        <MovieYear>{movieReleaseDate}</MovieYear>
 
         <MovieGenreContainer>
-          {genre_ids?.length > 0 ? (
-            genre_ids?.map((name, index) => (
-              <MovieGenre key={index}>{name}</MovieGenre>
-            ))
-          ) : (
-            <MovieGenre>Brak gatunków</MovieGenre>
-          )}
+          <MovieGenre>
+            {genreNames.map((genre, index) => (
+              <MovieGenre key={index}>{genre}</MovieGenre>
+            ))}
+
         </MovieGenreContainer>
 
-        {/* Ocena i liczba głosów */}
         <MovieRatingContainer>
-          <MovieRating>⭐ {vote_average?.toFixed(1)}</MovieRating>
-          <Votes>{vote_count} Votes</Votes>
+
+          <MovieRating>⭐️ {movieVoteAverage}</MovieRating>
+          <Votes>{movieVoteCount} votes</Votes>
         </MovieRatingContainer>
-      </MovieDetailsContainer>
+      </MovieDetailsCointainer>
+
     </MovieCardContainer>
   );
 };
