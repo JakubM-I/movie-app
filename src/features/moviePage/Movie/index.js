@@ -8,6 +8,7 @@ import { People } from "../People";
 
 export const Movie = () => {
 
+
   // const movieData = useSelector(selectors.selectDetails);
   // const { base, images, cast, crew } = movieData;
 

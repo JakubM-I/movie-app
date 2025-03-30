@@ -6,11 +6,11 @@ export function* detailsSaga({ getDetails, actions }) {
     yield delay(timeDelay);
 
     try {
-      const [details] = yield all([
+      const [data] = yield all([
         call(getDetails, { id }),
       ]);
 
-      yield put(actions.fetchSuccess({ details }));
+      yield put(actions.fetchSuccess(data));
 
     } catch (error) {
       yield put(actions.fetchError());
