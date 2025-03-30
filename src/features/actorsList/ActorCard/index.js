@@ -19,7 +19,7 @@ export const ActorCard = () => {
       <ActorImage src="https://image.tmdb.org/t/p/w500/aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg" />
 
       <ActorDetailsCointainer>
-        <ActorName>{name = "Young FU"}</ActorName>
+        <ActorName> asdfadsf</ActorName>
       </ActorDetailsCointainer>
 
     </ActorCardContainer>
