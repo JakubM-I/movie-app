@@ -1,4 +1,4 @@
-export const getMoviesData = async (page = 1) => {
+export const getPerson = async ({ person_id } = {}) => {
     // const page = useSelector(currentPageSelector);
     // console.log(`/movie-app/example-api.json?page=${page}`);
     const options = {
@@ -9,7 +9,7 @@ export const getMoviesData = async (page = 1) => {
         }
     };
 
-    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`, options);
+    const response = await fetch(`https://api.themoviedb.org/3/person/${person_id}?language=en-US`, options);
 
     if (!response.ok) {
         throw new Error(response.statusText);

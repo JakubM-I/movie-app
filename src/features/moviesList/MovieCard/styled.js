@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MovieListContainer = styled.div`
   display: grid;
   grid-template-rows: repeat(2, auto);
-  gap: 10px;
+  gap: 8px;
   margin-top: 20px;
   max-width: 1368px;
   max-height: 1391px;
@@ -20,7 +20,7 @@ export const MovieCardContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Ustawia elementy w kolumnie, a ostatni (czerwony pas) idzie na dół */
+  justify-content: flex-start; 
   position: relative;
   
   @media (max-width: 450px) {
@@ -35,9 +35,6 @@ export const MovieCardContainer = styled.div`
 
 export const MovieDetailsCointainer = styled.div`
   padding: 0 16px;
-  //background-color: green;
-  @media (max-width: 450px) {     
-  }
 `;
 
 export const MovieImage = styled.img`
@@ -78,17 +75,15 @@ export const MovieYear = styled.div`
 
 export const MovieGenreContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 8px;
-  align-items: center;
-  font-size: 16px;   
-  background-color: red;
+  font-size: 16px;
 
   @media (max-width: 450px) {
-   max-width: 107px;
-   max-height: 46px;
-   display: flex;
+    max-width: 100%;
+    display: flex;
     flex-wrap: wrap;
     gap: 4px;
     justify-content: flex-start;
@@ -97,10 +92,14 @@ export const MovieGenreContainer = styled.div`
 
 export const MovieGenre = styled.div`
   background-color: ${({ theme }) => theme.colors.grey};
-  font-size: 14px;
-  border-radius: 12px;
-  padding: 6px 14px;
+  font-size: 14px; 
+  border-radius: 6px;
+  padding: 8px;
+  margin: 0 auto;
   white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
 
   @media (max-width: 450px) {
    max-width: 107px;
@@ -114,35 +113,26 @@ export const MovieGenre = styled.div`
 
 export const MovieRatingContainer = styled.div`
   display: flex;
-  position: absolute; /* Umieszcza na dole */
+  position: absolute; 
   bottom: 0;
   left: 0;
   width: 100%;
-
- 
   padding: 10px;
-  margin-top: auto; /* Wypycha ten element na sam dół */
+  margin-top: auto; 
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 
   @media (max-width: 450px) {
-    
-    font-size: 13px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    background-color: red;
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
   }
 `;
 
 export const MovieRating = styled.div`
   padding-right: 8px;
-  @media (max-width: 450px) {
-    
-  }
 `;
 
 export const Votes = styled.div`
@@ -150,8 +140,7 @@ export const Votes = styled.div`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.darkerGrey};
   @media (max-width: 450px) {
-    font-size: 13px;
-    
+    font-size: 12px;
   }
 `;
 
