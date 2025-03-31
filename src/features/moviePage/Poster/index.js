@@ -1,8 +1,8 @@
 import { Top } from "./styled";
 import { ImgBig } from "./styled";
 
-export const Poster = ({ posterBig }) => (
+export const Poster = ({ backdrop }) => (
   <Top>
-    <ImgBig src={posterBig} alt="" />
+    <ImgBig src={backdrop} alt="" />
   </Top>
 );

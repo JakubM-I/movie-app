@@ -1,17 +1,25 @@
 import { useSelector } from "react-redux";
 import { selectors } from "../moviePageSlice";
 import { API_imageURL } from "../../../common/detailsPages/API_imageURL";
+import emptyImage from "../movieImages/emptyImage.png";
 import { PageWrapper } from "./styled";
 import { Poster } from "../Poster";
 import { Tile } from "../Tile";
 import { People } from "../People";
 
+
+const imageFromAPI = data => {
+  if (data.length > 0) return `${API_imageURL}/${data[0].file_path}`;
+  return emptyImage;
+};
+
 export const Movie = () => {
 
   const { images, credits, ...base } = useSelector(selectors.selectDetails);
 
-  const posterBig = `${API_imageURL}/${images.backdrops[1].file_path}`;
-  const posterSmall = `${API_imageURL}/${images.posters[16].file_path}`;
+  const backdrop = imageFromAPI(images.backdrops);
+  const poster = imageFromAPI(images.posters);
+
   const description = base.overview;
   const title = base.title;
   const production = "Poland, UK, France";
@@ -23,9 +31,9 @@ export const Movie = () => {
 
   return (
     <PageWrapper>
-      <Poster posterBig={posterBig} />
+      <Poster backdrop={backdrop} />
       <Tile
-        posterSmall={posterSmall}
+        poster={poster}
         title={title}
         year={year}
         description={description}
