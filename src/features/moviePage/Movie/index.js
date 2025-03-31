@@ -23,11 +23,11 @@ export const Movie = () => {
   const description = base.overview;
   const title = base.title;
   const production = "Poland, UK, France";
-  const date = base.release_date;
+  const date = new Date(base.release_date).toLocaleDateString();
+  const year = new Date(base.release_date).getFullYear();
+
   const cast = credits.cast;
   const crew = credits.crew;
-  const year = new Date(date).getFullYear();
-
 
   return (
     <PageWrapper>

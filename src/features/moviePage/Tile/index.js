@@ -15,7 +15,8 @@ export const Tile = ({ poster,
     <MovieData>
       <MovieTitle>{title}</MovieTitle>
       <MovieDescription>{year}</MovieDescription>
-      <MovieDescription>Production: {production}<br />Release date: {date}</MovieDescription>
+      <MovieDescription>Production: {production}</MovieDescription>
+      <MovieDescription>Release date: {date}</MovieDescription>
       <MovieDescription>{description}</MovieDescription>
     </MovieData>
   </MovieTile>
