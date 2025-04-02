@@ -1,4 +1,4 @@
-import { call, delay, put, takeEvery, takeLatest, select } from "redux-saga/effects";
+import { call, delay, put, takeEvery, select } from "redux-saga/effects";
 import { getMoviesData } from "../../common/utils/getMoviesData";
 import { getSearchMovie } from "../../common/utils/getSearchMovie";
 import { getMovieGenre } from "../../common/utils/getMoviesGerne";
@@ -17,8 +17,7 @@ import {
     setNewMoviesPage,
     setNextPage,
     setPreviousPage,
-    moviesActorSelector,
-    setActor
+    setActor,
 } from "./moviesSlice";
 
 function* fetchMoviesWorker() {
@@ -43,18 +42,18 @@ function* fetchGenresWorker() {
         console.error(error);
     }
 }
+
 ////////////////////////////////////////////////////////////////////////////////
 function* fetchActorWorker() {
-    const person = yield select(moviesActorSelector);
+    const page = yield select(currentPageSelector);
 
     try {
-        const person = yield call(getPerson);
+        const person = yield call(getPerson, page);
         yield put(setActor(person));
     } catch (error) {
         console.error(error);
     }
 }
-
 
 // function* paginationWorker() {
 //     try {
@@ -84,7 +83,6 @@ function* newPageWorker() {
         console.error(error);
     }
 }
-
 
 function* searchMovieWorker({ payload }) {
     // const query = yield select(searchQuerySelector);

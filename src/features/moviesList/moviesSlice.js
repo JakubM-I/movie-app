@@ -27,8 +27,8 @@ export const moviesSlice = createSlice({
             state.genres = genres;
         },
         ///////////////////////////////////////////
-        setActor: (state, { payload: actor }) => {
-            state.actor = actor;
+        setActor: (state, { payload: results }) => {
+            state.results = results;
         },
 
         setNewMoviesPage: (state, { payload: movies }) => {
@@ -81,11 +81,12 @@ export const moviesSlice = createSlice({
 export const moviesStateSelector = state => state.movies;
 export const moviesSelector = state => moviesStateSelector(state).movies;
 export const moviesGenreSelector = state => moviesStateSelector(state).genres;
-export const moviesActorSelector = state => moviesStateSelector(state).actor;
+///////////////////////////////////////////
+export const moviesActorSelector = state => moviesStateSelector(state).results;
 export const currentPageSelector = state => moviesStateSelector(state).currentPage;
 export const totalPagesSelector = state => moviesStateSelector(state).totalPages;
 export const isSearchingSelector = state => moviesStateSelector(state).isSearching;
 export const searchQuerySelector = state => moviesStateSelector(state).searchQuery;
 
-export const { fetchMovies, setMovies, setGenres, setActor, setNewMoviesPage, setMovieSearching, setNextPage, setLastPage, setPreviousPage, setFirstPage } = moviesSlice.actions;
+export const { fetchMovies, setMovies, setGenres, setActor, setNewMoviesPage, setMovieSearching, setNextPage, setLastPage, setPreviousPage, setFirstPage,  } = moviesSlice.actions;
 export default moviesSlice.reducer;

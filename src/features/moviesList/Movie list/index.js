@@ -6,7 +6,7 @@ import { MovieCard, } from "../MovieCard";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { currentPageSelector, fetchMovies, moviesSelector, moviesGenreSelector, searchQuerySelector, setMovieSearching, totalPagesSelector } from "../moviesSlice";
+import { currentPageSelector, fetchMovies, moviesSelector, searchQuerySelector, setMovieSearching, totalPagesSelector } from "../moviesSlice";
 
 
 export const MovieList = () => {
@@ -14,9 +14,6 @@ export const MovieList = () => {
   const query = searchParams.get("search");
   //console.log("MovieList", query);
   const dispatch = useDispatch();
-  const currentSearchQuery = useSelector(searchQuerySelector);
-  const currentPage = useSelector(currentPageSelector);
-  const totalPages = useSelector(totalPagesSelector);
   const movie = useSelector(moviesSelector);
 
   useEffect(() => {

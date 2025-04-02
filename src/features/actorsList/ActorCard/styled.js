@@ -23,9 +23,5 @@ export const ActorImage = styled.img`
   max-height: 231px;
   border-radius: 10px;
 
-  @media (max-width: 450px) {
-    margin: 16px 16px;
-    max-width: 114px;
-    max-height: 169px;
-  }
+
 `;

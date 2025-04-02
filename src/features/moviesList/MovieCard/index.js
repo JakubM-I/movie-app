@@ -14,9 +14,11 @@ import {
 } from "./styled";
 
 export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movieVoteCount, moviePosterPath, movieGenreId }) => {
-  console.log(moviePosterPath);
+
+
   const movieGenres = useSelector(moviesGenreSelector);
   const getMovieGenres = (movieGenres, movieGenreId) => {
+
 
     if (!Array.isArray(movieGenres.genres)) {
       console.error('movieGenres is not an array:', movieGenres);
@@ -31,7 +33,10 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
 
   const genreNames = getMovieGenres(movieGenres, movieGenreId);
 
-  return (
+  console.log(movieTitle);
+
+  return ( // ma najpierw sprawdzic czy gatunki,data wydania jest poprawna
+    // jak nie to zwrocic error
     <MovieCardContainer>
       <MovieImage src={`https://image.tmdb.org/t/p/w500${moviePosterPath}`} />
 
