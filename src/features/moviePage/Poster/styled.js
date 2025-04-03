@@ -6,8 +6,7 @@ export const Top = styled.div`
 `;
 
 export const ImgBig = styled.img`
-  display: block;
   width: 100vw;
-  max-width: 1350px;
+  max-width: 100%;
   max-height: 770px;
 `;
