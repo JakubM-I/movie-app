@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 1368px;
   margin: 0 auto;
   @media (max-width: 450px) {
@@ -9,8 +12,10 @@ export const PageContainer = styled.div`
 
 export const ActorsListContainer = styled.div`
   display: grid;
+
   grid-template-columns: repeat(6, 1fr);
   gap: 10px;
+
   margin-top: 20px;
   max-width: 1368px;
   justify-content: center;
@@ -29,3 +34,4 @@ export const ActorsListContainer = styled.div`
     justify-items: center;
   }
 `;
+

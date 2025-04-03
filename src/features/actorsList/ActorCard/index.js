@@ -4,6 +4,7 @@ import {
   ActorCardContainer,
   ActorImage,
   ActorName,
+  ActorDetailsCointainer,
 } from "./styled";
 
 export const ActorCard = ({ actorId }) => {

@@ -1,3 +1,4 @@
+
 import { Buttons } from "../../../common/Buttons";
 import { PageTitle } from "../../../common/PageHeader";
 import { PageContainer, ActorsListContainer } from "./styled";
@@ -24,6 +25,7 @@ export const ActorsList = () => {
     }
   }, [query])
 
+
   return (
     <>
       <PageContainer>
@@ -41,7 +43,8 @@ export const ActorsList = () => {
 
         </ActorsListContainer>
         <Buttons />
+
       </PageContainer>
     </>
   );
-};
+}
