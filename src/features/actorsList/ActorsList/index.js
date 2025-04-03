@@ -1,3 +1,4 @@
+
 import { Buttons } from "../../../common/Buttons";
 import { PageTitle } from "../../../common/PageHeader";
 import { PageContainer, ActorsListContainer } from "./styled";
@@ -21,15 +22,40 @@ export const ActorsList = () => {
     }
   }, [query])
 
+
   return (
     <>
       <PageContainer>
         <PageTitle title={`${query ? `Result for: ${query}` : "Popular people"}`} />
         <ActorsListContainer>
           <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
+          <ActorCard />
         </ActorsListContainer>
         <Buttons />
+
       </PageContainer>
     </>
   );
-};
+}

@@ -18,8 +18,8 @@ export const MovieData = styled.div`
 
 export const ImgSmall = styled.img`
   width: 100vw;
-  max-width: 312px;
-  max-height: 464px; 
+  width: 312px;
+  height: 464px; 
 `;
 
 export const MovieTitle = styled.p`

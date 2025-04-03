@@ -4,11 +4,13 @@ import {
   ActorCardContainer,
   ActorImage,
   ActorName,
+  ActorDetailsCointainer,
 } from "./styled";
 
 export const ActorCard = () => {
   const dispatch = useDispatch();
   const moviesActor = useSelector(moviesActorSelector);
+
   const actorDetails = moviesActor?.results || [];
   const currentPage = moviesActor?.page || 1; // Pobierz aktualną stronę z Redux
   const actor2 = useSelector(moviesActorSelector);
@@ -48,5 +50,6 @@ export const ActorCard = () => {
         </ActorCardContainer>
       ))}
     </>
+
   );
 };
