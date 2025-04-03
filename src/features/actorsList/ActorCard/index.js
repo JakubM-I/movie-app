@@ -7,30 +7,31 @@ import {
   ActorDetailsCointainer,
 } from "./styled";
 
-export const ActorCard = ({ actorId }) => {
+export const ActorCard = ({ actorId, actorName, actorImage }) => {
 
-  const movieActors = useSelector(moviesActorSelector);
-  console.log("ActorCard", movieActors.results);
-  const getActorDetails = (actorId) => {
-    if (!Array.isArray(movieActors.results)) {
-      console.error("actorDetails is not an array:", movieActors.results);
+  console.log("Wszystko", actorId, actorName, actorImage);
+
+  const actors = useSelector(moviesActorSelector);
+  console.log("Actors", actors);
+
+  const getActorDetails = (actors, actorId) => {
+    if (!Array.isArray(actors)) {
+      console.error('Actors is not an array:', actors);
       return [];
     }
 
-    const foundActor = movieActors.results.find((actor) => actor.id === actorId);
+    const actorDetails = actors.find((actor) => actor.id === actorId);
+    if (actorDetails) {
+      return {
+        name: actorDetails.name,
+        image: actorDetails.profile_path,
+      };
+    }
+    return null;
+  }
 
-    return foundActor
-      ? {
-        actorName: foundActor.name,
-        actorImage: foundActor.profile_path,
-      }
-      : { actorName: "Unknown", actorImage: "" };
-  };
-
-  const { actorName, actorImage } = getActorDetails(actorId);
-  ;
-  console.log("ActorCard", actorName, actorImage);
-
+  const { name, image } = getActorDetails(actors, actorId) || { name: actorName, image: actorImage };
+  console.log("ActorDetails", name, image);
 
   return (
     <ActorCardContainer key={actorId}>

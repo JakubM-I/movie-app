@@ -15,11 +15,11 @@ export const ActorsList = () => {
   const dispatch = useDispatch();
 
   const actors = useSelector(moviesActorSelector);
-  console.log("ActorsList", actors);
 
   useEffect(() => {
     if (query && query.length > 0) {
       dispatch(setMovieSearching(query))
+      
     } else {
       dispatch(fetchMovies())
     }

@@ -5,7 +5,7 @@ export const moviesSlice = createSlice({
     initialState: {
         movies: [],
         genres: [],
-        actors: [],
+        results: [],
         loading: false,
         currentPage: 1,
         totalPages: undefined,
@@ -28,7 +28,7 @@ export const moviesSlice = createSlice({
         },
         ///////////////////////////////////////////
         setActor: (state, { payload: results }) => {
-            state.results = results;
+            state.results = results.results || results;
             state.totalPages = results.total_pages || 0; 
             state.loading = false;
         },

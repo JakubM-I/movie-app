@@ -19,7 +19,7 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
 
 
   const movieGenres = useSelector(moviesGenreSelector);
-
+  console.log("movieGenres", movieGenres.genres);
   const getMovieGenres = (movieGenres, movieGenreId) => {
 
     if (!Array.isArray(movieGenres.genres)) {
