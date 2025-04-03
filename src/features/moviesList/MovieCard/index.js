@@ -17,8 +17,8 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
 
 
   const movieGenres = useSelector(moviesGenreSelector);
-  const getMovieGenres = (movieGenres, movieGenreId) => {
 
+  const getMovieGenres = (movieGenres, movieGenreId) => {
 
     if (!Array.isArray(movieGenres.genres)) {
       console.error('movieGenres is not an array:', movieGenres);
@@ -33,7 +33,7 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
 
   const genreNames = getMovieGenres(movieGenres, movieGenreId);
 
-  console.log(movieTitle);
+  //console.log(movieTitle);
 
   return ( // ma najpierw sprawdzic czy gatunki,data wydania jest poprawna
     // jak nie to zwrocic error

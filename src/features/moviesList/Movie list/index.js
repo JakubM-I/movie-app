@@ -14,8 +14,10 @@ export const MovieList = () => {
   const query = searchParams.get("search");
   //console.log("MovieList", query);
   const dispatch = useDispatch();
-  const movie = useSelector(moviesSelector);
 
+  const movie = useSelector(moviesSelector);
+  //console.log("MovieList", movie);
+  
   useEffect(() => {
     if (query && query.length > 0) {
       dispatch(setMovieSearching(query))

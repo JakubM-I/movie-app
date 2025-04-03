@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { moviesActorSelector } from "../../moviesList/moviesSlice";
 import {
   ActorCardContainer,
@@ -6,47 +6,37 @@ import {
   ActorName,
 } from "./styled";
 
-export const ActorCard = () => {
-  const dispatch = useDispatch();
-  const moviesActor = useSelector(moviesActorSelector);
-  const actorDetails = moviesActor?.results || [];
-  const currentPage = moviesActor?.page || 1; // Pobierz aktualną stronę z Redux
-  const actor2 = useSelector(moviesActorSelector);
+export const ActorCard = ({ actorId }) => {
 
-  useEffect(() => {
-    dispatch(fetchActors(currentPage)); // Wywołaj akcję pobierania aktorów
-  }, [dispatch, currentPage]);
-
-  const getActorDetails = (actorDetails) => {
-    if (!Array.isArray(actorDetails)) {
-      console.error("actorDetails is not an array:", actorDetails);
+  const movieActors = useSelector(moviesActorSelector);
+  console.log("ActorCard", movieActors.results);
+  const getActorDetails = (actorId) => {
+    if (!Array.isArray(movieActors.results)) {
+      console.error("actorDetails is not an array:", movieActors.results);
       return [];
     }
-    return actorDetails.map((actor) => {
-      const foundActor = actorDetails.find((a) => a.id === actor.id);
-      return foundActor
-        ? {
-          actorId: foundActor.id,
-          actorName: foundActor.name,
-          actorImage: foundActor.profile_path,
-        }
-        : { actorId: null, actorName: "Unknown", actorImage: "" };
-    });
+
+    const foundActor = movieActors.results.find((actor) => actor.id === actorId);
+
+    return foundActor
+      ? {
+        actorName: foundActor.name,
+        actorImage: foundActor.profile_path,
+      }
+      : { actorName: "Unknown", actorImage: "" };
   };
 
-  const actors = getActorDetails(actorDetails);
-  console.log(actors);
-  return (
+  const { actorName, actorImage } = getActorDetails(actorId);
+  ;
+  console.log("ActorCard", actorName, actorImage);
 
-    <>
-      {actor.map(({ actorId, actorName, actorImage }) => (
-        <ActorCardContainer key={actorId}>
-          <ActorImage
-            src={actorImage ? `https://image.tmdb.org/t/p/w500${actorImage}` : "default-image.jpg"}
-          />
-          <ActorName>{actorName}</ActorName>
-        </ActorCardContainer>
-      ))}
-    </>
+
+  return (
+    <ActorCardContainer key={actorId}>
+      <ActorImage
+        src={actorImage ? `https://image.tmdb.org/t/p/w500${actorImage}` : "default-image.jpg"}
+      />
+      <ActorName>{actorName}</ActorName>
+    </ActorCardContainer>
   );
 };
