@@ -6,7 +6,17 @@ import { ActorCard } from "../ActorCard";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMovies, setMovieSearching, moviesActorSelector } from "../../moviesList/moviesSlice";
+import {
+  fetchMovies,
+  setMovieSearching,
+  moviesActorSelector,
+  setNextPage,
+  setPreviousPage,
+  setFirstPage,
+  setLastPage,
+  totalPagesSelector,
+  currentPageSelector
+} from "../../moviesList/moviesSlice";
 
 export const ActorsList = () => {
 
@@ -15,11 +25,13 @@ export const ActorsList = () => {
   const dispatch = useDispatch();
 
   const actors = useSelector(moviesActorSelector);
+  const currentPage = useSelector(currentPageSelector);
+  const totalPages = useSelector(totalPagesSelector);
 
   useEffect(() => {
     if (query && query.length > 0) {
       dispatch(setMovieSearching(query))
-      
+
     } else {
       dispatch(fetchMovies())
     }
@@ -42,7 +54,14 @@ export const ActorsList = () => {
           ))}
 
         </ActorsListContainer>
-        <Buttons />
+        <Buttons
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onNextPage={() => dispatch(setNextPage())}
+          onPreviousPage={() => dispatch(setPreviousPage())}
+          onFirstPage={() => dispatch(setFirstPage())}
+          onLastPage={() => dispatch(setLastPage())}
+        />
 
       </PageContainer>
     </>
