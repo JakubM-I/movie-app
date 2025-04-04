@@ -3,44 +3,67 @@ import { Buttons } from "../../../common/Buttons";
 import { PageTitle } from "../../../common/PageHeader";
 import { PageContainer, ActorsListContainer } from "./styled";
 import { ActorCard } from "../ActorCard";
+import { useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchMovies,
+  setMovieSearching,
+  moviesActorSelector,
+  setNextPage,
+  setPreviousPage,
+  setFirstPage,
+  setLastPage,
+  totalPagesSelector,
+  currentPageSelector
+} from "../../moviesList/moviesSlice";
 
 export const ActorsList = () => {
-  const isMobile = console.log(window.innerWidth);
+
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("search");
+  const dispatch = useDispatch();
+
+  const actors = useSelector(moviesActorSelector);
+  const currentPage = useSelector(currentPageSelector);
+  const totalPages = useSelector(totalPagesSelector);
+
+  useEffect(() => {
+    if (query && query.length > 0) {
+      dispatch(setMovieSearching(query))
+
+    } else {
+      dispatch(fetchMovies())
+    }
+  }, [query])
+
+
   return (
     <>
       <PageContainer>
-        <PageTitle title="Popular movies" />
-
+        <PageTitle title={`${query ? `Result for: ${query}` : "Popular people"}`} />
         <ActorsListContainer>
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-          <ActorCard />
-        </ActorsListContainer>
-        <Buttons />
-       
-      </PageContainer>
 
+          {Array.isArray(actors) && actors.map(m => (
+            <ActorCard
+              key={m.id}
+              actorId={m.id}
+              actorName={m.name}
+              actorImage={m.profile_path}
+            />
+          ))}
+
+        </ActorsListContainer>
+        <Buttons
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onNextPage={() => dispatch(setNextPage())}
+          onPreviousPage={() => dispatch(setPreviousPage())}
+          onFirstPage={() => dispatch(setFirstPage())}
+          onLastPage={() => dispatch(setLastPage())}
+        />
+
+      </PageContainer>
     </>
   );
 }

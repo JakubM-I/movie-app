@@ -1,27 +1,44 @@
-
+import { useSelector } from "react-redux";
+import { moviesActorSelector } from "../../moviesList/moviesSlice";
 import {
   ActorCardContainer,
   ActorImage,
   ActorName,
   ActorDetailsCointainer,
 } from "./styled";
-import { useSelector } from "react-redux";
-import { moviesActorSelector } from "../../moviesList/moviesSlice";
 
-export const ActorCard = () => {
+export const ActorCard = ({ actorId, actorName, actorImage }) => {
 
-  const moviesActor = useSelector(moviesActorSelector);
-  console.log(moviesActor);
-  // const getMovieGenres = (moviesActor, moviesActorId) => {
+  console.log("Wszystko", actorId, actorName, actorImage);
+
+  const actors = useSelector(moviesActorSelector);
+  console.log("Actors", actors);
+
+  const getActorDetails = (actors, actorId) => {
+    if (!Array.isArray(actors)) {
+      console.error('Actors is not an array:', actors);
+      return [];
+    }
+
+    const actorDetails = actors.find((actor) => actor.id === actorId);
+    if (actorDetails) {
+      return {
+        name: actorDetails.name,
+        image: actorDetails.profile_path,
+      };
+    }
+    return null;
+  }
+
+  const { name, image } = getActorDetails(actors, actorId) || { name: actorName, image: actorImage };
+  console.log("ActorDetails", name, image);
 
   return (
-    <ActorCardContainer>
-      <ActorImage src="https://image.tmdb.org/t/p/w500/aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg" />
-
-      <ActorDetailsCointainer>
-        <ActorName> asdfadsf</ActorName>
-      </ActorDetailsCointainer>
-
+    <ActorCardContainer key={actorId}>
+      <ActorImage
+        src={actorImage ? `https://image.tmdb.org/t/p/w500${actorImage}` : "default-image.jpg"}
+      />
+      <ActorName>{actorName}</ActorName>
     </ActorCardContainer>
   );
 };

@@ -9,8 +9,13 @@ export const getPerson = async (page = 1) => {
         }
     };
 
+
     const response = await fetch(`https://api.themoviedb.org/3/person/popular?language=en-US&page=${page}`, options);
 
+    // console.log(response);
+
+
+    //`https://api.themoviedb.org/3/person/popular?language=en-US&page=${page}`
     if (!response.ok) {
         throw new Error(response.statusText);
     }

@@ -16,8 +16,10 @@ import {
 
 
 export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movieVoteCount, moviePosterPath, movieGenreId }) => {
-  console.log(moviePosterPath);
+
+
   const movieGenres = useSelector(moviesGenreSelector);
+  console.log("movieGenres", movieGenres.genres);
   const getMovieGenres = (movieGenres, movieGenreId) => {
 
     if (!Array.isArray(movieGenres.genres)) {
@@ -33,29 +35,33 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
 
   const genreNames = getMovieGenres(movieGenres, movieGenreId);
 
-  return (
-    <MovieCardContainer>
-      <MovieImage src={`https://image.tmdb.org/t/p/w500${moviePosterPath}`} />
+  if (!movieTitle || !movieVoteAverage || !movieReleaseDate) {
+    console.error('Missing required movie data:', { movieTitle, movieVoteAverage, movieReleaseDate });
+  } else {
+    return (
+      <MovieCardContainer>
+        <MovieImage src={`https://image.tmdb.org/t/p/w500${moviePosterPath}`} />
 
 
-      <MovieDetailsContainer>
-        <MovieTitle>{movieTitle}</MovieTitle>
-        <MovieYear>{movieReleaseDate}</MovieYear>
+        <MovieDetailsContainer>
+          <MovieTitle>{movieTitle}</MovieTitle>
+          <MovieYear>{movieReleaseDate}</MovieYear>
 
-        <MovieGenreContainer>
+          <MovieGenreContainer>
 
-          {genreNames.slice(0, 4).map((genre, index) => (
-            <MovieGenre key={index}>{genre}</MovieGenre>
-          ))}
-        </MovieGenreContainer>
+            {genreNames.slice(0, 4).map((genre, index) => (
+              <MovieGenre key={index}>{genre}</MovieGenre>
+            ))}
+          </MovieGenreContainer>
 
-        <MovieRatingContainer>
-          <MovieRating>⭐️ {movieVoteAverage.toFixed(1)}</MovieRating>
+          <MovieRatingContainer>
+            <MovieRating>⭐️ {movieVoteAverage.toFixed(1)}</MovieRating>
 
-          <Votes>{movieVoteCount} votes</Votes>
-        </MovieRatingContainer>
-      </MovieDetailsContainer>
+            <Votes>{movieVoteCount} votes</Votes>
+          </MovieRatingContainer>
+        </MovieDetailsContainer>
 
-    </MovieCardContainer>
-  );
+      </MovieCardContainer>
+    );
+  }
 };
