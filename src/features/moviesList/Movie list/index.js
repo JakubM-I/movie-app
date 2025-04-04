@@ -6,7 +6,8 @@ import { MovieCard, } from "../MovieCard";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { currentPageSelector, fetchMovies, moviesSelector, searchQuerySelector, setMovieSearching, totalPagesSelector } from "../moviesSlice";
+import { currentPageSelector, fetchMovies, moviesSelector, moviesGenreSelector, searchQuerySelector, setMovieSearching, totalPagesSelector } from "../moviesSlice";
+import { Link } from "react-router-dom";
 
 export const MovieList = () => {
 
@@ -34,15 +35,18 @@ export const MovieList = () => {
         <MovieListContainer>
 
           {movie.map(m => (
-            <MovieCard
-              key={m.id}
-              movieTitle={m.title}
-              movieReleaseDate={m.release_date}
-              movieVoteAverage={m.vote_average}
-              movieVoteCount={m.vote_count}
-              moviePosterPath={m.poster_path}
-              movieGenreId={m.genre_ids}
-            />
+            <Link to={`movie/${m.id}`}>
+              <MovieCard
+                key={m.id}
+                movieTitle={m.title}
+                movieReleaseDate={m.release_date}
+                movieVoteAverage={m.vote_average}
+                movieVoteCount={m.vote_count}
+                moviePosterPath={m.poster_path}
+                movieGenreId={m.genre_ids}
+              />
+            </Link>
+
           ))}
 
         </MovieListContainer>

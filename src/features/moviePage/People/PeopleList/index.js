@@ -1,5 +1,5 @@
 import { PersonTileList, PersonTile, ImgPerson, Name, Character } from "./styled"
-import { imageURL } from "../../../../common/utils/imageURL";
+import { API_imageURL } from "../../../../common/detailsPages/API_imageURL";
 import emptyImage from "../../movieImages/emptyImage.png";
 
 
@@ -8,7 +8,7 @@ export const PeopleList = ({ people }) => (
     {people.map(({ credit_id, profile_path, original_name, character, job }) => {
 
       if (profile_path === null) { profile_path = emptyImage; }
-      else { profile_path = `${imageURL}/${profile_path}` };
+      else { profile_path = `${API_imageURL}/${profile_path}` };
 
       if (character === undefined) character = job;
 

@@ -1,7 +1,15 @@
-import { MoviePage } from "./MoviePage";
+import { DetailsPages } from "../../common/detailsPages/DetailsPages";
+import { Movie } from "./Movie";
+import { actions, selectors } from "./moviePageSlice";
 
-function MoviePageApp({ id = "212" }) {
-  return (<MoviePage id={id} />);
-};
+const MoviePageApp = () => (
+  <DetailsPages
+    statusSelector={selectors.selectStatus}
+    fetchAction={actions.fetch}
+    clearAction={actions.clear}
+  >
+    <Movie />
+  </DetailsPages>
+);
 
 export default MoviePageApp;

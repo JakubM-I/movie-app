@@ -6,16 +6,17 @@ import {
   MovieDescription,
 } from "./styled";
 
-export const Tile = ({ posterSmall,
+export const Tile = ({ poster,
   description, title, year, production,
   date }) => (
 
   <MovieTile>
-    <ImgSmall src={posterSmall} alt="" />
+    <ImgSmall src={poster} alt="" />
     <MovieData>
       <MovieTitle>{title}</MovieTitle>
       <MovieDescription>{year}</MovieDescription>
-      <MovieDescription>Production: {production}<br />Release date: {date}</MovieDescription>
+      <MovieDescription>Production: {production}</MovieDescription>
+      <MovieDescription>Release date: {date}</MovieDescription>
       <MovieDescription>{description}</MovieDescription>
     </MovieData>
   </MovieTile>
