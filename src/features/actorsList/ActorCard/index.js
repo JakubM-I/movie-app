@@ -7,10 +7,9 @@ import {
 } from "./styled";
 import emptyImage from "../../moviePage/movieImages/emptyImage.png";
 
-export const ActorCard = ({ actorId, actorName, actorImage }) => {
+export const ActorCard = ({ actorId, actorName, actorImage, emptyImage }) => {
 
   const actors = useSelector(moviesActorSelector);
-
   const getActorDetails = (actors, actorId) => {
     if (!Array.isArray(actors)) {
       console.error('Actors is not an array:', actors);
@@ -30,7 +29,7 @@ export const ActorCard = ({ actorId, actorName, actorImage }) => {
     return null;
   }
   console.log(emptyImage, "emptyImage")
-  const { name, image } = getActorDetails(actors, actorId) || { name: actorName, image: actorImage };
+  const { name, image } = getActorDetails(actors, actorId, emptyImage) || { name: actorName, image: actorImage };
   // console.log("ActorDetails", name, image);
 
   return (
