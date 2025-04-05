@@ -26,7 +26,7 @@ export const routes = [
                 element: <ActorsListApp />,
             },
             {
-                path: "actor/:id",
+                path: "actors/actor/:id",
                 element: <ActorPageApp />
             },
             {
