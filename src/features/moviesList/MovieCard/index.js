@@ -12,13 +12,12 @@ import {
   MovieDetailsContainer,
   Votes,
 } from "./styled";
-import emptyImage from "../../moviePage/movieImages/emptyImage.png";
 
 export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movieVoteCount, moviePosterPath, movieGenreId }) => {
 
-  
+
   const movieGenres = useSelector(moviesGenreSelector);
-  console.log("movieGenres", movieGenres.genres);
+
   const getMovieGenres = (movieGenres, movieGenreId) => {
 
     if (!Array.isArray(movieGenres.genres)) {
@@ -39,7 +38,7 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
   } else {
     return (
       <MovieCardContainer>
-        <MovieImage src={`https://image.tmdb.org/t/p/w500${moviePosterPath} `}/>
+        <MovieImage src={`https://image.tmdb.org/t/p/w500${moviePosterPath} `} />
 
 
         <MovieDetailsContainer>
