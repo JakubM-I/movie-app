@@ -1,4 +1,3 @@
-
 import { Buttons } from "../../../common/Buttons";
 import { PageTitle } from "../../../common/PageHeader";
 import { PageContainer, ActorsListContainer, StyledLink } from "./styled";
@@ -8,15 +7,20 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchMovies,
-  setMovieSearching,
+  setSearching,
   moviesActorSelector,
   setNextPage,
   setPreviousPage,
   setFirstPage,
   setLastPage,
   totalPagesSelector,
-  currentPageSelector
+  currentPageSelector,
+  isSearchingSelector,
+  loadingSelector,
+  isActorsPageSelector
 } from "../../moviesList/moviesSlice";
+import NoResults from "../../../common/NoResults";
+import Loading from "../../../common/Loading";
 
 export const ActorsList = () => {
 
@@ -27,12 +31,23 @@ export const ActorsList = () => {
   const actors = useSelector(moviesActorSelector);
   const currentPage = useSelector(currentPageSelector);
   const totalPages = useSelector(totalPagesSelector);
+  const isSearching = useSelector(isSearchingSelector);
+  const isLoading = useSelector(loadingSelector);
+  const isActorsPage = useSelector(isActorsPageSelector);
+
+
+  useEffect(() => {
+
+    dispatch(setSearching({ query: "", isActorsPage: true }));
+    dispatch(fetchMovies());
+  }, []);
 
   useEffect(() => {
     if (query && query.length > 0) {
-      dispatch(setMovieSearching(query))
-
+      dispatch(setSearching({ query, isActorsPage: true }))
     } else {
+
+      dispatch(setSearching({ query: "", isActorsPage: true }))
       dispatch(fetchMovies())
     }
   }, [query])
@@ -41,29 +56,30 @@ export const ActorsList = () => {
   return (
     <>
       <PageContainer>
-        <PageTitle title={`${query ? `Result for: ${query}` : "Popular people"}`} />
-        <ActorsListContainer>
+        {isLoading ? (
+          <Loading />
+        ) : actors.length > 0 ? (
+          <>
+            <PageTitle title={`${query ? `Result for: ${query}` : "Popular people"}`} />
+            <ActorsListContainer>
 
-          {Array.isArray(actors) && actors.map(m => (
-            <StyledLink to={`actor/${m.id}`}>
-              <ActorCard
-                key={m.id}
-                actorId={m.id}
-                actorName={m.name}
-                actorImage={m.profile_path}
-              />
-            </StyledLink>
-          ))}
+              {Array.isArray(actors) && actors.map(m => (
+                <StyledLink to={`actor/${m.id}`}>
+                  <ActorCard
+                    key={m.id}
+                    actorId={m.id}
+                    actorName={m.name}
+                    actorImage={m.profile_path}
+                  />
+                </StyledLink>
+              ))}
 
-        </ActorsListContainer>
-        <Buttons
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onNextPage={() => dispatch(setNextPage())}
-          onPreviousPage={() => dispatch(setPreviousPage())}
-          onFirstPage={() => dispatch(setFirstPage())}
-          onLastPage={() => dispatch(setLastPage())}
-        />
+            </ActorsListContainer>
+          </>
+
+        ) : (<NoResults query={query} />)}
+
+        <Buttons />
 
       </PageContainer>
     </>
