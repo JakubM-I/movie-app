@@ -4,16 +4,12 @@ import {
   ActorCardContainer,
   ActorImage,
   ActorName,
-  ActorDetailsCointainer,
 } from "./styled";
+import emptyImage from "../../moviePage/movieImages/emptyImage.png";
 
-export const ActorCard = ({ actorId, actorName, actorImage }) => {
-
-  console.log("Wszystko", actorId, actorName, actorImage);
+export const ActorCard = ({ actorId, actorName, actorImage, emptyImage }) => {
 
   const actors = useSelector(moviesActorSelector);
-  console.log("Actors", actors);
-
   const getActorDetails = (actors, actorId) => {
     if (!Array.isArray(actors)) {
       console.error('Actors is not an array:', actors);
@@ -21,22 +17,25 @@ export const ActorCard = ({ actorId, actorName, actorImage }) => {
     }
 
     const actorDetails = actors.find((actor) => actor.id === actorId);
+
     if (actorDetails) {
       return {
         name: actorDetails.name,
-        image: actorDetails.profile_path,
+        image: actorDetails.profile_path
+          ? `https://image.tmdb.org/t/p/w500${actorDetails.profile_path}`
+          : emptyImage,
       };
     }
     return null;
   }
-
-  const { name, image } = getActorDetails(actors, actorId) || { name: actorName, image: actorImage };
-  console.log("ActorDetails", name, image);
+  console.log(emptyImage, "emptyImage")
+  const { name, image } = getActorDetails(actors, actorId, emptyImage) || { name: actorName, image: actorImage };
+  // console.log("ActorDetails", name, image);
 
   return (
     <ActorCardContainer key={actorId}>
       <ActorImage
-        src={actorImage ? `https://image.tmdb.org/t/p/w500${actorImage}` : "default-image.jpg"}
+        src={image}
       />
       <ActorName>{actorName}</ActorName>
     </ActorCardContainer>

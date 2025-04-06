@@ -1,6 +1,6 @@
 import { Buttons } from "../../../common/Buttons";
 import { PageTitle } from "../../../common/PageHeader";
-import { PageContainer, MovieListContainer } from "./styled";
+import { PageContainer, MovieListContainer, StyledLink } from "./styled";
 import { MovieCard, } from "../MovieCard";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
@@ -57,7 +57,7 @@ export const MovieList = () => {
             <MovieListContainer>
 
               {movie.map(m => (
-                <Link to={`movie/${m.id}`}>
+                <StyledLink to={`movie/${m.id}`}>
                   <MovieCard
                     key={m.id}
                     movieTitle={m.title}
@@ -67,7 +67,7 @@ export const MovieList = () => {
                     moviePosterPath={m.poster_path}
                     movieGenreId={m.genre_ids}
                   />
-                </Link>
+                </StyledLink>
 
               ))}
 
