@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const PageContainer = styled.div`
   display: flex;
@@ -36,4 +37,10 @@ export const MovieListContainer = styled.div`
     justify-items: center;
     
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  
+  color: ${({ theme }) => theme.colors.black};
 `;
