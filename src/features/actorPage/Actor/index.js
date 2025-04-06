@@ -18,8 +18,8 @@ export const Actor = ({ actorBase, actorCredits }) => {
         day_of_death={day_of_death}
         place_of_birth={place_of_birth}
       />
-      <ActorMoviesList title="Movies - cast(4)" movies={moviesCast} />
-      <ActorMoviesList title="Movies - crew(4)" movies={moviesCrew} />
+      <ActorMoviesList title="Movies - cast" movies={moviesCast} />
+      <ActorMoviesList title="Movies - crew" movies={moviesCrew} />
     </ActorPageWrapper>
   );
 }
