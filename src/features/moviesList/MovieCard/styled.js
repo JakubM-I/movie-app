@@ -94,11 +94,12 @@ export const MovieGenre = styled.div`
   font-size: 14px; 
   border-radius: 6px;
   padding: 8px;
-  margin: 0 auto;
+  margin: 0 0;
   white-space: nowrap;
   display: flex;
   flex-wrap: nowrap;
   gap: 8px;
+  flex: 0 0 auto;
 
   @media (max-width: 450px) {
    max-width: 107px;
