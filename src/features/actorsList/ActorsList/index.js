@@ -61,26 +61,22 @@ export const ActorsList = () => {
         ) : actors.length > 0 ? (
           <>
             <PageTitle title={`${query ? `Result for: ${query}` : "Popular people"}`} />
-            <ActorsListContainer>
 
-              {Array.isArray(actors) && actors.map(m => (
-                <StyledLink to={`actor/${m.id}`}>
+            <ActorsListContainer>
+              {Array.isArray(actors) && actors.map(actor => (
+                <StyledLink to={`/actor/${actor.id}`} key={actor.id}>
                   <ActorCard
-                    key={m.id}
-                    actorId={m.id}
-                    actorName={m.name}
-                    actorImage={m.profile_path}
+                    actorId={actor.id}
+                    actorName={actor.name}
+                    actorProfilePath={actor.profile_path}
                   />
                 </StyledLink>
               ))}
-
             </ActorsListContainer>
           </>
-
-        ) : (<NoResults query={query} />)}
+        ) : isSearching ? (<NoResults query={query} />) : <Loading />}
 
         <Buttons />
-
       </PageContainer>
     </>
   );
