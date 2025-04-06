@@ -57,7 +57,7 @@ export const MovieList = () => {
             <MovieListContainer>
 
               {Array.isArray(movie) && movie.map(m => (
-                <Link to={`movie/${m.id}`}>
+                <StyledLink to={`movie/${m.id}`}>
                   <MovieCard
                     key={m.id}
                     movieTitle={m.title}
@@ -67,7 +67,7 @@ export const MovieList = () => {
                     moviePosterPath={m.poster_path}
                     movieGenreId={m.genre_ids}
                   />
-                </Link>
+                </StyledLink>
 
               ))}
 
