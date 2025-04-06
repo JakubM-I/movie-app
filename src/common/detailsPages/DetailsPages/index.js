@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useClearDataOnLeave } from "../useClearDataOnLeave";
-import { MainPage } from "../../MainPage";
+import { MainPage } from "../MainPage";
 
 
 export const DetailsPages = ({ statusSelector, fetchAction, clearAction, children }) => {

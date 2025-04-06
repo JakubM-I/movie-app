@@ -1,6 +1,5 @@
 import { moviesGenreSelector } from "../moviesSlice";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 import {
   MovieCardContainer,
   MovieImage,
@@ -16,7 +15,6 @@ import {
 
 
 export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movieVoteCount, moviePosterPath, movieGenreId }) => {
-  console.log(moviePosterPath);
   const movieGenres = useSelector(moviesGenreSelector);
   const getMovieGenres = (movieGenres, movieGenreId) => {
 

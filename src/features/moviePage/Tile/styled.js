@@ -16,10 +16,11 @@ export const MovieData = styled.div`
   margin: 0 10px;
 `;
 
-export const ImgSmall = styled.img`
+export const Poster = styled.img`
   width: 100vw;
   width: 312px;
-  height: 464px; 
+  height: 464px;
+  border-radius: 15px; 
 `;
 
 export const MovieTitle = styled.p`
