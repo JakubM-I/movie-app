@@ -22,7 +22,7 @@ const SearchForm = () => {
             <StyledSearchIcon src={searchIcon} alt="search" />
             <StyledSearchInput
                 type="text"
-                placeholder={`Search for ${isActorsPage ? "actors" : "movies"}...`}
+                placeholder={`Search for ${isActorsPage ? "peoples" : "movies"}...`}
                 value={query ? query : ""}
                 onChange={onInputChange}
             />
