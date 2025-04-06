@@ -3,10 +3,10 @@ import { PageContainer } from "../styled/page-container";
 import noresult from "../assets/no-results.png"
 import { StyledImg } from "./styled";
 
-const NoResults = () => {
+const NoResults = ({ query }) => {
     return (
         <PageContainer>
-            <PageTitle title="Sorry, there are no results for “Muan”" />
+            <PageTitle title={`Sorry, there are no results for “${query}”`} />
             <StyledImg src={noresult} alt="No results" />
         </PageContainer>
     )

@@ -1,6 +1,4 @@
-export const getPerson = async (page = 1) => {
-    // const page = useSelector(currentPageSelector);
-    // console.log(`/movie-app/example-api.json?page=${page}`);
+export const getSearchPeople = async (query, page = 1) => {
     const options = {
         method: 'GET',
         headers: {
@@ -9,16 +7,11 @@ export const getPerson = async (page = 1) => {
         }
     };
 
+    const response = await fetch(`https://api.themoviedb.org/3/search/person?query=${query}&include_adult=false&language=en-US&page=${page}`, options);
 
-    const response = await fetch(`https://api.themoviedb.org/3/person/popular?language=en-US&page=${page}`, options);
-
-    // console.log(response);
-
-
-    //`https://api.themoviedb.org/3/person/popular?language=en-US&page=${page}`
     if (!response.ok) {
-        throw new Error(response.statusText);
-    }
+        throw new Error(response.statusText)
+    };
 
     return await response.json();
 }
