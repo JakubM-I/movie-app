@@ -37,6 +37,7 @@ export const MovieDetailsContainer = styled.div`
 `;
 
 export const MovieImage = styled.img`
+  width: 100%;
   max-width: 292px;
   max-height: 434px;
   display: block;

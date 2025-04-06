@@ -45,7 +45,7 @@ export const ActorsList = () => {
         <ActorsListContainer>
 
           {Array.isArray(actors) && actors.map(m => (
-            <StyledLink to={`actor/${m.id}`}>
+            <StyledLink to={`actor/${m.id}`} key={m.id}>
               <ActorCard
                 key={m.id}
                 actorId={m.id}

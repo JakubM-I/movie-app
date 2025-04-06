@@ -6,7 +6,7 @@ import { MovieCard, } from "../MovieCard";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { currentPageSelector, fetchMovies, moviesSelector, searchQuerySelector, setMovieSearching, totalPagesSelector } from "../moviesSlice";
+import { fetchMovies, moviesSelector, setMovieSearching } from "../moviesSlice";
 
 export const MovieList = () => {
 
@@ -15,7 +15,6 @@ export const MovieList = () => {
   const dispatch = useDispatch();
 
   const movie = useSelector(moviesSelector);
-  //console.log("MovieList", movie);
 
   useEffect(() => {
     if (query && query.length > 0) {
@@ -33,7 +32,7 @@ export const MovieList = () => {
         <MovieListContainer>
 
           {movie.map(m => (
-            <StyledLink to={`movie/${m.id}`}>
+            <StyledLink to={`movie/${m.id}`} key={m.id}>
               <MovieCard
                 key={m.id}
                 movieTitle={m.title}

@@ -43,7 +43,6 @@ function* fetchGenresWorker() {
     }
 }
 
-////////////////////////////////////////////////////////////////////////////////
 function* fetchActorWorker() {
     const page = yield select(currentPageSelector);
 

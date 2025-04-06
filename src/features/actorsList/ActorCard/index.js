@@ -7,7 +7,7 @@ import {
 } from "./styled";
 import emptyImage from "../../moviePage/movieImages/emptyImage.png";
 
-export const ActorCard = ({ actorId, actorName, actorImage, emptyImage }) => {
+export const ActorCard = ({ actorId, actorName, actorImage }) => {
 
   const actors = useSelector(moviesActorSelector);
   const getActorDetails = (actors, actorId) => {
@@ -28,16 +28,14 @@ export const ActorCard = ({ actorId, actorName, actorImage, emptyImage }) => {
     }
     return null;
   }
-  console.log(emptyImage, "emptyImage")
   const { name, image } = getActorDetails(actors, actorId, emptyImage) || { name: actorName, image: actorImage };
-  // console.log("ActorDetails", name, image);
 
   return (
     <ActorCardContainer key={actorId}>
       <ActorImage
         src={image}
       />
-      <ActorName>{actorName}</ActorName>
+      <ActorName>{name}</ActorName>
     </ActorCardContainer>
   );
 };

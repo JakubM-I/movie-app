@@ -26,7 +26,7 @@ export const moviesSlice = createSlice({
         setGenres: (state, { payload: genres }) => {
             state.genres = genres;
         },
-        ///////////////////////////////////////////
+
         setActor: (state, { payload: results }) => {
             state.results = results.results || results;
             state.totalPages = results.total_pages || 0; 
@@ -45,10 +45,7 @@ export const moviesSlice = createSlice({
             state.currentPage = 1;
         },
 
-        // setPagination: (state, payload) => {
-        //     state.currentPage = payload.page;
 
-        // },
 
         setNextPage: (state) => {
             if (state.currentPage < state.totalPages) {
@@ -83,7 +80,6 @@ export const moviesSlice = createSlice({
 export const moviesStateSelector = state => state.movies;
 export const moviesSelector = state => moviesStateSelector(state).movies;
 export const moviesGenreSelector = state => moviesStateSelector(state).genres;
-///////////////////////////////////////////
 export const moviesActorSelector = state => moviesStateSelector(state).results;
 export const currentPageSelector = state => moviesStateSelector(state).currentPage;
 export const totalPagesSelector = state => moviesStateSelector(state).totalPages;

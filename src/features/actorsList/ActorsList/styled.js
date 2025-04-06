@@ -13,10 +13,8 @@ export const PageContainer = styled.div`
 
 export const ActorsListContainer = styled.div`
   display: grid;
-
   grid-template-columns: repeat(6, 1fr);
   gap: 10px;
-
   margin-top: 20px;
   max-width: 1368px;
   justify-content: center;
