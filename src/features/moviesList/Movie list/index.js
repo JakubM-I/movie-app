@@ -1,4 +1,3 @@
-
 import { Buttons } from "../../../common/Buttons";
 import { PageTitle } from "../../../common/PageHeader";
 import { PageContainer, MovieListContainer, StyledLink } from "./styled";
@@ -6,20 +5,40 @@ import { MovieCard, } from "../MovieCard";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMovies, moviesSelector, setMovieSearching } from "../moviesSlice";
+
+import {
+  currentPageSelector,
+  fetchMovies,
+  moviesSelector,
+  moviesGenreSelector,
+  searchQuerySelector,
+  setSearching,
+  totalPagesSelector,
+  isSearchingSelector,
+  loadingSelector,
+  isActorsPageSelector
+} from "../moviesSlice";
+import { Link } from "react-router-dom";
+import NoResults from "../../../common/NoResults";
+import Loading from "../../../common/Loading";
+
 
 export const MovieList = () => {
 
   const [searchParams] = useSearchParams();
   const query = searchParams.get("search");
   const dispatch = useDispatch();
+  const isActorsPage = useSelector(isActorsPageSelector);
 
+  const isSearching = useSelector(isSearchingSelector);
   const movie = useSelector(moviesSelector);
+
 
   useEffect(() => {
     if (query && query.length > 0) {
-      dispatch(setMovieSearching(query))
+      dispatch(setSearching({ query, isActorsPage: false }))
     } else {
+      dispatch(setSearching({ query: "", isActorsPage: false }))
       dispatch(fetchMovies())
     }
   }, [query])
@@ -47,6 +66,7 @@ export const MovieList = () => {
           ))}
 
         </MovieListContainer>
+
         <Buttons />
       </PageContainer>
     </>

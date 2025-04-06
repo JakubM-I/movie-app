@@ -6,7 +6,7 @@ const ActorsListApp = () => {
 
     return (
         <>
-            <p> <ActorsList /></p>
+            <ActorsList />
         </>
     );
 };

@@ -6,20 +6,24 @@ export const moviesSlice = createSlice({
         movies: [],
         genres: [],
         results: [],
+        actors: [],
         loading: false,
         currentPage: 1,
         totalPages: undefined,
         isSearching: false,
         searchQuery: "",
+        isActorsPage: false,
     },
     reducers: {
         fetchMovies: state => {
             state.loading = true;
             state.isSearching = false;
+            state.currentPage = 1;
         },
 
         setMovies: (state, { payload: movies }) => {
             state.movies = movies.movies || movies.results;
+            state.results = movies.results || movies.movies;
             state.totalPages = movies.total_pages;
             state.loading = false;
         },
@@ -28,8 +32,8 @@ export const moviesSlice = createSlice({
         },
 
         setActor: (state, { payload: results }) => {
-            state.results = results.results || results;
-            state.totalPages = results.total_pages || 0; 
+            state.actors = results.results || results;
+            state.totalPages = results.total_pages || 0;
             state.loading = false;
         },
 
@@ -38,14 +42,13 @@ export const moviesSlice = createSlice({
             state.loading = false;
         },
 
-        setMovieSearching: (state, { payload: query }) => {
+        setSearching: (state, { payload }) => {
             state.loading = true;
-            state.isSearching = true;
-            state.searchQuery = query;
+            state.isSearching = payload.query ? true : false;
+            state.searchQuery = payload.query;
             state.currentPage = 1;
+            state.isActorsPage = payload.isActorsPage;
         },
-
-
 
         setNextPage: (state) => {
             if (state.currentPage < state.totalPages) {
@@ -85,7 +88,9 @@ export const currentPageSelector = state => moviesStateSelector(state).currentPa
 export const totalPagesSelector = state => moviesStateSelector(state).totalPages;
 export const isSearchingSelector = state => moviesStateSelector(state).isSearching;
 export const searchQuerySelector = state => moviesStateSelector(state).searchQuery;
+export const isActorsPageSelector = state => moviesStateSelector(state).isActorsPage;
+export const loadingSelector = state => moviesStateSelector(state).loading;
 
 
-export const { fetchMovies, setMovies, setGenres, setActor, setNewMoviesPage, setMovieSearching, setNextPage, setLastPage, setPreviousPage, setFirstPage, } = moviesSlice.actions;
+export const { fetchMovies, setMovies, setGenres, setActor, setNewMoviesPage, setSearching, setNextPage, setLastPage, setPreviousPage, setFirstPage, } = moviesSlice.actions;
 export default moviesSlice.reducer;
