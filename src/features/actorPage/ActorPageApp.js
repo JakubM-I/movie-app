@@ -1,11 +1,15 @@
+import { DetailsPages } from "../../common/detailsPages/DetailsPages";
 import { ActorPage } from "./ActorPage";
-import { useParams } from "react-router-dom";
+import { actions, selectors } from "./actorPageSlice";
 
-function ActorPageApp() {
-
-  const { id } = useParams();
-
-  return (<ActorPage id={id} />);
-};
+const ActorPageApp = () => (
+  <DetailsPages
+    statusSelector={selectors.selectStatus}
+    fetchAction={actions.fetch}
+    clearAction={actions.clear}
+  >
+    <ActorPage />
+  </DetailsPages>
+);
 
 export default ActorPageApp;

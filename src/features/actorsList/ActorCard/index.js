@@ -28,6 +28,7 @@ export const ActorCard = ({ actorId, actorName, actorImage }) => {
     }
     return null;
   }
+
   const { name, image } = getActorDetails(actors, actorId, emptyImage) || { name: actorName, image: actorImage };
 
   return (

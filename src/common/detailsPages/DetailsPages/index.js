@@ -6,6 +6,7 @@ import { MainPage } from "../MainPage";
 
 
 export const DetailsPages = ({ statusSelector, fetchAction, clearAction, children }) => {
+
   const status = useSelector(statusSelector);
 
   const dispatch = useDispatch();
