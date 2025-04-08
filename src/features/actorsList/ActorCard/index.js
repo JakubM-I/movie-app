@@ -5,7 +5,7 @@ import {
   ActorImage,
   ActorName,
 } from "./styled";
-import emptyImage from "../../moviePage/movieImages/emptyImage.png";
+import emptyImage from "../../actorPage/actorImages/emptyImage.png";
 
 export const ActorCard = ({ actorId, actorName, actorImage }) => {
 

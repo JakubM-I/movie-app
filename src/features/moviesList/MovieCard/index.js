@@ -12,7 +12,7 @@ import {
   MovieDetailsContainer,
   Votes,
 } from "./styled";
-
+import emptyImage from "../../actorPage/actorImages/emptyImage.png";
 export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movieVoteCount, moviePosterPath, movieGenreId }) => {
 
 
