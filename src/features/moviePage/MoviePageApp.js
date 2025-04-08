@@ -1,5 +1,5 @@
 import { DetailsPages } from "../../common/detailsPages/DetailsPages";
-import { Movie } from "./Movie";
+import { MoviePage } from "./MoviePage";
 import { actions, selectors } from "./moviePageSlice";
 
 const MoviePageApp = () => (
@@ -8,7 +8,7 @@ const MoviePageApp = () => (
     fetchAction={actions.fetch}
     clearAction={actions.clear}
   >
-    <Movie />
+    <MoviePage />
   </DetailsPages>
 );
 

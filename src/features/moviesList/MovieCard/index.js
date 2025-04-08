@@ -12,11 +12,10 @@ import {
   MovieDetailsContainer,
   Votes,
 } from "./styled";
-import emptyImage from "../../moviePage/movieImages/emptyImage.png";
 
 export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movieVoteCount, moviePosterPath, movieGenreId }) => {
 
-  
+
   const movieGenres = useSelector(moviesGenreSelector);
   const getMovieGenres = (movieGenres, movieGenreId) => {
 

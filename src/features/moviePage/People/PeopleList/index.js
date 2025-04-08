@@ -1,6 +1,6 @@
 import { PersonTileList, PersonTile, ImgPerson, Name, Character } from "./styled"
 import { API_imageURL } from "../../../../common/detailsPages/API_imageURL";
-import emptyImage from "../../movieImages/emptyImage.png";
+import emptyImage from "../../../../common/detailsPages/emptyImage.png";
 
 
 export const PeopleList = ({ people }) => (

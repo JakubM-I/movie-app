@@ -1,5 +1,5 @@
-import ErrorPage from "../ErrorPage";
-import Loading from "../Loading";
+import ErrorPage from "../../ErrorPage";
+import Loading from "../../Loading";
 
 export const MainPage = ({ status, children }) => {
 

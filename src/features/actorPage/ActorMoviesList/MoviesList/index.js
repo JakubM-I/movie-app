@@ -1,7 +1,7 @@
 import {
   MoviesTileList, MovieTile, ImgMovie, MovieTitle, MovieYear
 } from "./styled";
-import emptyImage from "../../../moviePage/movieImages/emptyImage.png";
+import emptyImage from "../../../../common/detailsPages/emptyImage.png";
 import { API_imageURL } from "../../../../common/detailsPages/API_imageURL";
 
 export const MoviesList = ({ movies }) => (
