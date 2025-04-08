@@ -37,4 +37,4 @@ export const About = ({ image, name, day_of_birth, day_of_death, place_of_birth,
       <InfoWrapper>{biography}</InfoWrapper>
     </PersonalInfo>
   </AboutWrapper>
-)
+);

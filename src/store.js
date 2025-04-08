@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import moviesReducer from "./features/moviesList/moviesSlice";
 import moviePageReducer from "./features/moviePage/moviePageSlice";
+import actorPageReducer from "./features/actorPage/actorPageSlice";
 
 import rootSaga from "./rootSaga";
 import createSagaMiddleware from "redux-saga";
@@ -11,6 +12,7 @@ const store = configureStore({
     reducer: {
         movies: moviesReducer,
         movieDetails: moviePageReducer,
+        actorDetails: actorPageReducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
 });

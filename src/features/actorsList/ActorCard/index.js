@@ -27,7 +27,7 @@ export const ActorCard = ({ actorId, actorName, actorImage, emptyImage }) => {
     }
     return null;
   }
-  console.log(emptyImage, "emptyImage")
+  // console.log(emptyImage, "emptyImage")
   const { name, image } = getActorDetails(actors, actorId, emptyImage) || { name: actorName, image: actorImage };
   // console.log("ActorDetails", name, image);
 
