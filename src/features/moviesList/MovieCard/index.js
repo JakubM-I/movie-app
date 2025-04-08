@@ -12,7 +12,7 @@ import {
   MovieDetailsContainer,
   Votes,
 } from "./styled";
-import emptyImage from "../../actorPage/actorImages/emptyImage.png";
+import emptyImage from "../../../common/detailsPages/emptyImage.png";
 export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movieVoteCount, moviePosterPath, movieGenreId }) => {
 
 
@@ -33,10 +33,10 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
   const genreNames = getMovieGenres(movieGenres, movieGenreId);
 
 
-    return (
-      <MovieCardContainer>
-      <MovieImage 
-        src={moviePosterPath ? `https://image.tmdb.org/t/p/w500${moviePosterPath}` : emptyImage} 
+  return (
+    <MovieCardContainer>
+      <MovieImage
+        src={moviePosterPath ? `https://image.tmdb.org/t/p/w500${moviePosterPath}` : emptyImage}
         alt={movieTitle}
       />
 
@@ -45,16 +45,16 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
         <MovieYear>{movieReleaseDate}</MovieYear>
 
         <MovieGenreContainer>
-        {genreNames.slice(0, 4).map((genre, index) => (
-          <MovieGenre key={index}>{genre}</MovieGenre>
-        ))}
+          {genreNames.slice(0, 4).map((genre, index) => (
+            <MovieGenre key={index}>{genre}</MovieGenre>
+          ))}
         </MovieGenreContainer>
 
         <MovieRatingContainer>
-        <MovieRating>⭐️ {movieVoteAverage.toFixed(1)}</MovieRating>
-        <Votes>{movieVoteCount} votes</Votes>
+          <MovieRating>⭐️ {movieVoteAverage.toFixed(1)}</MovieRating>
+          <Votes>{movieVoteCount} votes</Votes>
         </MovieRatingContainer>
       </MovieDetailsContainer>
-      </MovieCardContainer>
-    );
-  }
+    </MovieCardContainer>
+  );
+}
