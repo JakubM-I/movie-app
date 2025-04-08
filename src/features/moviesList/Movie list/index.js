@@ -57,7 +57,7 @@ export const MovieList = () => {
             <MovieListContainer>
 
               {Array.isArray(movie) && movie.map(m => (
-                <StyledLink to={`movie/${m.id}`}>
+                <StyledLink to={`movie/${m.id}` } key={m.id}>
                   <MovieCard
                     key={m.id}
                     movieTitle={m.title}

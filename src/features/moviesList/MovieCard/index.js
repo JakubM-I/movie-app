@@ -12,12 +12,11 @@ import {
   MovieDetailsContainer,
   Votes,
 } from "./styled";
-
+import emptyImage from "../../actorPage/actorImages/emptyImage.png";
 export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movieVoteCount, moviePosterPath, movieGenreId }) => {
 
 
   const movieGenres = useSelector(moviesGenreSelector);
-
   const getMovieGenres = (movieGenres, movieGenreId) => {
 
     if (!Array.isArray(movieGenres.genres)) {
@@ -33,33 +32,29 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
 
   const genreNames = getMovieGenres(movieGenres, movieGenreId);
 
-  if (!movieTitle || !movieVoteAverage || !movieReleaseDate) {
-    console.error('Missing required movie data:', { movieTitle, movieVoteAverage, movieReleaseDate });
-  } else {
+
     return (
       <MovieCardContainer>
-        <MovieImage src={`https://image.tmdb.org/t/p/w500${moviePosterPath} `} />
+      <MovieImage 
+        src={moviePosterPath ? `https://image.tmdb.org/t/p/w500${moviePosterPath}` : emptyImage} 
+        alt={movieTitle}
+      />
 
+      <MovieDetailsContainer>
+        <MovieTitle>{movieTitle}</MovieTitle>
+        <MovieYear>{movieReleaseDate}</MovieYear>
 
-        <MovieDetailsContainer>
-          <MovieTitle>{movieTitle}</MovieTitle>
-          <MovieYear>{movieReleaseDate}</MovieYear>
+        <MovieGenreContainer>
+        {genreNames.slice(0, 4).map((genre, index) => (
+          <MovieGenre key={index}>{genre}</MovieGenre>
+        ))}
+        </MovieGenreContainer>
 
-          <MovieGenreContainer>
-
-            {genreNames.slice(0, 4).map((genre, index) => (
-              <MovieGenre key={index}>{genre}</MovieGenre>
-            ))}
-          </MovieGenreContainer>
-
-          <MovieRatingContainer>
-            <MovieRating>⭐️ {movieVoteAverage.toFixed(1)}</MovieRating>
-
-            <Votes>{movieVoteCount} votes</Votes>
-          </MovieRatingContainer>
-        </MovieDetailsContainer>
-
+        <MovieRatingContainer>
+        <MovieRating>⭐️ {movieVoteAverage.toFixed(1)}</MovieRating>
+        <Votes>{movieVoteCount} votes</Votes>
+        </MovieRatingContainer>
+      </MovieDetailsContainer>
       </MovieCardContainer>
     );
   }
-};
