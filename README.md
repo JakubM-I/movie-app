@@ -7,7 +7,8 @@ A modern web application that allows users to browse popular movies, view detail
 
 ### 📸 Preview
 
-![App Screenshot](./screenshot.png)
+![App Screenshot](https://raw.githubusercontent.com/JakubM-I/movie-app/d3d0a33e115a2bcfc23614faccac4416bed266fe/src/common/readmeGifs/2025-04-09-19-21-12.gif)
+![App Screenshot](https://raw.githubusercontent.com/JakubM-I/movie-app/d3d0a33e115a2bcfc23614faccac4416bed266fe/src/common/readmeGifs/2025-04-09-19-26-19.gif)
 
 
 ## ✨ Features
@@ -19,7 +20,7 @@ A modern web application that allows users to browse popular movies, view detail
 - 👥 See full cast with names and photos
 - 📖 Movie description and details page
 
-### Yout can try app here: [To-do-list]()
+### Yout can try app here: [To-do-list](https://jakubm-i.github.io/movie-app/)
 
 ### 🧰 Tech Stack
 
