@@ -38,3 +38,6 @@ export const ButtonsContainer = styled.div`
 export const GraySpan = styled.span`
   color: ${({ theme }) => theme.colors.darkerGrey};
 `; 
+export const BlueSpan = styled.span`
+  color: ${({ theme }) => theme.colors.blue};
+`;

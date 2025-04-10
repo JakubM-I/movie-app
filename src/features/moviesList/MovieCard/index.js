@@ -11,6 +11,7 @@ import {
   MovieRating,
   MovieDetailsContainer,
   Votes,
+  MovieStar,
 } from "./styled";
 import emptyImage from "../../../common/detailsPages/emptyImage.png";
 export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movieVoteCount, moviePosterPath, movieGenreId }) => {
@@ -31,7 +32,7 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
   };
 
   const genreNames = getMovieGenres(movieGenres, movieGenreId);
-
+  const year = new Date(movieReleaseDate).getFullYear();
 
   return (
     <MovieCardContainer>
@@ -42,7 +43,7 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
 
       <MovieDetailsContainer>
         <MovieTitle>{movieTitle}</MovieTitle>
-        <MovieYear>{movieReleaseDate}</MovieYear>
+        <MovieYear>{year}</MovieYear>
 
         <MovieGenreContainer>
           {genreNames.slice(0, 4).map((genre, index) => (
@@ -51,7 +52,8 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
         </MovieGenreContainer>
 
         <MovieRatingContainer>
-          <MovieRating>⭐️ {movieVoteAverage.toFixed(1)}</MovieRating>
+          <MovieStar>⭐️</MovieStar>
+          <MovieRating> {movieVoteAverage.toFixed(1)}</MovieRating>
           <Votes>{movieVoteCount} votes</Votes>
         </MovieRatingContainer>
       </MovieDetailsContainer>

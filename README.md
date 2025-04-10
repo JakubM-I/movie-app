@@ -2,7 +2,7 @@
 
 ## Authors: Jakub Musiałowski, Jakub Kulik, Ireneusz Miernik
 
-**Movies Browser** 
+
 A modern web application that allows users to browse popular movies, view detailed information, check ratings, explore cast members, and search for specific titles. Designed to resemble a movie database or streaming catalog, it's perfect for movie enthusiasts or as a base project for learning frontend development.
 
 ### 📸 Preview
@@ -20,7 +20,7 @@ A modern web application that allows users to browse popular movies, view detail
 - 👥 See full cast with names and photos
 - 📖 Movie description and details page
 
-### Yout can try app here: [To-do-list](https://jakubm-i.github.io/movie-app/)
+### You can try app here: [Movie-Browser](https://jakubm-i.github.io/movie-app/)
 
 ### 🧰 Tech Stack
 
