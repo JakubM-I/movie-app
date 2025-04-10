@@ -120,8 +120,7 @@ export const MovieRatingContainer = styled.div`
   width: 100%;
   padding: 10px;
   margin-top: auto; 
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  font-size: 16px;
 
   @media (max-width: 450px) {
     font-size: 12px;
@@ -134,15 +133,26 @@ export const MovieRatingContainer = styled.div`
 
 export const MovieRating = styled.div`
   padding-right: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
 `;
 
 export const Votes = styled.div`
-  font-size: 16px;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.darkerGrey};
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
   @media (max-width: 450px) {
     font-size: 12px;
   }
 `;
 
+export const MovieStar = styled.span`
+  font-size: 22px;
+  @media (max-width: 450px) {
+    font-size: 16px;
+  }
+  `
 
