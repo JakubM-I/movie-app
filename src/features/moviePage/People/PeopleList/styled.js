@@ -12,7 +12,12 @@ export const PersonTileList = styled.div`
 `;
 
 export const PersonTile = styled.div`
-  padding: 0px;
+  max-width: 208px;
+  width: 100vw;
+  max-height: 339px;
+  background: ${({ theme }) => theme.colors.white};
+  padding: 16px 16px 0px 16px;
+  border-radius: 5px;
   margin: 0;
   display: flex;
   flex-flow: column;
@@ -28,11 +33,14 @@ export const ImgPerson = styled.img`
 `;
 
 export const Name = styled.p`
-  margin: 0px;
+  font-weight: 500;
+  font-size: 22px;
+  margin: 0px auto;
 `;
 
 export const Character = styled.p`
-  margin: 5px 0px;
-  font-size: small;
-  color: #555;
+  margin: 8px auto auto auto;
+  font-weight: 400;
+  font-size: 18px;
+  color: ${({ theme }) => theme.colors.darkerGrey};
 `;

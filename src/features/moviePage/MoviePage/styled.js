@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const PageWrapper = styled.div`
-  max-width: 100%;
-  max-height: 770px;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
+  width: 1368px;
+  max-width: calc(100%-2*12px);
+  max-width: 100vw;
+  margin: auto;
 `;
