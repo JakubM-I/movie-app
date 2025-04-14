@@ -10,6 +10,7 @@ export const moviesSlice = createSlice({
         loading: false,
         currentPage: 1,
         totalPages: undefined,
+        maxPages: 500,
         isSearching: false,
         searchQuery: "",
         isActorsPage: false,
@@ -24,7 +25,7 @@ export const moviesSlice = createSlice({
         setMovies: (state, { payload: movies }) => {
             state.movies = movies.movies || movies.results;
             state.results = movies.results || movies.movies;
-            state.totalPages = movies.total_pages;
+            state.totalPages = movies.total_pages < state.maxPages ? movies.total_pages : state.maxPages;
             state.loading = false;
         },
         setGenres: (state, { payload: genres }) => {
@@ -33,7 +34,7 @@ export const moviesSlice = createSlice({
 
         setActor: (state, { payload: results }) => {
             state.actors = results.results || results;
-            state.totalPages = results.total_pages || 0;
+            state.totalPages = results.total_pages < state.maxPages ? results.total_pages : state.maxPages || 0;
             state.loading = false;
         },
 
