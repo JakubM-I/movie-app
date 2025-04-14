@@ -7,6 +7,6 @@ export const PeopleWrapper = styled.div`
 `;
 
 export const SubHeader = styled.h2`
-  margin: 0px;
+  margin: 0px 0px 0px 2px; 
   width: 100vw;
 `;

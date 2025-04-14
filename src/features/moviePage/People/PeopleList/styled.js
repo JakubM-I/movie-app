@@ -8,29 +8,51 @@ export const PersonTileList = styled.div`
   grid-template-columns: repeat(6,1fr);
   list-style: none;
   padding: 0;
-  grid-gap: 30px;
+  grid-gap: 24px;
+  justify-content: center;
+  align-items: start;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.laptopMax}px) {
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorizontalMax}px) {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
 `;
 
 export const PersonTile = styled.div`
   max-width: 208px;
   width: 100vw;
-  max-height: 339px;
+  max-height: auto;
   background: ${({ theme }) => theme.colors.white};
   padding: 16px 16px 0px 16px;
   border-radius: 5px;
   margin: 0;
   display: flex;
   flex-flow: column;
-  align-items: center;
+  flex-basis: fit-content;
+  justify-content: start;
 `;
 
 export const ImgPerson = styled.img`
   margin-bottom: 15px;
   width: 100vw;
   max-width: 176px;
-  max-height: 231px;
+  height: 231px;
   border-radius: 5px;
 `;
+
+export const NameWrapper = styled.div`
+  max-width: 176px;
+  max-height: auto;
+`;
+
 
 export const Name = styled.p`
   font-weight: 500;

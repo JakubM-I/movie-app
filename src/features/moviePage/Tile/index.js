@@ -15,14 +15,14 @@ export const Tile = ({ poster,
   tags, vote }) => (
 
   <MovieTile>
-    <Poster src={poster} alt="" />
+    <Poster url={poster} />
     <MovieData>
       <MovieTitle>{title}</MovieTitle>
       <MovieYear>{year}</MovieYear>
       <MetaData metaData={metaData} />
       <Tags tags={tags} />
       <Vote vote={vote} />
-      <MovieDescription>{description}</MovieDescription>
     </MovieData>
+    <MovieDescription>{description}</MovieDescription>
   </MovieTile>
 );
