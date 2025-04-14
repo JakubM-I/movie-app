@@ -20,7 +20,7 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
   const movieGenres = useSelector(moviesGenreSelector);
   const getMovieGenres = (movieGenres, movieGenreId) => {
 
-    if (!Array.isArray(movieGenres.genres)) {
+    if (!Array.isArray(movieGenres.genres) || movieGenres.genres.length === 0) {
       console.error('movieGenres is not an array:', movieGenres);
       return [];
     }
