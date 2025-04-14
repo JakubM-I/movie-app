@@ -11,7 +11,7 @@ import {
 
 export const About = ({ image, name, day_of_birth, day_of_death, place_of_birth, biography }) => (
   <AboutWrapper>
-    <Img src={image} alt="" />
+    <Img url={image} />
     <PersonalInfo>
       <Name>{name}</Name>
       {(day_of_birth !== null) ? (
@@ -34,7 +34,7 @@ export const About = ({ image, name, day_of_birth, day_of_death, place_of_birth,
           </HeaderInfo>
         </>
       ) : null}
-      <InfoWrapper>{biography}</InfoWrapper>
     </PersonalInfo>
+    <InfoWrapper>{biography}</InfoWrapper>
   </AboutWrapper>
 );
