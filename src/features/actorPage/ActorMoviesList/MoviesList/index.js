@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { moviesGenreSelector } from "../../../moviesList/moviesSlice";
 import {
-  MoviesTileList, MovieTile, ImgMovie, MovieTitle, MovieYear
+  MoviesTileList, MovieTile, ImgMovie, MovieInfo, MovieTitle, MovieYear
 } from "./styled";
 import emptyImage from "../../../../common/detailsPages/emptyImage.png";
 import { API_imageURL } from "../../../../common/detailsPages/API_imageURL";
@@ -26,17 +26,22 @@ export const MoviesList = ({ movies }) => {
         return (
           <MovieTile key={credit_id}>
             <ImgMovie src={poster_path} alt="" />
-            <MovieTitle>{title}</MovieTitle>
-            <MovieYear>{`${character} (${new Date(release_date).getFullYear()})`}</MovieYear>
-            <Tags
-              tags={genre_ids?.map(id => genres.find(e => e.id === id).name)}
-            />
-            <Vote
-              vote={{
-                average: vote_average,
-                count: vote_count,
-              }}
-            />
+            <MovieInfo>
+              <MovieTitle>{title}</MovieTitle>
+              <MovieYear>{`${character} (${new Date(release_date).getFullYear()})`}</MovieYear>
+
+              <Tags
+                tags={genre_ids?.map(id => genres.find(e => e.id === id).name)}
+                small
+              />
+
+              <Vote
+                vote={{
+                  average: vote_average,
+                  count: vote_count,
+                }}
+              />
+            </MovieInfo>
           </MovieTile>
         )
       })}

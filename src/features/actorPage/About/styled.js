@@ -5,7 +5,7 @@ export const AboutWrapper = styled.div`
   height: auto;
   max-width: calc(100%-2*12px);
   max-width: 100vw;
-  margin: 56px auto;
+  margin: 56px auto 0px;
   padding: 40px;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
