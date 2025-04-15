@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
   ${({ backdrop }) => backdrop && css`
     color: ${({ theme }) => theme.colors.white};
     margin-bottom: 56px;
+    margin-left: 276px;
   `}  
 `;
 

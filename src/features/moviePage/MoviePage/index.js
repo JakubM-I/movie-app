@@ -32,23 +32,25 @@ export const MoviePage = () => {
   const crew = credits.crew;
 
   return (
-    <PageWrapper>
+    <>
       <Backdrop />
-      <Tile
-        poster={poster}
-        title={title}
-        year={year}
-        metaData={movieMetaData}
-        hideMetaDataKeysOnMobile
-        tags={base.genres?.map(({ name }) => name)}
-        vote={{
-          average: base.vote_average,
-          count: base.vote_count,
-        }}
-        description={description}
-      />
-      <People type="Cast" people={cast} />
-      <People type="Crew" people={crew} />
-    </PageWrapper>
+      <PageWrapper>
+        <Tile
+          poster={poster}
+          title={title}
+          year={year}
+          metaData={movieMetaData}
+          hideMetaDataKeysOnMobile
+          tags={base.genres?.map(({ name }) => name)}
+          vote={{
+            average: base.vote_average,
+            count: base.vote_count,
+          }}
+          description={description}
+        />
+        <People type="Cast" people={cast} />
+        <People type="Crew" people={crew} />
+      </PageWrapper>
+    </>
   )
 };

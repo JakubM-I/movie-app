@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Wrapper = styled.dl`
+  font-weight: 400;
   font-size: 18px;
   margin: 24px 0px 0px 0px;
 
@@ -25,7 +26,7 @@ export const Row = styled.div`
 export const Key = styled.dt`
   display: inline;
   color: ${({ theme }) => theme.colors.stormGray};
-  margin-right: 12px;
+  margin-right: 10px;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}px) {
     display: block;

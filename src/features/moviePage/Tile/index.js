@@ -3,6 +3,7 @@ import {
   Poster,
   MovieData,
   MovieTitle,
+  MovieYear,
   MovieDescription,
 } from "./styled";
 import { MetaData } from "../../../common/detailsPages/MetaData";
@@ -14,14 +15,14 @@ export const Tile = ({ poster,
   tags, vote }) => (
 
   <MovieTile>
-    <Poster src={poster} alt="" />
+    <Poster url={poster} />
     <MovieData>
       <MovieTitle>{title}</MovieTitle>
-      <MovieDescription>{year}</MovieDescription>
+      <MovieYear>{year}</MovieYear>
       <MetaData metaData={metaData} />
       <Tags tags={tags} />
       <Vote vote={vote} />
-      <MovieDescription>{description}</MovieDescription>
     </MovieData>
+    <MovieDescription>{description}</MovieDescription>
   </MovieTile>
 );

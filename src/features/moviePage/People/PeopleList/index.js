@@ -1,4 +1,4 @@
-import { PersonTileList, PersonTile, ImgPerson, Name, Character } from "./styled"
+import { PersonTileList, PersonTile, ImgPerson, NameWrapper, Name, Character } from "./styled"
 import { API_imageURL } from "../../../../common/detailsPages/API_imageURL";
 import emptyImage from "../../../../common/detailsPages/emptyImage.png";
 
@@ -15,8 +15,10 @@ export const PeopleList = ({ people }) => (
       return (
         <PersonTile key={credit_id}>
           <ImgPerson src={profile_path} alt="" />
-          <Name>{original_name}</Name>
-          <Character>{character}</Character>
+          <NameWrapper>
+            <Name>{original_name}</Name>
+            <Character>{character}</Character>
+          </NameWrapper>
         </PersonTile>
       )
     })}
