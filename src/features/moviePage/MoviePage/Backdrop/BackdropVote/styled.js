@@ -36,7 +36,7 @@ export const CounterWrapper = styled.div`
     align-items: baseline;
     margin-block-end: 3px;
 
-    @media (425px < width){
+    @media (width < 425px){
       margin-block-end: 1px;
     }
 `
