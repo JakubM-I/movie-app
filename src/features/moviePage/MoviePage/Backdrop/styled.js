@@ -43,8 +43,16 @@ export const TitleWrapper = styled.div`
     /* margin-inline: auto; */
     margin-block-end: 56px;
 
-    @media (width < 1199px) {
+    @media (width < 1392px) {
       padding-inline-start: 24px;
+    }
+
+    @media (width < 1024px){
+      margin-block-end: clamp(0.5rem, -0.8636rem + 6.8182vw, 3.5rem);
+    }
+
+    @media (width < 767px) {
+      padding-inline-start: 16px;
     }
 
 `;
@@ -54,5 +62,10 @@ export const Title = styled.h1`
   color: ${({ theme }) => theme.colors.white};
   font-weight: 600;
   line-height: 1.2;
-  margin: 0px;
+  margin: 0px 0px 24px;
+
+  @media (width < 1024px){
+    font-size: clamp(1.5rem, 0.3636rem + 5.6818vw, 4rem);
+    margin-block-end: clamp(0.25rem, -0.3182rem + 2.8409vw, 1.5rem);
+  }
 `;
