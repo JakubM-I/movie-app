@@ -8,9 +8,15 @@ export const Top = styled.div`
   background-color: ${({ theme }) => theme.colors.black};
 `;
 
+export const StyledWrapper = styled.div`
+width: min(1368px, 100%);
+margin-inline: auto;
+position: relative;
+`
+
 export const ImgBig = styled.img`
-  width: 100vw;
-  max-width: 100%;
+  width: 100%;
+  /* max-width: 100%; */
 `;
 
 export const Vignette = styled.div`
@@ -24,14 +30,22 @@ export const Vignette = styled.div`
   justify-content: end;
   flex-wrap: wrap;
   background:
-   linear-gradient(00deg, black, transparent 30%, transparent 70%, black),
-   linear-gradient(90deg, black, transparent 20%, transparent 80%, black);
+   linear-gradient(00deg, black, transparent 40%, transparent 60%, black),
+   linear-gradient(90deg, black, transparent 30%, transparent 70%, black);
   `;
 
 export const TitleWrapper = styled.div`
-  max-width: auto;
-  max-height: auto;
-  margin: auto auto 56px 110px;
+  /* max-width: auto; */
+  /* max-height: auto; */
+  /* margin: auto auto 56px 110px; */
+  /* width: min(1382px, 100%); */
+    /* padding-inline-start: 24px; */
+    /* margin-inline: auto; */
+    margin-block-end: 56px;
+
+    @media (width < 1199px) {
+      padding-inline-start: 24px;
+    }
 
 `;
 

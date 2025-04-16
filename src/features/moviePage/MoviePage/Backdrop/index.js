@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectors } from "../../moviePageSlice";
 import { API_imageURL } from "../../../../common/detailsPages/API_imageURL";
-import { Top, ImgBig, Vignette, Title, TitleWrapper } from "./styled";
+import { Top, ImgBig, Vignette, Title, TitleWrapper, StyledWrapper } from "./styled";
 import { BackdropVote } from "./BackdropVote";
 
 export const Backdrop = () => {
@@ -10,18 +10,20 @@ export const Backdrop = () => {
 
   return !!(images.backdrops.length > 0) && (
     <Top>
-      <ImgBig src={`${API_imageURL}/${images.backdrops[0].file_path}`} alt="" />
-      <Vignette >
-        <TitleWrapper>
-          <Title>{base.title}</Title>
-          <BackdropVote
-            vote={{
-              average: base.vote_average,
-              count: base.vote_count,
-            }}
-          />
-        </TitleWrapper>
-      </Vignette>
+      <StyledWrapper>
+        <ImgBig src={`${API_imageURL}/${images.backdrops[0].file_path}`} alt="" />
+        <Vignette >
+          <TitleWrapper>
+            <Title>{base.title}</Title>
+            <BackdropVote
+              vote={{
+                average: base.vote_average,
+                count: base.vote_count,
+              }}
+            />
+          </TitleWrapper>
+        </Vignette>
+      </StyledWrapper>
     </Top >
   );
 };
