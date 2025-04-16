@@ -85,9 +85,10 @@ export const Count = styled.p`
 
     @media (768px < width){
       flex: 1 1 100%;
+      margin-block-start: 8px;
     }
 
-    @media (425px < width){
+    @media (width < 425px){
       margin-block-end: 1px;
     }
 `;
