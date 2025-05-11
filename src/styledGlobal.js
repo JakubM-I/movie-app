@@ -13,6 +13,7 @@ const StyledGlobal = createGlobalStyle`
     body {
         background: ${({ theme }) => theme.colors.lightGrey};
         max-width: 1920px;
+        margin-inline: auto;
         max-height: 3126px;
     }
 `;
