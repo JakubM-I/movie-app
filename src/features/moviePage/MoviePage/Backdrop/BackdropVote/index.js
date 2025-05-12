@@ -18,7 +18,6 @@ export const BackdropVote = ({ vote }) => (
           }
         </Count>
       </RateWrapper>
-
     </Wrapper>
   )
 );

@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { selectors } from "../moviePageSlice";
 import { API_imageURL } from "../../../common/detailsPages/API_imageURL";
 import emptyImage from "../../../common/detailsPages/emptyImage.png";
-import { PageWrapper } from "./styled";
+import { PageContainer } from "../../../common/detailsPages/DetailsPages/styled";
 import { Backdrop } from "./Backdrop";
 import { Tile } from "../Tile";
 import { People } from "../People";
@@ -34,7 +34,7 @@ export const MoviePage = () => {
   return (
     <>
       <Backdrop />
-      <PageWrapper>
+      <PageContainer>
         <Tile
           poster={poster}
           title={title}
@@ -50,7 +50,7 @@ export const MoviePage = () => {
         />
         <People type="Cast" people={cast} />
         <People type="Crew" people={crew} />
-      </PageWrapper>
+      </PageContainer>
     </>
   )
 };

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Top = styled.div`
   position: relative;
   width: 100vw;
-  max-width:100%;
+  width: 100%;
   margin: 0px;
   background-color: ${({ theme }) => theme.colors.black};
 `;

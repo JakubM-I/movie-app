@@ -1,68 +1,92 @@
 import styled from "styled-components";
 
 export const PersonTileList = styled.div`
-  margin: 20px 0 0 0;
+  margin: 0px;
   max-width: 100%;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: repeat(6,1fr);
-  list-style: none;
-  padding: 0;
-  grid-gap: 24px;
-  justify-content: center;
-  align-items: start;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.laptopMax}px) {
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorizontalMax}px) {
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-  }
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 `;
 
 export const PersonTile = styled.div`
-  max-width: 208px;
-  width: 100vw;
-  max-height: auto;
+  flex: 0 0 208px;
   background: ${({ theme }) => theme.colors.white};
   padding: 16px 16px 0px 16px;
   border-radius: 5px;
-  margin: 0;
+  margin: 0px 0px 24px 0px;
   display: flex;
-  flex-flow: column;
-  flex-basis: fit-content;
+  flex-direction: column;
   justify-content: start;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    flex: 0 0 136px;
+    background: ${({ theme }) => theme.colors.white};
+    padding: 8px 8px 0px 8px;
+    border-radius: 2px;
+    margin: 0px 0px 16px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
 `;
 
 export const ImgPerson = styled.img`
-  margin-bottom: 15px;
   width: 100vw;
   max-width: 176px;
   height: 231px;
   border-radius: 5px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    width: 100vw;
+    max-width: 120px;
+    height: 178px;
+    border-radius: 2px;
+  }
 `;
 
 export const NameWrapper = styled.div`
   max-width: 176px;
-  max-height: auto;
+  max-height: 100%;
+  margin: 12px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    max-width: 120px;
+    max-height: 100%;
+    margin: 8px;
+    display: flex;
+    lex-direction: column;
+    justify-content: space-between;
+  }
 `;
 
 
 export const Name = styled.p`
   font-weight: 500;
   font-size: 22px;
-  margin: 0px auto;
+  margin: 0px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0px;
+    text-align: center;
+  }
 `;
 
 export const Character = styled.p`
-  margin: 8px auto auto auto;
+  margin: 8px 0px 0px 0px;
   font-weight: 400;
   font-size: 18px;
   color: ${({ theme }) => theme.colors.darkerGrey};
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    margin: 8px 0px 0px 0px;
+    font-weight: 400;
+    font-size: 13px;
+    color: ${({ theme }) => theme.colors.darkerGrey};
+    text-align: center;
+  }
 `;
