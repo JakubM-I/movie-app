@@ -39,6 +39,7 @@ export const Average = styled.strong`
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     font-weight: 600;
     font-size: 13px;
+    margin-left: 4px;
   }
 `;
 
@@ -61,6 +62,7 @@ export const Count = styled.p`
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     font-weight: 400;
     font-size: 13px;
-    margin: 0px 8px;
+    margin-left: 4px;
+    color: ${({ theme }) => theme.colors.darkerGrey};
   }
 `;
