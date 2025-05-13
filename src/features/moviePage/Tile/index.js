@@ -7,21 +7,21 @@ import {
   MovieDescription,
 } from "./styled";
 import { MetaData } from "../../../common/detailsPages/MetaData";
-import { Tags } from "../../../common/detailsPages/Tags";
-import { Vote } from "../../../common/detailsPages/Vote";
+import { TileTags } from "./TileTags";
+import { TileVote } from "./TileVote";
 
 export const Tile = ({ poster,
   description, title, year, metaData,
-  tags, vote }) => (
+  hideMetaDataKeysOnMobile, tags, vote }) => (
 
   <MovieTile>
     <Poster url={poster} />
     <MovieData>
       <MovieTitle>{title}</MovieTitle>
       <MovieYear>{year}</MovieYear>
-      <MetaData metaData={metaData} />
-      <Tags tags={tags} />
-      <Vote vote={vote} />
+      <MetaData metaData={metaData} hideKeysOnMobile={hideMetaDataKeysOnMobile} />
+      <TileTags tags={tags} />
+      <TileVote vote={vote} />
     </MovieData>
     <MovieDescription>{description}</MovieDescription>
   </MovieTile>

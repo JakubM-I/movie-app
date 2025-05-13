@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
 export const AboutWrapper = styled.div`
-  width: 1368px;
   height: auto;
-  max-width: calc(100%-2*12px);
   max-width: 100vw;
-  margin: 56px auto 0px;
+  margin: 56px auto 64px;
   padding: 40px;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
@@ -16,101 +14,115 @@ export const AboutWrapper = styled.div`
   grid-template-columns: 399px 1fr;
   grid-template-rows: auto 1fr;
   align-content: start;
-  grid-gap: 0 24px;
+  grid-gap: 0 40px;
   border-radius: 5px;
 
-  @media(max-width: ${({ theme }) => theme.breakpoints.tabletHorizontalMax}px) {
-    grid-template-columns: 399px 1fr;
-    grid-template-rows: 564px 1fr;
-    grid-template-areas:
-      "picture data"
-      "description description";
-    grid-gap: 24px;
-    padding: 24px;
-  }
-
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    grid-template-columns: 130px 1fr;
+    max-width: 288px;
+    grid-template-columns: 116px 1fr;
     grid-template-rows: 163px 1fr;
     grid-template-areas:
       "picture data"
       "description description";
     padding: 16px;
-    grid-gap: 8px 16px;
+    grid-gap: 0px 16px;
   }
 `;
 
 export const PersonalInfo = styled.div`
-  max-width: 75%;
+  max-height: auto;
+  max-width: 60vw;
   display: flex;
   flex-flow: column;
   align-items: left;
   margin: 0px;
   grid-area: data;
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    max-width: 125px;
+  }
 `;
 
 export const Img = styled.div`
   padding-top: calc(100%  * 632 / 421);
-  max-width: 399px;
-  max-height: 564px;
   background: url("${({ url }) => url}");
-  background-size: cover;
-  background-position: center;
+  background-size: 399px 564px;
+  background-position: top;
+  background-repeat: no-repeat;
   border-radius: 5px;
   grid-area: picture;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    max-width: 116px;
-    max-height: 163px;
+    background-size: 116px 163px;
   }
 `;
 
 export const Name = styled.p`
-  font-weight: bold;
-  font-size: 35px;
-  margin: 0px 0px 20px 0px;
+  max-width: 55vw;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.6;
+  margin: 8px 0px 0px 0px;
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    max-width: 125px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.2;
+    margin: 4px 0px 0px 0px;
+  }  
 `;
 
 export const BirthdayWrapper = styled.div`
-  margin: 0px;
-  width: 100vw;
-  max-width: 40%;
+  max-width: 55vw;
+  margin: 16px 0px 0px 0px;
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
   justify-content: space-between;
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    max-width: 125px;
+    margin: 8px 0px 0px 0px;
+  }
 `;
 
 export const TextInfo = styled.span`
   margin: 0px;
-  color: #000;
-  font-weight: normal;
+  color: ${({ theme }) => theme.colors.black};
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    font-weight: 400;
+    font-size: 12px;
+  }
 `;
 
 export const HeaderInfo = styled.p`
-  margin: 5px 0px;
-  font-size: small;
-  color: #555;
+  margin: 8px 0px 0px 0px;
+  color: ${({ theme }) => theme.colors.darkerGrey};
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    font-weight: 400;
+    font-size: 12px;
+  }
 `;
 
 export const InfoWrapper = styled.p`
-  max-width: 849px;
+  max-width: 55vw;
+  margin: 24px 0 0 0;
+  text-align: justify; 
   font-weight: 400;
   font-size: 20px;
   line-height: 1.6;
-  margin: 20px 0 0 0;
   grid-area: description;
 
-  @media(max-width: ${({ theme }) => theme.breakpoints.tabletHorizontalMax}px) {
-    max-width: 900px;
-  }
-
-  @media(max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}px) {
-    max-width: 600px;
-    font-size: 14px;
-  }
-
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    max-width: 240px;
+    max-width: 256px;
     font-size: 14px;
   }
-  `;
+`;

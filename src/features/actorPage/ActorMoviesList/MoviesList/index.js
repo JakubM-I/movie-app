@@ -5,13 +5,12 @@ import {
 } from "./styled";
 import emptyImage from "../../../../common/detailsPages/emptyImage.png";
 import { API_imageURL } from "../../../../common/detailsPages/API_imageURL";
-import { Tags } from "../../../../common/detailsPages/Tags";
-import { Vote } from "../../../../common/detailsPages/Vote";
+import { ActorTags } from "./ActorTags";
+import { ActorVote } from "./ActorVote";
 
 export const MoviesList = ({ movies }) => {
 
   const genres = useSelector(moviesGenreSelector).genres;
-  // const genreName = (i, t) => t.find((e) => e.id === i).name;
 
   return (
     <MoviesTileList>
@@ -29,13 +28,10 @@ export const MoviesList = ({ movies }) => {
             <MovieInfo>
               <MovieTitle>{title}</MovieTitle>
               <MovieYear>{`${character} (${new Date(release_date).getFullYear()})`}</MovieYear>
-
-              <Tags
+              <ActorTags
                 tags={genre_ids?.map(id => genres.find(e => e.id === id).name)}
-                small
               />
-
-              <Vote
+              <ActorVote
                 vote={{
                   average: vote_average,
                   count: vote_count,

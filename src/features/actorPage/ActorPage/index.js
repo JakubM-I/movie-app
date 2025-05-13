@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { selectors } from "../actorPageSlice";
 import { API_imageURL } from "../../../common/detailsPages/API_imageURL";
 import emptyImage from "../../../common/detailsPages/emptyImage.png";
-import { ActorPageWrapper } from "./styled";
+import { PageContainer } from "../../../common/detailsPages/DetailsPages/styled";
 import { About } from "../About";
 import { ActorMoviesList } from "../ActorMoviesList";
 
@@ -27,7 +27,7 @@ export const ActorPage = () => {
   const day_of_death = (deathday !== null) ? new Date(deathday).toLocaleDateString() : null;
 
   return (
-    <ActorPageWrapper>
+    <PageContainer>
       <About
         image={image}
         name={name}
@@ -38,6 +38,6 @@ export const ActorPage = () => {
       />
       <ActorMoviesList title="Movies - cast" movies={moviesCast} />
       <ActorMoviesList title="Movies - crew" movies={moviesCrew} />
-    </ActorPageWrapper>
+    </PageContainer>
   );
 };
