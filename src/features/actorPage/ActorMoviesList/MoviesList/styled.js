@@ -12,21 +12,22 @@ export const MoviesTileList = styled.div`
 export const MovieTile = styled.div`
   max-width: 324px;
   padding: 16px;
-  margin: 24px 20px 0px 0px;
+  margin: 24px 16px 0px 0px;
   background-color: ${({ theme }) => theme.colors.white};
   display: flex;
   flex-flow: column;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    max-width: 288px;
+    width: 288px;
     padding: 16px;
-    flex-flow: row wrap;
+    margin: 16px 0px 0px 0px;
+    flex-flow: row;
     justify-content: start;
   }
 `;
 
 export const ImgMovie = styled.img`
-  max-width: 292px;
+  width: 292px;
   height: 434px;
   border-radius: 5px;
 
