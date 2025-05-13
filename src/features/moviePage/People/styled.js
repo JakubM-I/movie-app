@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PeopleWrapper = styled.div`
-  max-width: 100vw;
+  max-width: 100%;
   margin: 40px auto 0px;
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {

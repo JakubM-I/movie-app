@@ -5,7 +5,7 @@ export const PersonTileList = styled.div`
   max-width: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 `;
 
 export const PersonTile = styled.div`
@@ -13,7 +13,7 @@ export const PersonTile = styled.div`
   background: ${({ theme }) => theme.colors.white};
   padding: 16px 16px 0px 16px;
   border-radius: 5px;
-  margin: 0px 0px 24px 0px;
+  margin: 0px 20px 24px 0px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -23,7 +23,7 @@ export const PersonTile = styled.div`
     background: ${({ theme }) => theme.colors.white};
     padding: 8px 8px 0px 8px;
     border-radius: 2px;
-    margin: 0px 0px 16px 0px;
+    margin: 0px 8px 16px 0px;
     display: flex;
     flex-direction: column;
     justify-content: start;
