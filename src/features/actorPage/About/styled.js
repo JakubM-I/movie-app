@@ -18,7 +18,8 @@ export const AboutWrapper = styled.div`
   border-radius: 5px;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    max-width: 288px;
+    width: 288px;
+    margin: 24px auto;
     grid-template-columns: 116px 1fr;
     grid-template-rows: 163px 1fr;
     grid-template-areas:

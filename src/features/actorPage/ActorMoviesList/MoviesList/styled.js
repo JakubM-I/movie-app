@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MoviesTileList = styled.div`
-  margin: 0px auto 0;
+  margin: 0px auto;
   padding: 0;
   max-width: 100%;
   display: flex;
