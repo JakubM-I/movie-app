@@ -53,8 +53,8 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
 
         <MovieRatingContainer>
           <MovieStar>⭐️</MovieStar>
-          <MovieRating> {movieVoteAverage ? movieVoteAverage.toFixed(1) : "N/A"}</MovieRating>
-          <Votes>{movieVoteCount ? `${movieVoteCount} votes` : "No votes"}</Votes>
+          <MovieRating> {(movieVoteAverage !== null && movieVoteAverage !== undefined) ? movieVoteAverage.toFixed(1) : "N/A"}</MovieRating>
+          <Votes>{(movieVoteCount !== null && movieVoteCount !== undefined) ? `${movieVoteCount} votes` : "No votes"}</Votes>
         </MovieRatingContainer>
       </MovieDetailsContainer>
     </MovieCardContainer>
