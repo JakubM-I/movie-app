@@ -11,7 +11,7 @@ import {
 
 export const About = ({ image, name, day_of_birth, day_of_death, place_of_birth, biography }) => (
   <AboutWrapper>
-    <Img url={image} />
+    <Img $url={image} />
     <PersonalInfo>
       <Name>{name}</Name>
       {(day_of_birth !== null) ? (

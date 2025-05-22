@@ -11,7 +11,7 @@ export const BackdropVote = ({ vote }) => (
             <OutOf>/ 10</OutOf>
           </CounterWrapper>
         )}
-        <Count noVotes={!vote?.count}>
+        <Count $noVotes={!vote?.count}>
           {vote?.count
             ? `${vote.count} ${vote.count === 1 ? "vote" : "votes"}`
             : "no votes yet"

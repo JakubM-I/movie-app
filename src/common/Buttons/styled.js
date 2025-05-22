@@ -7,10 +7,10 @@ export const StyledButton = styled.button`
   border: none;
   cursor: pointer;
 
-  ${({ reverse }) => reverse && css`
+  ${({ $reverse }) => $reverse && css`
     background: ${({ theme }) => theme.colors.grey};
   `}
-  ${({ next }) => next && css`
+  ${({ $next }) => $next && css`
     background: ${({ theme }) => theme.colors.lightBlue};
   `}
 
@@ -37,7 +37,7 @@ export const ButtonsContainer = styled.div`
 
 export const GraySpan = styled.span`
   color: ${({ theme }) => theme.colors.darkerGrey};
-`; 
+`;
 export const BlueSpan = styled.span`
   color: ${({ theme }) => theme.colors.blue};
 `;

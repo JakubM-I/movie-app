@@ -8,7 +8,7 @@ export const MetaData = ({ metaData = {}, hideKeysOnMobile }) => {
       <Wrapper>
         {filleMetaData.map(([key, value]) => (
           <Row key={key}>
-            <Key hideOnMobile={hideKeysOnMobile}>{key}:</Key>
+            <Key $hideOnMobile={hideKeysOnMobile}>{key}:</Key>
             <Value>{value}</Value>
           </Row>
         ))}

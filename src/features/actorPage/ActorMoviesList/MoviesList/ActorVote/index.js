@@ -19,7 +19,7 @@ export const ActorVote = ({ vote }) => (
       )}
 
       <Count
-        noVotes={!vote?.count}
+        $noVotes={!vote?.count}
       >
         {vote?.count
           ? `${vote.count} ${vote.count === 1 ? "vote" : "votes"}`

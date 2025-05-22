@@ -28,7 +28,7 @@ export const Vote = ({ vote, small, backdrop }) => (
       <Count
         small={small}
         backdrop={backdrop}
-        noVotes={!vote?.count}
+        $noVotes={!vote?.count}
       >
         {vote?.count
           ? `${vote.count} ${vote.count === 1 ? "vote" : "votes"}`

@@ -2,16 +2,20 @@ import styled, { css } from "styled-components";
 import { ReactComponent as StarIcon } from "./star.svg";
 
 export const Wrapper = styled.div`
-  margin: 24px 0px 0px 0px;
+  margin: 10px 0px 0px 16px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   font-size: 14px;
+  position: absolute; 
+  bottom: 0;
+  left: 0;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     margin: 0px;
     max-height: 20px;
     font-size: 13px;
+    position: static;
   }
 `;
 
@@ -55,7 +59,7 @@ export const OutOf = styled.span`
 export const Count = styled.p`
   margin-left: 8px;
 
-  ${({ noVotes }) => noVotes && css`
+  ${({ $noVotes }) => $noVotes && css`
     margin-left: 0px;
   `}
 

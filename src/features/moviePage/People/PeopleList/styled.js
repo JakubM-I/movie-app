@@ -5,7 +5,11 @@ export const PersonTileList = styled.div`
   max-width: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
+  gap: 24px 24px;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    gap: 16px 16px;
+  }
 `;
 
 export const PersonTile = styled.div`
@@ -13,20 +17,13 @@ export const PersonTile = styled.div`
   background: ${({ theme }) => theme.colors.white};
   padding: 16px 16px 0px 16px;
   border-radius: 5px;
-  margin: 0px 20px 24px 0px;
+  margin: 0px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-
+  
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     flex: 0 0 136px;
-    /* background: ${({ theme }) => theme.colors.white}; */
     padding: 8px 8px 0px 8px;
-    /* border-radius: 5px; */
-    margin: 0px 8px 16px 0px;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: start; */
   }
 `;
 
