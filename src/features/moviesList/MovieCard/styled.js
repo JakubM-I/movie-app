@@ -40,6 +40,7 @@ export const MovieImage = styled.img`
   width: 100%;
   max-width: 292px;
   max-height: 434px;
+  aspect-ratio: 2 /3;
   display: block;
   margin: 0 auto;
   margin-top: 10px;

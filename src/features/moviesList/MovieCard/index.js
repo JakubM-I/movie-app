@@ -46,15 +46,15 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
         <MovieYear>{year}</MovieYear>
 
         <MovieGenreContainer>
-          {genreNames.slice(0, 4).map((genre, index) => (
+          {Array.isArray(genreNames) && genreNames.slice(0, 4).map((genre, index) => (
             <MovieGenre key={index}>{genre}</MovieGenre>
           ))}
         </MovieGenreContainer>
 
         <MovieRatingContainer>
           <MovieStar>⭐️</MovieStar>
-          <MovieRating> {movieVoteAverage.toFixed(1)}</MovieRating>
-          <Votes>{movieVoteCount} votes</Votes>
+          <MovieRating> {(movieVoteAverage !== null && movieVoteAverage !== undefined) ? movieVoteAverage.toFixed(1) : "N/A"}</MovieRating>
+          <Votes>{(movieVoteCount !== null && movieVoteCount !== undefined) ? `${movieVoteCount} votes` : "No votes"}</Votes>
         </MovieRatingContainer>
       </MovieDetailsContainer>
     </MovieCardContainer>
