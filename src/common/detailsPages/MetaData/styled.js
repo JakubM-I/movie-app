@@ -36,7 +36,7 @@ export const Key = styled.dt`
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     margin-bottom: 4px;
   
-    ${({ hideOnMobile }) => hideOnMobile && css`
+    ${({ $hideOnMobile }) => $hideOnMobile && css`
       display: none;
   `}
   }

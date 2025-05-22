@@ -15,7 +15,7 @@ export const Tile = ({ poster,
   hideMetaDataKeysOnMobile, tags, vote }) => (
 
   <MovieTile>
-    <Poster url={poster} />
+    <Poster $url={poster} />
     <MovieData>
       <MovieTitle>{title}</MovieTitle>
       <MovieYear>{year}</MovieYear>

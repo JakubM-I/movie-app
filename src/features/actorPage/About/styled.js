@@ -46,7 +46,7 @@ export const PersonalInfo = styled.div`
 
 export const Img = styled.div`
   padding-top: calc(100%  * 632 / 421);
-  background: url("${({ url }) => url}");
+  background: url("${({ $url }) => $url}");
   background-size: 399px 564px;
   background-position: top;
   background-repeat: no-repeat;
@@ -121,6 +121,7 @@ export const InfoWrapper = styled.p`
   font-size: 20px;
   line-height: 1.6;
   grid-area: description;
+  overflow-wrap: anywhere;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     max-width: 256px;

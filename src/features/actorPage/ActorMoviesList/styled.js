@@ -12,7 +12,7 @@ export const MoviesListWrapper = styled.div`
 
 export const SubHeader = styled.h2`
   max-width: 100%;
-  margin: 24px 0px 0px 0px;
+  margin: 24px 0px 24px;
   padding-left: 16px;
   font-weight: 600;
   font-size: 36px;
@@ -21,7 +21,7 @@ export const SubHeader = styled.h2`
   
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     max-width: 100%;
-    margin: 0px 0px 12px 0px;
+    margin: 0px;
     padding-left: 8px;
     font-size: 20px;
   }  

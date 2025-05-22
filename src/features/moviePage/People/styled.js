@@ -20,7 +20,7 @@ export const SubHeader = styled.h2`
   
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     max-width: 100%;
-    margin: 0px 0px 12px 0px;
+    margin-bottom: 12px;
     padding-left: 8px;
     font-size: 20px;
   }  

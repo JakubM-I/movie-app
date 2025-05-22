@@ -55,7 +55,7 @@ export const OutOf = styled.span`
 export const Count = styled.p`
   margin-left: 8px;
 
-  ${({ noVotes }) => noVotes && css`
+  ${({ $noVotes }) => $noVotes && css`
     margin-left: 0px;
   `}
 

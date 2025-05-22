@@ -6,23 +6,28 @@ export const MoviesTileList = styled.div`
   max-width: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: start;
+  gap: 24px 24px;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    gap: 12px 12px;
+  }
 `;
 
 export const MovieTile = styled.div`
   max-width: 324px;
   padding: 16px;
-  margin: 24px 16px 0px 0px;
+  margin: 0px;
   background-color: ${({ theme }) => theme.colors.white};
+  border-radius: 5px;
   display: flex;
   flex-flow: column;
-  
+  position: relative;
+    
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     width: 288px;
     padding: 16px;
     margin: 16px 0px 0px 0px;
     flex-flow: row;
-    justify-content: start;
   }
 `;
 
@@ -41,16 +46,16 @@ export const MovieInfo = styled.div`
   display: flex;
   flex-flow: column;
   align-items: left;
-  margin: 0px;
-
+  margin: 16px 0px;
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     max-width: 126px;
-    margin-left: 16px;
+    margin: 0px 16px;
   }
 `;
 
 export const MovieTitle = styled.p`
-  margin: 16px auto 8px 0px;
+  margin: 0px auto 8px 0px;
   max-width: 280px;
   font-weight: 500;
   font-size: 22px;
@@ -59,12 +64,12 @@ export const MovieTitle = styled.p`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     max-width: 126px;
     font-size: 16px;
-    margin: 0px auto 0px 0px;
+    margin: 0px auto 4px 0px;
   }
 `;
 
 export const MovieYear = styled.p`
-  margin: 0px;
+  margin: 0px auto 8px 0px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;

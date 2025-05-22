@@ -44,7 +44,7 @@ export const MovieData = styled.div`
 
 export const Poster = styled.div`
   padding-top: calc(100%  * 632 / 421);
-  background: url("${({ url }) => url}");
+  background: url("${({ $url }) => $url}");
   background-size: 312px 464px;
   background-position: top;
   background-repeat: no-repeat;
