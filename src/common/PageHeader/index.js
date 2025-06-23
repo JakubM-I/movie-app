@@ -1,5 +1,5 @@
 import { StyledPageTitle } from "./styled";
 
-export const PageTitle = ({ title }) => {
-  return <StyledPageTitle>{title}</StyledPageTitle>;
+export const PageTitle = ({ title, className }) => {
+  return <StyledPageTitle className={className}>{title}</StyledPageTitle>;
 }
