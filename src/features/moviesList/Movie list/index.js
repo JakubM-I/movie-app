@@ -72,10 +72,10 @@ export const MovieList = () => {
               ))}
 
             </MovieListContainer>
+            <Buttons />
           </>
         ) : isSearching ? (<NoResults query={query} />) : <Loading />}
 
-        <Buttons />
       </PageContainer>
     </>
   );
