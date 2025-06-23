@@ -75,7 +75,7 @@ export const ActorsList = () => {
             </ActorsListContainer>
              <Buttons />
           </>
-        ) : isSearching ? (<NoResults query={query} />) : <Loading />}
+        ) : (<NoResults query={query} />)}
 
       </PageContainer>
     </>
