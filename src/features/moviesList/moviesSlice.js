@@ -27,6 +27,7 @@ export const moviesSlice = createSlice({
             state.results = movies.results || movies.movies;
             state.totalPages = movies.total_pages < state.maxPages ? movies.total_pages : state.maxPages;
             state.loading = false;
+            state.isSearching = false;
         },
         setGenres: (state, { payload: genres }) => {
             state.genres = genres;

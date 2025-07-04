@@ -73,10 +73,10 @@ export const ActorsList = () => {
                 </StyledLink>
               ))}
             </ActorsListContainer>
+             <Buttons />
           </>
-        ) : isSearching ? (<NoResults query={query} />) : <Loading />}
+        ) : (<NoResults query={query} />)}
 
-        <Buttons />
       </PageContainer>
     </>
   );
