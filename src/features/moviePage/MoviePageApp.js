@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { DetailsPages } from "../../common/detailsPages/DetailsPages";
 import { MoviePage } from "./MoviePage";
 import { actions, selectors } from "./moviePageSlice";
@@ -19,13 +19,15 @@ const MoviePageApp = () => {
   const isSearching = useSelector(isSearchingSelector);
   const movie = useSelector(moviesSelector);
   const isLoading = useSelector(loadingSelector);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (query && query.length > 0) {
-      dispatch(setSearching({ query, isActorsPage: false }))
+      navigate(`/?search=${query}`);
+      dispatch(setSearching({ query, isActorsPage: false }));
     } else {
-      dispatch(setSearching({ query: "", isActorsPage: false }))
-      dispatch(fetchMovies())
+      dispatch(setSearching({ query: "", isActorsPage: false }));
+      dispatch(fetchMovies());
     }
   }, [query])
 
@@ -34,15 +36,14 @@ const MoviePageApp = () => {
   return (
     <>
       {query && query.length > 0 ? 
-        (      <PageContainer>
-        {isLoading ? (
-          <Loading />
-        ) : movie.length > 0 ? (
+        (      
+        <PageContainer>
+          {isLoading ? (
+            <Loading />
+          ) : movie.length > 0 ? (
           <>
             <PageTitle title={`${query ? `Result for: ${query}` : "Popular movies"}`} />
-
             <MovieListContainer>
-
               {Array.isArray(movie) && movie.map(m => (
                 <StyledLink to={`movie/${m.id}` } key={m.id}>
                   <MovieCard
@@ -55,24 +56,22 @@ const MoviePageApp = () => {
                     movieGenreId={m.genre_ids}
                   />
                 </StyledLink>
-
               ))}
-
             </MovieListContainer>
             <Buttons />
           </>
-        ) : (<NoResults query={query} />)}
-
+          ) : (<NoResults query={query} />)}
       </PageContainer>) 
         : 
-        (  <DetailsPages
-    statusSelector={selectors.selectStatus}
-    fetchAction={actions.fetch}
-    clearAction={actions.clear}
-  >
-    <MoviePage />
-  </DetailsPages>)
-        }
+        (  
+          <DetailsPages
+            statusSelector={selectors.selectStatus}
+            fetchAction={actions.fetch}
+            clearAction={actions.clear}
+          >
+            <MoviePage />
+          </DetailsPages>
+        )}
     </>
 )
 };
