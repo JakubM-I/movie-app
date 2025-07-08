@@ -3,7 +3,7 @@ import { DetailsPages } from "../../common/detailsPages/DetailsPages";
 import { MoviePage } from "./MoviePage";
 import { actions, selectors } from "./moviePageSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMovies, isSearchingSelector, loadingSelector, moviesSelector, setSearching } from "../moviesList/moviesSlice";
+import { fetchMovies, loadingSelector, moviesSelector, setSearching } from "../moviesList/moviesSlice";
 import { useEffect } from "react";
 import { MovieListContainer, PageContainer, StyledLink } from "../moviesList/Movie list/styled";
 import Loading from "../../common/Loading";
@@ -16,7 +16,6 @@ const MoviePageApp = () => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("search");
   const dispatch = useDispatch();
-  const isSearching = useSelector(isSearchingSelector);
   const movie = useSelector(moviesSelector);
   const isLoading = useSelector(loadingSelector);
   const navigate = useNavigate();
@@ -30,8 +29,6 @@ const MoviePageApp = () => {
       dispatch(fetchMovies());
     }
   }, [query])
-
-
 
   return (
     <>
@@ -73,7 +70,7 @@ const MoviePageApp = () => {
           </DetailsPages>
         )}
     </>
-)
+  )
 };
 
 export default MoviePageApp;

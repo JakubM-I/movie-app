@@ -31,7 +31,6 @@ const ActorPageApp = () => {
     }
   }, [query])
 
-
   return (
     <>
       {query && query.length > 0 ?
