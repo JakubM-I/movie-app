@@ -13,27 +13,37 @@ export const MovieListContainer = styled.div`
 `;
 
 export const MovieCardContainer = styled.div`
-  width: 324px;
-  height: 650px;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 12px 0px #BAC7D580;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; 
   position: relative;
   
-  @media (max-width: 450px) {
-    max-width: 288px;
+  @media (max-width: 425px) {
+    width: 100%;
     max-height: 201px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    padding: 16px;
+    display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    gap: 16px;
   }
 `;
 
 export const MovieDetailsContainer = styled.div`
   padding: 0 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media (width <= 425px){
+    padding: 0;
+    gap: 8px;
+    justify-content: flex-start;
+  }
 `;
 
 export const MovieImage = styled.img`
@@ -46,12 +56,11 @@ export const MovieImage = styled.img`
   margin-top: 10px;
   border-radius: 10px;
 
-  @media (max-width: 450px) {
-    margin: 16px 16px 0px 16px;
+  @media (max-width: 425px) {
+    margin: 0;
     max-width: 114px;
     height: auto;
-    padding: 0 0;
-    margin-right: 0;
+    padding: 0;
   }
 `;
 
@@ -60,8 +69,9 @@ export const MovieTitle = styled.h2`
   font-size: 22px;
   font-weight: 500;
   text-align: left;
-  @media (max-width: 450px) {
+  @media (max-width: 425px) {
     font-size: 16px;
+    margin: 0;
   }
 `;
 
@@ -69,8 +79,9 @@ export const MovieYear = styled.div`
   font-size: 400;
   color: ${({ theme }) => theme.colors.darkerGrey};
   padding-bottom: 8px;
-  @media (max-width: 450px) {
+  @media (max-width: 425px) {
     font-size: 13px;
+    padding-bottom: 0;
   }
 `;
 
@@ -82,7 +93,7 @@ export const MovieGenreContainer = styled.div`
   gap: 8px;
   font-size: 16px;
 
-  @media (max-width: 450px) {
+  @media (max-width: 425px) {
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -103,7 +114,7 @@ export const MovieGenre = styled.div`
   gap: 8px;
   flex: 0 0 auto;
 
-  @media (max-width: 450px) {
+  @media (max-width: 425px) {
    max-width: 107px;
    max-height: 46px;
    padding: 4px 8px;
@@ -115,25 +126,31 @@ export const MovieGenre = styled.div`
 
 export const MovieRatingContainer = styled.div`
   display: flex;
-  position: absolute; 
-  bottom: 0;
-  left: 0;
+  /* position: absolute;  */
+  /* bottom: 0; */
+  /* left: 0; */
   width: 100%;
   padding: 10px;
   margin-top: auto; 
+  margin-bottom: 0;
   font-size: 16px;
+  justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
 
-  @media (max-width: 450px) {
+  @media (max-width: 425px) {
     font-size: 12px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     gap: 8px;
+    padding: 0;
+    margin-top: 0;
   }
 `;
 
 export const MovieRating = styled.div`
-  padding-right: 8px;
+  /* padding-right: 8px; */
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -142,10 +159,10 @@ export const MovieRating = styled.div`
 export const Votes = styled.div`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.darkerGrey};
-  display: flex;
-  align-items: center;
-  margin-left: 8px;
-  @media (max-width: 450px) {
+  /* display: flex; */
+  /* align-items: center; */
+  /* margin-left: 8px; */
+  @media (max-width: 425px) {
     font-size: 12px;
   }
 `;
