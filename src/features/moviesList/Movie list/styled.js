@@ -7,23 +7,30 @@ export const PageContainer = styled.div`
   justify-content: space-between;
   max-width: 1368px;
   margin: 0 auto;
-  @media (max-width: 450px) {
-    max-width: 288px;  }
+  padding-inline: 8px
+  /* @media (max-width: 450px) {
+    max-width: 288px;  } */
 `;
 
 export const MovieListContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   grid-template-rows: repeat(2, auto);
-  gap: 10px;
+  gap: 24px;
   margin-top: 20px;
   max-width: 1368px;
- 
-
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
 
-  @media (max-width: 1375px) {
+  @media (width < 566px){
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  }
+
+  @media (width <= 425px){
+    grid-template-columns: 1fr;
+  }
+
+  /* @media (max-width: 1375px) {
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
   }
@@ -36,7 +43,7 @@ export const MovieListContainer = styled.div`
     grid-template-columns: repeat(1, 1fr);
     justify-items: center;
     
-  }
+  } */
 `;
 
 export const StyledLink = styled(Link)`
