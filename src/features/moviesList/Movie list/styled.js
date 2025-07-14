@@ -9,8 +9,11 @@ export const PageContainer = styled.div`
   margin: 0 auto;
   padding-inline: 8px;
   padding-block-start: 56px;
+  padding-block-end: 103px;
+
   @media (width < 640px){
     padding-block-start: clamp(1.5rem, -0.5rem + 10vw, 3.5rem);
+    padding-block-end: clamp(1.9375rem, -2.5625rem + 22.5vw, 6.4375rem);
   }
 
 `;
@@ -23,6 +26,11 @@ export const MovieListContainer = styled.div`
   width: 100%;
   justify-content: center;
   align-items: stretch;
+  margin-block-end: 40px;
+
+  @media (width < 640px){
+    margin-block-end: clamp(2rem, 1.5rem + 2.5vw, 2.5rem);
+  }
 
   @media (width < 566px){
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
