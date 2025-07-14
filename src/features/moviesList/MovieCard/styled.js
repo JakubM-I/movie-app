@@ -16,7 +16,7 @@ export const MovieCardContainer = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 12px 0px #BAC7D580;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; 
