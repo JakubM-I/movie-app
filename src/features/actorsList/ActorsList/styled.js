@@ -5,9 +5,9 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: min(1368px, 100%);
+  width: min(1400px, 100%);
   margin: 0 auto;
-  padding-inline: 8px;
+  padding-inline: 16px;
   padding-block-start: 56px;
   padding-block-end: 103px;
 
@@ -26,6 +26,10 @@ export const ActorsListContainer = styled.div`
   justify-content: center;
   align-items: stretch;
   margin-block-end: 40px;
+
+  @media (width <= 1024px){
+    gap: clamp(1rem, 0.8295rem + 0.8523vw, 1.375rem);
+  }
 
   @media (width < 640px){
     margin-block-end: clamp(2rem, 1.5rem + 2.5vw, 2.5rem);
