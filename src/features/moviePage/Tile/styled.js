@@ -13,7 +13,8 @@ export const MovieTile = styled.article`
   grid-template-columns: 312px 1fr;
   grid-template-rows: auto 1fr;
   align-content: start;
-  grid-gap: 24px 24px;
+  row-gap: 24px;
+  column-gap: 40px;
   border-radius: 5px;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
@@ -30,11 +31,13 @@ export const MovieTile = styled.article`
 `;
 
 export const MovieData = styled.div`
-  max-width: 65vw;
+  /* max-width: 65vw; */
   display: flex;
   flex-flow: column;
-  align-items: left;
+  justify-content: flex-start;
+  gap: 24px;
   margin: 0px;
+  padding-block-start: 8px;
   grid-area: data;
   
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
@@ -61,7 +64,7 @@ export const MovieTitle = styled.h1`
   font-weight: 600;
   font-size: 36px;
   line-height: 1.2;
-  margin: 8px 0px 0px 0px;
+  margin: 0;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     max-width: 126px;
@@ -77,7 +80,7 @@ export const MovieYear = styled.p`
   font-weight: 400;
   font-size: 22px;
   line-height: 1.2;
-  margin: 24px 0 0 0;
+  margin: 0;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     max-width: 126px;
