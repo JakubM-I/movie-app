@@ -95,13 +95,13 @@ export const ImgPerson = styled.img`
 export const NameWrapper = styled.div`
   /* max-width: 176px; */
   /* max-height: 100%; */
-  width: 10%;
+  width: 100%;
   /* margin: 12px auto 16px; */
-  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  gap: 8px;
 
   /* @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     max-width: 120px;
@@ -115,6 +115,7 @@ export const NameWrapper = styled.div`
 
 
 export const Name = styled.p`
+width: 100%;
   font-size: 22px;
   font-weight: 500;
   text-align: center;
@@ -136,6 +137,7 @@ export const Name = styled.p`
 export const Character = styled.p`
   /* margin: 8px 0px 0px 0px; */
   width: 100%;
+  margin: 0;
   font-weight: 400;
   font-size: 18px;
   text-align: center;
