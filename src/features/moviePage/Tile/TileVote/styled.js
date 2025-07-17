@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     margin: 0px;
-    max-height: 20px;
+    /* max-height: 20px; */
     font-size: 13px;
   }
 `;
@@ -31,6 +31,8 @@ export const Star = styled(StarIcon)`
   
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     height: 16px;
+    width: 16px;
+    padding-block-end: 2px;
   }
 `;
 
@@ -43,7 +45,6 @@ export const Average = styled.strong`
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     font-weight: 600;
     font-size: 13px;
-    margin-left: 4px;
   }
 `;
 
@@ -53,12 +54,12 @@ export const OutOf = styled.span`
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     display: none;
-    height: 0px;
   }
 `;
 
 export const Count = styled.p`
   margin: 0px;
+  line-height: 1.2;
 
   /* ${({ $noVotes }) => $noVotes && css`
     margin-left: 0px;
@@ -67,7 +68,7 @@ export const Count = styled.p`
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     font-weight: 400;
     font-size: 13px;
-    line-height: 1.2;
+    line-height: 1.3;
     /* margin-left: 4px; */
     color: ${({ theme }) => theme.colors.darkerGrey};
   }

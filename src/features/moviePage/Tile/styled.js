@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const MovieTile = styled.article`
-  max-width: 100vw;
-  margin: 64px auto 24px;
+  /* max-width: 100vw; */
+  margin-block: 64px 24px;
   padding: 40px;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
@@ -17,11 +17,20 @@ export const MovieTile = styled.article`
   column-gap: 40px;
   border-radius: 5px;
 
+  @media(max-width: ${({ theme }) => theme.breakpoints.tabletMax}px) {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "picture data"
+      "description description";
+    grid-gap: 16px 16px;
+  }
+
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    max-width: 288px;
-    margin: 16px auto 15px;
+    /* max-width: 288px; */
+    margin-block: 16px 15px;
     padding: 16px;
-    grid-template-columns: 114px 1fr;
+    grid-template-columns: 114px 2fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
       "picture data"
@@ -41,7 +50,9 @@ export const MovieData = styled.div`
   grid-area: data;
   
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    max-width: 126px;
+    /* max-width: 126px; */
+    column-gap: 16px;
+    row-gap: 8px;
   }
 `;
 
@@ -54,9 +65,14 @@ export const Poster = styled.div`
   border-radius: 5px;
   grid-area: picture;
 
-  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+   @media(max-width: ${({ theme }) => theme.breakpoints.tabletMax}px) {
+    background-position: center;
+    background-size: cover;
+   }
+
+  /* @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     background-size: 114px 169px;
-  }
+  } */
 `;
 
 export const MovieTitle = styled.h1`
@@ -67,7 +83,7 @@ export const MovieTitle = styled.h1`
   margin: 0;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    max-width: 126px;
+    /* max-width: 126px; */
     font-weight: 500;
     font-size: 16px;
     line-height: 1.3;
@@ -76,14 +92,14 @@ export const MovieTitle = styled.h1`
 `;
 
 export const MovieYear = styled.p`
-  max-width: 65vw;
+  /* max-width: 65vw; */
   font-weight: 400;
   font-size: 22px;
   line-height: 1.2;
   margin: 0;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    max-width: 126px;
+    /* max-width: 126px; */
     font-weight: 400;
     font-size: 13px;
     line-height: 1.3;
@@ -92,7 +108,7 @@ export const MovieYear = styled.p`
 `;
 
 export const MovieDescription = styled.p`
-  max-width: 65vw;
+  /* max-width: 65vw; */
   margin: 0px;
   font-weight: 400;
   font-size: 20px;
@@ -101,7 +117,7 @@ export const MovieDescription = styled.p`
   text-align: justify;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    max-width: 256px;
+    /* max-width: 256px; */
     font-size: 14px;
   }
 `;
