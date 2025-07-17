@@ -5,7 +5,7 @@ export const PeopleWrapper = styled.div`
   margin: 40px auto 0px;
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    max-width: 288px;
+    /* max-width: 288px; */
     margin: 6px auto 0px;
   }
 `;
