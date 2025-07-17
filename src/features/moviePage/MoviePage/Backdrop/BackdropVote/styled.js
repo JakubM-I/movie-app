@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { ReactComponent as StarIcon } from "./star.svg";
 
 export const Wrapper = styled.div`
-  margin: 24px 0px 0px 0px;
+  margin-top: 24px;
   display: flex;
-  flex-flow: row wrap;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
   font-size: 14px;
   color: ${({ theme }) => theme.colors.white};
 
@@ -28,48 +29,55 @@ export const Wrapper = styled.div`
 
 export const CounterWrapper = styled.div`
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
   align-items: baseline;
-  margin-left: clamp(4px, 1vw, 8px);;
+  justify-content: flex-start;
+  font-size: 14px;
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    margin: 0px;
+    font-size: 13px;
+  }
 `
 
 export const Star = styled(StarIcon)`
-  height: auto;
-  width: clamp(16px, 4vw, 40px);
+  height: 24px;
+  width: 24px;
+  margin-inline-end: 8px;
+  align-self: flex-start;
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    height: 16px;
+    width: 16px;
+    padding-block-end: 2px;
+  }
 `;
 
 export const Average = styled.strong`
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 500;
+  margin-inline-end: 8px;
   line-height: 1.3;
-  margin: 0;
-  
-  @media(max-width: ${({ theme }) => theme.breakpoints.tabletHorizontalMax}px) {
-    font-size: 20px;
-    
-  }
+
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
   }
 `;
 
 export const OutOf = styled.span`
-  margin-left: clamp(2px, 0.5vw, 7px);
+  margin-inline-end: 8px;
   line-height: 1.2;
-  font-size: clamp(10px, 2vw, 16px);
-  font-weight: 400;
 `;
 
 export const Count = styled.p`
-  flex: 1 1 100%;
-  margin: 8px 0 0 0;
+  margin: 0px;
   line-height: 1.2;
-  font-size: clamp(10px, 2vw, 16px);
-  font-weight: 400;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    flex-basis: auto;
-    margin: 0 0 0 8px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.3;
+    color: ${({ theme }) => theme.colors.darkerGrey};
   }
 `;
