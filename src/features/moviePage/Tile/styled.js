@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const MovieTile = styled.article`
-  /* max-width: 100vw; */
   margin-block: 64px 24px;
   padding: 40px;
   background-color: ${({ theme }) => theme.colors.white};
@@ -27,7 +26,6 @@ export const MovieTile = styled.article`
   }
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    /* max-width: 288px; */
     margin-block: 16px 15px;
     padding: 16px;
     grid-template-columns: 114px 2fr;
@@ -40,7 +38,6 @@ export const MovieTile = styled.article`
 `;
 
 export const MovieData = styled.div`
-  /* max-width: 65vw; */
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
@@ -50,7 +47,6 @@ export const MovieData = styled.div`
   grid-area: data;
   
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    /* max-width: 126px; */
     column-gap: 16px;
     row-gap: 8px;
   }
@@ -69,10 +65,6 @@ export const Poster = styled.div`
     background-position: center;
     background-size: cover;
    }
-
-  /* @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    background-size: 114px 169px;
-  } */
 `;
 
 export const MovieTitle = styled.h1`
@@ -83,7 +75,6 @@ export const MovieTitle = styled.h1`
   margin: 0;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    /* max-width: 126px; */
     font-weight: 500;
     font-size: 16px;
     line-height: 1.3;
@@ -92,14 +83,12 @@ export const MovieTitle = styled.h1`
 `;
 
 export const MovieYear = styled.p`
-  /* max-width: 65vw; */
   font-weight: 400;
   font-size: 22px;
   line-height: 1.2;
   margin: 0;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    /* max-width: 126px; */
     font-weight: 400;
     font-size: 13px;
     line-height: 1.3;
@@ -108,7 +97,6 @@ export const MovieYear = styled.p`
 `;
 
 export const MovieDescription = styled.p`
-  /* max-width: 65vw; */
   margin: 0px;
   font-weight: 400;
   font-size: 20px;
@@ -117,7 +105,6 @@ export const MovieDescription = styled.p`
   text-align: justify;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    /* max-width: 256px; */
     font-size: 14px;
   }
 `;

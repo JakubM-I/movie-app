@@ -25,15 +25,6 @@ export const PersonTileList = styled.div`
   @media (width <= 425px){
     grid-template-columns: repeat(2, 1fr);
   }
-  /* margin: 0px;
-  max-width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  gap: 24px 24px;
-
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    gap: 16px 16px;
-  } */
 `;
 
 export const PersonTile = styled.div`
@@ -57,18 +48,6 @@ export const PersonTile = styled.div`
    @media (width <= 566px){
     aspect-ratio: 136 / 245;
    }
-  /* flex: 0 0 208px;
-  background: ${({ theme }) => theme.colors.white};
-  padding: 16px 16px 0px 16px;
-  border-radius: 5px;
-  margin: 0px;
-  display: flex;
-  flex-direction: column;
-  
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    flex: 0 0 136px;
-    padding: 8px 8px 0px 8px;
-  } */
 `;
 
 export const ImgPerson = styled.img`
@@ -81,41 +60,20 @@ export const ImgPerson = styled.img`
 @media (width <= 566px){
     aspect-ratio: 120 / 178;
   }
-  /* width: 176px;
-  height: 231px;
-  border-radius: 5px;
-
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    width: 120px;
-    height: 178px;
-    border-radius: 5px;
-  } */
 `;
 
 export const NameWrapper = styled.div`
-  /* max-width: 176px; */
-  /* max-height: 100%; */
   width: 100%;
-  /* margin: 12px auto 16px; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
-
-  /* @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    max-width: 120px;
-    max-height: 100%;
-    margin: 8px;
-    display: flex;
-    lex-direction: column;
-    justify-content: space-between;
-  } */
 `;
 
 
 export const Name = styled.p`
-width: 100%;
+  width: 100%;
   font-size: 22px;
   font-weight: 500;
   text-align: center;
@@ -124,18 +82,9 @@ width: 100%;
   @media (width <= 768px){
     font-size: clamp(0.875rem, 0.5179rem + 1.7857vw, 1.375rem);
   }
-  /* font-weight: 500;
-  font-size: 22px;
-  margin: 0px;
-  text-align: center;
-
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    font-size: 14px;
-  } */
 `;
 
 export const Character = styled.p`
-  /* margin: 8px 0px 0px 0px; */
   width: 100%;
   margin: 0;
   font-weight: 400;
