@@ -3,14 +3,15 @@ import styled from "styled-components";
 export const Wrapper = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 8px;
-  margin: 0px auto 10px 0px;
+  margin: 0px;
   padding: 0px;
   list-style: none;
   
-  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    margin: 0px auto 8px 0px;
-  }
+  /* @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    margin-block-end: 8px;
+  } */
 `;
 
 export const Item = styled.li`
