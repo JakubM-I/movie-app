@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 import { ReactComponent as StarIcon } from "./star.svg";
 
 export const Wrapper = styled.div`
-  /* margin: 24px 0px 0px 0px; */
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -11,7 +10,6 @@ export const Wrapper = styled.div`
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     margin: 0px;
-    /* max-height: 20px; */
     font-size: 13px;
   }
 `;
@@ -21,7 +19,6 @@ export const Star = styled(StarIcon)`
   width: 24px;
   margin-inline-end: 8px;
   align-self: flex-start;
-  /* transform: translate(-8%); */
   
   //no vote vertically
   ${({ hidden }) => hidden && css`
@@ -61,15 +58,10 @@ export const Count = styled.p`
   margin: 0px;
   line-height: 1.2;
 
-  /* ${({ $noVotes }) => $noVotes && css`
-    margin-left: 0px;
-  `} */
-
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     font-weight: 400;
     font-size: 13px;
     line-height: 1.3;
-    /* margin-left: 4px; */
     color: ${({ theme }) => theme.colors.darkerGrey};
   }
 `;
