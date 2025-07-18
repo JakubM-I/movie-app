@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     margin: 0px;
     font-size: 13px;
+    gap: 8px;
   }
 `;
 
