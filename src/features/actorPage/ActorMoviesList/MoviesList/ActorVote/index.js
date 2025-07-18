@@ -12,9 +12,9 @@ export const ActorVote = ({ vote }) => (
           <Average>
             {vote.average.toFixed(1)}
           </Average>
-          <OutOf>
+          {/* <OutOf>
             / 10
-          </OutOf>
+          </OutOf> */}
         </>
       )}
 

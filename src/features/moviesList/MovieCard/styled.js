@@ -76,7 +76,9 @@ export const MovieTitle = styled.h2`
 `;
 
 export const MovieYear = styled.div`
-  font-size: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
   color: ${({ theme }) => theme.colors.darkerGrey};
   padding-bottom: 8px;
   @media (max-width: 425px) {
@@ -135,8 +137,8 @@ export const MovieRatingContainer = styled.div`
   margin-bottom: 0;
   font-size: 16px;
   justify-content: flex-start;
-    align-items: center;
-    gap: 12px;
+  align-items: center;
+  gap: 12px;
 
   @media (max-width: 425px) {
     font-size: 12px;
