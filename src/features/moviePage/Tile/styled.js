@@ -22,7 +22,7 @@ export const MovieTile = styled.article`
     grid-template-areas:
       "picture data"
       "description description";
-    grid-gap: 16px 16px;
+    gap: 16px;
   }
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
@@ -33,7 +33,7 @@ export const MovieTile = styled.article`
     grid-template-areas:
       "picture data"
       "description description";
-    grid-gap: 16px 16px;
+    gap: 16px;
   }
 `;
 
