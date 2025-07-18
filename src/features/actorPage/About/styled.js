@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const AboutWrapper = styled.div`
-  /* height: auto; */
-  /* max-width: 100vw; */
   margin-block-end: 64px;
   padding: 40px;
   background-color: ${({ theme }) => theme.colors.white};
@@ -28,23 +26,18 @@ export const AboutWrapper = styled.div`
   }
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    /* width: 288px; */
     margin-block-end: 24px;
     padding: 16px;
     grid-template-columns: 116px 1fr;
-    /* grid-template-rows: 163px 1fr; */
      grid-template-rows: auto 1fr;
     grid-template-areas:
       "picture data"
       "description description";
-    /* padding: 16px; */
     gap: 16px;
   }
 `;
 
 export const PersonalInfo = styled.div`
-  /* max-height: auto; */
-  /* max-width: 60vw; */
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
@@ -72,10 +65,6 @@ export const Img = styled.div`
     background-position: center;
     background-size: cover;
    }
-
-  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    /* background-size: 116px 163px; */
-  }
 `;
 
 export const Name = styled.p`
@@ -86,7 +75,6 @@ export const Name = styled.p`
   margin: 0px;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    /* max-width: 125px; */
     font-weight: 600;
     font-size: 12px;
     line-height: 1.3;
@@ -95,16 +83,9 @@ export const Name = styled.p`
 `;
 
 export const BirthdayWrapper = styled.div`
-  /* max-width: 55vw; */
-  /* margin: 8px 0px; */
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
-
-  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    /* max-width: 125px; */
-    /* margin: 8px 0px 0px 0px; */
-  }
 `;
 
 export const TextInfo = styled.span`
@@ -134,17 +115,13 @@ export const HeaderInfo = styled.p`
 `;
 
 export const InfoWrapper = styled.p`
-  /* max-width: 55vw; */
   margin: 0;
-  /* text-align: justify;  */
   font-weight: 400;
   font-size: 20px;
   line-height: 1.6;
   grid-area: description;
-  /* overflow-wrap: anywhere; */
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    /* max-width: 256px; */
     font-size: 14px;
   }
 `;

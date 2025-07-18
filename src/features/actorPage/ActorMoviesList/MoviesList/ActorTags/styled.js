@@ -8,10 +8,6 @@ export const Wrapper = styled.ul`
   margin: 0px;
   padding: 0px;
   list-style: none;
-  
-  /* @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    margin-block-end: 8px;
-  } */
 `;
 
 export const Item = styled.li`
