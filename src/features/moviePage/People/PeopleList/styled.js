@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PersonTileList = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
   grid-template-rows: repeat(2, auto);
   gap: 24px;
   width: 100%;
@@ -73,7 +73,10 @@ export const NameWrapper = styled.div`
 
 
 export const Name = styled.p`
-  width: 100%;
+  width: 12ch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   font-size: 22px;
   font-weight: 500;
   text-align: center;
@@ -85,7 +88,10 @@ export const Name = styled.p`
 `;
 
 export const Character = styled.p`
-  width: 100%;
+  width: 15ch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   margin: 0;
   font-weight: 400;
   font-size: 18px;
