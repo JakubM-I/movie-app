@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const MoviesTileList = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
   grid-template-rows: repeat(2, auto);
   gap: 24px;
   width: 100%;
-  justify-content: center;
+  justify-content: start;
   align-items: stretch;
   margin-block-end: 40px;
 
@@ -15,7 +15,7 @@ export const MoviesTileList = styled.div`
   }
 
   @media (width < 566px){
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 11rem), 1fr));
   }
 
   @media (width <= 425px){

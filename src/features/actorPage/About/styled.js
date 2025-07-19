@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const AboutWrapper = styled.div`
-  margin-block-end: 64px;
+  margin-block: 56px 64px;
   padding: 40px;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
@@ -26,7 +26,7 @@ export const AboutWrapper = styled.div`
   }
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
-    margin-block-end: 24px;
+    margin-block: 23px 24px;
     padding: 16px;
     grid-template-columns: 116px 1fr;
      grid-template-rows: auto 1fr;

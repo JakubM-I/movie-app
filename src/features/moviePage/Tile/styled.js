@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MovieTile = styled.article`
-  margin-block: 64px 24px;
+  margin-block-end: 24px;
   padding: 40px;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
