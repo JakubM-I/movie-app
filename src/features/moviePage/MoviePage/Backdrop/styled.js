@@ -3,8 +3,13 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  margin: 0px;
+  margin-block-end: 64px;
   background-color: ${({ theme }) => theme.colors.black};
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tabletMax}px) {
+        margin-block-end: clamp(1rem, -1.1429rem + 10.7143vw, 4rem);
+  }
+
 `;
 
 export const ImgBig = styled.img`
