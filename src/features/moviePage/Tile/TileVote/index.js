@@ -23,7 +23,7 @@ export const TileVote = ({ vote }) => (
       >
         {vote?.count
           ? `${vote.count} ${vote.count === 1 ? "vote" : "votes"}`
-          : "no votes yet"
+          : "No votes yet"
         }
       </Count>
     </Wrapper>
