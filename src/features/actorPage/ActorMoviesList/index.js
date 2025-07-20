@@ -4,7 +4,7 @@ import { MoviesList } from "./MoviesList";
 export const ActorMoviesList = ({ title, movies }) => {
   return (
     <MoviesListWrapper>
-      <SubHeader>{`${title}(${movies.length})`}</SubHeader>
+      <SubHeader>{`${title}`}</SubHeader>
       <MoviesList movies={movies} />
     </MoviesListWrapper>
   );

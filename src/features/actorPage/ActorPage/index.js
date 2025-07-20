@@ -36,8 +36,8 @@ export const ActorPage = () => {
         day_of_death={day_of_death}
         place_of_birth={place_of_birth}
       />
-      <ActorMoviesList title="Movies - cast" movies={moviesCast} />
-      <ActorMoviesList title="Movies - crew" movies={moviesCrew} />
+      <ActorMoviesList title="Cast" movies={moviesCast} />
+      <ActorMoviesList title="Crew" movies={moviesCrew} />
     </PageContainer>
   );
 };
