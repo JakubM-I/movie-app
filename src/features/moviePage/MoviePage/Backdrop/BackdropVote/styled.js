@@ -52,20 +52,17 @@ export const CounterWrapper = styled.div`
 export const Star = styled(StarIcon)`
   height: 40px;
   width: 40px;
-  /* margin-inline-end: 8px; */
   align-self: flex-start;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
     height: 16px;
     width: 16px;
-    /* padding-block-end: 2px; */
   }
 `;
 
 export const Average = styled.strong`
   font-size: 30px;
   font-weight: 500;
-  /* margin-inline-end: 8px; */
   line-height: 1.3;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
@@ -75,9 +72,7 @@ export const Average = styled.strong`
 `;
 
 export const OutOf = styled.span`
-  /* margin-inline-end: 8px; */
   line-height: 1.2;
-  /* margin-inline-end: 4px; */
 `;
 
 export const Count = styled.p`

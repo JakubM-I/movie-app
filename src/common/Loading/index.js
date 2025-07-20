@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import { StyledSearchTitle, Wrapper, StyledSpinner } from "./styled";
+import { StyledSearchTitle, Wrapper, StyledSpinner, StyledSpinnerWrapper } from "./styled";
 import { useSelector } from "react-redux";
 import { isSearchingSelector } from "../../features/moviesList/moviesSlice";
 import { PageTitle } from "../PageHeader";
@@ -13,7 +13,9 @@ const Loading = () => {
   return (
     <Wrapper>
         {isSearching && ( <StyledSearchTitle title={`Result for: ${query}`} /> )}
-      <StyledSpinner />
+        <StyledSpinnerWrapper>
+          <StyledSpinner />
+        </StyledSpinnerWrapper>
     </Wrapper>
   )
 };

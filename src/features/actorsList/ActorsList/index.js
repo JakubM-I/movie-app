@@ -2,22 +2,14 @@ import { Buttons } from "../../../common/Buttons";
 import { PageTitle } from "../../../common/PageHeader";
 import { PageContainer, ActorsListContainer, StyledLink } from "./styled";
 import { ActorCard } from "../ActorCard";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchMovies,
   setSearching,
   moviesActorSelector,
-  setNextPage,
-  setPreviousPage,
-  setFirstPage,
-  setLastPage,
-  totalPagesSelector,
-  currentPageSelector,
-  isSearchingSelector,
-  loadingSelector,
-  isActorsPageSelector
+  loadingSelector
 } from "../../moviesList/moviesSlice";
 import NoResults from "../../../common/NoResults";
 import Loading from "../../../common/Loading";
@@ -27,13 +19,9 @@ export const ActorsList = () => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("search");
   const dispatch = useDispatch();
-
   const actors = useSelector(moviesActorSelector);
-  const currentPage = useSelector(currentPageSelector);
-  const totalPages = useSelector(totalPagesSelector);
-  const isSearching = useSelector(isSearchingSelector);
   const isLoading = useSelector(loadingSelector);
-  const isActorsPage = useSelector(isActorsPageSelector);
+
 
 
   useEffect(() => {

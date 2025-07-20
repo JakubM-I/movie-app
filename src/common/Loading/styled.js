@@ -9,23 +9,32 @@ const rotate = keyframes`
 `;
 
 export const Wrapper = styled.div`
-  /* text-align: center; */
-  margin-top: 88px;
   font-size: 20px;
-  /* color: ${({ theme }) => theme.colors.blue}; */
-  /* display: grid; */
-  /* justify-items: center; */
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 `;
 
+export const StyledSpinnerWrapper = styled.div`
+  padding-block-start: 40px;
+  flex-basis: 55%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 export const StyledSpinner = styled(Spinner)`
-  margin-top: 48px;
   animation: ${rotate} 1s linear infinite;
   color: ${({ theme }) => theme.colors.blue};
   height: 100px;
-  flex-basis: 55%;
-  flex-grow: 1;
+  width: 100px;
+  
+  @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    height: 35px;
+    width: 35px;
+  }
 `;
 
 export const StyledSearchTitle = styled(PageTitle)`

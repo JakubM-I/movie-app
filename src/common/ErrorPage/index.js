@@ -2,7 +2,6 @@ import { PageContainer } from "../styled/page-container";
 import warning from "../assets/warning.png"
 import { ErrorPageTitle, StyledButton, StyledErrorPage, StyledParagraph, StyledWarningImg } from "./styled";
 import {
-    // Navigate,
     useNavigate
 } from "react-router-dom";
 

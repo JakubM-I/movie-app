@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 export const Wrapper = styled.dl`
   font-weight: 400;
   font-size: 18px;
-  /* margin: 24px 0px 0px 0px; */
   margin: 0;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {

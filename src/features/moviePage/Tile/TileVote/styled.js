@@ -18,7 +18,6 @@ export const Wrapper = styled.div`
 export const Star = styled(StarIcon)`
   height: 24px;
   width: 24px;
-  /* margin-inline-end: 8px; */
   align-self: flex-start;
   
   //no vote vertically
@@ -37,7 +36,6 @@ export const Star = styled(StarIcon)`
 export const Average = styled.strong`
   font-size: 22px;
   font-weight: 500;
-  /* margin-inline-end: 8px; */
   line-height: 1.3;
 
   @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {

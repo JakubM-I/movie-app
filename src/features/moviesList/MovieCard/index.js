@@ -52,7 +52,6 @@ export const MovieCard = ({ movieTitle, movieReleaseDate, movieVoteAverage, movi
         </MovieGenreContainer>
 
         <MovieRatingContainer>
-          {/* <MovieStar>⭐️</MovieStar> */}
           {(movieVoteCount > 0) ? 
             (
               <>
