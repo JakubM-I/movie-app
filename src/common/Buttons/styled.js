@@ -24,17 +24,25 @@ export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
 
   @media (max-width: 425px) {
-   max-width: 232px;
    font-size: 10px;
    gap: 8px;
    margin: auto;
-   margin-top: 24px;
   }
 `;
 
+export const StyledInfoWrapper = styled.div`
+  margin-inline: 12px;
+
+  @media (max-width: 425px) {
+    margin-inline: 0;
+  }
+`
+export const StyledPageNumber = styled.span`
+ font-weight: 600;
+`
 export const GraySpan = styled.span`
   color: ${({ theme }) => theme.colors.darkerGrey};
 `;
