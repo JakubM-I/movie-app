@@ -5,7 +5,7 @@ export const People = ({ type, people }) => {
 
   return (
     <PeopleWrapper>
-      <SubHeader>{`${type}(${people.length})`}</SubHeader>
+      <SubHeader>{`${type}`}</SubHeader>
       <PeopleList people={people} />
     </PeopleWrapper>
   )
