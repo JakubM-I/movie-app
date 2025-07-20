@@ -5,7 +5,6 @@ export const StyledPageTitle = styled.h1`
   font-weight: 600;
   margin: 0 0 24px;
   align-self: flex-start;
-  /* max-height: 1391px; */
 
   @media (width < 640px){
     font-size: clamp(1.125rem, 0rem + 5.625vw, 2.25rem);

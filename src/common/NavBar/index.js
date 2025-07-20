@@ -1,11 +1,8 @@
 import {
     StyledLogoIcon, StyledLogoName, StyledLogoNavLink,
-    // StyledLogoWrapper,
-    StyledMenu, StyledMenuItem, StyledNavBar, StyledNavLink, StyledSearch, StyledSearchIcon, StyledSearchInput
+    StyledMenu, StyledMenuItem, StyledNavBar, StyledNavLink
 } from "./styled";
 import logo from "../assets/video-logo.png";
-
-import { NavLink } from "react-router-dom";
 import SearchForm from "../SearchForm";
 
 const NavBar = () => (

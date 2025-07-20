@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoints.tabletMax}px) {
         margin-block-end: clamp(1rem, -1.1429rem + 10.7143vw, 4rem);
   }
-
 `;
 
 export const ImgBig = styled.img`
